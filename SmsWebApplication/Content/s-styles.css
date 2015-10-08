@@ -1,0 +1,20 @@
+﻿.s-menu {
+    
+}
+
+.s-menu-item-value {
+    display: none;
+}
+
+.s-label {
+    text-align: left !important;
+}
+
+.s-text-area {
+    width: 90%;
+    max-width: 90%;  
+}
+
+.s-btn {
+    margin-bottom: 5px;
+}

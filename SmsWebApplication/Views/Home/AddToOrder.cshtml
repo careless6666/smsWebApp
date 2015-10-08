@@ -1,12 +1,106 @@
-﻿
-@{
-    ViewBag.Title = "Добавление на заказ";
-}
+﻿<h2>Добавление на заказ</h2>
+<hr />
 
-@model SmsWebApplication.Models.AddToOrderViewModel
-<script>
-    var viewModel = @Newtonsoft.Json.JsonConvert.SerializeObject(Model)
-</script>
-
-<h2>AddToOrder</h2>
-
+<form class="form-horizontal" role="form">
+    <div class="form-group">
+        <label class="control-label col-sm-2 s-label" for="DoNotSendSmsAddToOrder">Не отправлять смс:</label>
+        <div class="col-sm-10">
+            @*<input type="email" class="form-control" id="UnitAddToOrder" placeholder="Enter email">*@
+            <input id="DoNotSendSmsAddToOrder" type="checkbox"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2 s-label" for="UnitAddToOrder">Подразделение:</label>
+        <div class="col-sm-10">
+            @*<input type="email" class="form-control" id="UnitAddToOrder" placeholder="Enter email">*@
+            <select id="UnitAddToOrder" class="form-control"></select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2 s-label" for="NetAddToOrder">Сеть:</label>
+        <div class="col-sm-10">
+            <select id="NetAddToOrder" class="form-control"></select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2 s-label" for="ClientAddToOrder">Клиент:</label>
+        <div class="col-sm-10">
+            <select id="ClientAddToOrder" class="form-control"></select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2 s-label" for="WorkTypeAddToOrder">Тип работ:</label>
+        <div class="col-sm-10">
+            <select id="WorkTypeAddToOrder" class="form-control"></select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2 s-label" for="DepartmentAddToOrder">Отдел:</label>
+        <div class="col-sm-10">
+            <select id="DepartmentAddToOrder" class="form-control"></select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2 s-label" for="StartDateAddToOrder">Дата начала с:</label>
+        <div class="col-sm-10">
+            <input id="StartDateAddToOrder" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2 s-label" for="EndDateAddToOrder">Дата начала по:</label>
+        <div class="col-sm-10">
+            <input id="EndDateAddToOrder" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2 s-label" for="StartTimeAddToOrder">Время начала с:</label>
+        <div class="col-sm-10">
+            <input id="StartTimeAddToOrder" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2 s-label" for="EndTimeAddToOrder">Время начала по:</label>
+        <div class="col-sm-10">
+            <input id="EndTimeAddToOrder" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-8">
+            <textarea class="form-control s-text-area" placeholder="Введите текст сообщения ..." Rows="7"></textarea>
+        </div>
+        <div class="col-sm-4">
+            <div class="container">
+                <div class="row" style="height: 30px;">
+                    <span style="font-weight: bold;">Переменные:</span>
+                </div>
+                <div class="row">
+                    <div>
+                        <button class="btn btn-default s-btn" type="button">Дата начала</button>
+                        <button class="btn btn-default s-btn" type="button">Время начала</button>
+                        <button class="btn btn-default s-btn" type="button">Дата окончания</button>
+                        <button class="btn btn-default s-btn" type="button">Время окончания</button>
+                        <button class="btn btn-default s-btn" type="button">Клиент</button>
+                        <button class="btn btn-default s-btn" type="button">Тип работы</button>
+                        <button class="btn btn-default s-btn" type="button">Отдел</button>
+                        <button class="btn btn-default s-btn" type="button">Адрес</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2 s-label" for="TranslitAddToOrder">Выполнить транслитерацию:</label>
+        <div class="col-sm-10">
+            @*<input type="email" class="form-control" id="UnitAddToOrder" placeholder="Enter email">*@
+            <input id="TranslitAddToOrder" type="checkbox" />
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-12">
+            <button class="btn btn-primary s-btn" type="button">Сохранить шаблон</button>
+            <button class="btn btn-success s-btn" type="button">Предварительный просмотр</button>
+            <button class="btn btn-info s-btn" type="button">Загрузить шаблон по умолчанию</button>
+            <button class="btn btn-primary s-btn" type="button">Сохранить шаблон по умочанию</button>
+        </div>
+    </div>
+</form>

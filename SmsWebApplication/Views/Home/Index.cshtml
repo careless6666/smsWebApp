@@ -2,7 +2,12 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
+@model SmsWebApplication.Models.ModelsList
+
+<div class="jumbotron" id="main-page">
     <h1>SMS MODULE</h1>
 </div>
 
+<div class="s-menu-item-value" data-action="addToOrderContainer">
+    @Html.Partial("AddToOrder")
+</div>

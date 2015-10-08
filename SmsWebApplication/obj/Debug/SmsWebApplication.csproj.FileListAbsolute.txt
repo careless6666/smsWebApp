@@ -23,4 +23,3 @@ c:\users\a.usov\documents\visual studio 2013\Projects\SmsWebApplication\SmsWebAp
 c:\users\a.usov\documents\visual studio 2013\Projects\SmsWebApplication\SmsWebApplication\bin\Newtonsoft.Json.xml
 c:\users\a.usov\documents\visual studio 2013\Projects\SmsWebApplication\SmsWebApplication\obj\Debug\SmsWebApplication.dll
 c:\users\a.usov\documents\visual studio 2013\Projects\SmsWebApplication\SmsWebApplication\obj\Debug\SmsWebApplication.pdb
-c:\users\a.usov\documents\visual studio 2013\Projects\SmsWebApplication\SmsWebApplication\obj\Debug\SmsWebApplication.csprojResolveAssemblyReference.cache

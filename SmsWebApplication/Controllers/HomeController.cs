@@ -11,7 +11,7 @@ namespace SmsWebApplication.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            return View(new ModelsList());
         }
 
         public ActionResult About()
@@ -29,7 +29,7 @@ namespace SmsWebApplication.Controllers
         }
 
         public ActionResult AddToOrder() {
-            return View(new AddToOrderViewModel());
+            return View();
         }
     }
 }
