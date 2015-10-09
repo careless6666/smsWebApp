@@ -1,0 +1,1021 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{75375F13-4EAF-4BB7-B3FF-012734475E39}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DAL</RootNamespace>
+    <AssemblyName>DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ACTION.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ACTION_PAYMENTS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ACTION_PAYMENTS_HISTORY.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ACT_ACTIONS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ACT_ACTION_NUMBER_SHIFTS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AC_ACCRUALS_WORKER_ACTION_PAYMENTS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AC_ACCRUAL_CHARGE.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AC_ACCRUAL_KEEPING.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AC_ACCRUAL_ORDER.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AC_ACCRUAL_RECRUITER.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AC_ACCRUAL_TYPE.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AC_ACCRUAL_WR_CHARGE.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AC_ACCURAL.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AC_BANKS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AC_BANKS_UNITS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AC_BANKS_UNITS_ACTIONS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AC_INTEGRATION_TRANSFERS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AC_INTEGRATION_TRANSFERS_ACCURALS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AC_INTEGRATION_TRANSFERS_PAYMENT.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AC_MONEY_HIST.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ALFA_NEW_REGIONS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ARCHIVE_WR_WAGES.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ARCH_STATUSES.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BANK_TRANSFERS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BANK_TRANSFERS_HISTORY.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BANK_TRANSFERS_PAYMENT_HISTORY.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BANK_TRANSFERS_STATUS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CC_BLOCK.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CC_CALLBACK_BLOCK.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CC_CALL_RESULTS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CC_CALL_RESULT_TYPES.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CC_IPTEL_CALL_RESULTS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CC_IPTEL_CALL_RESULT_TYPES.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CC_IPTEL_LOGS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CC_IPTEL_LOG_TYPES.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CC_IPTEL_SID_INFO.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CC_IPTEL_TASKS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CC_IPTEL_TASK_CAMPAIGN.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CC_IPTEL_TASK_ORDER.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CC_IPTEL_TASK_PRIORITY.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CC_IPTEL_TASK_STATUS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CC_IPTEL_TASK_TYPES.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CC_IPTEL_USERS_STATUSES.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CC_IPTEL_WKAC.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CC_MANAGER_TASK.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CC_MANAGER_TASK_CANDIDATES.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CC_MANAGER_TASK_TYPE.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CC_MANAGER_TASK_WORKERS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CC_RECALL_TASK.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CC_REG_GIVE_MONEY.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CC_WORKER_REMINDS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CGNT_BILL.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CGNT_BILL_ITEM.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CGNT_CONTRAGENT.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CGNT_FIN_UNIT.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CGNT_FIN_UNIT_UNIT.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CGN_BONUS_CLIENTS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CGN_BONUS_OPTIONS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CGN_CAMPAIGN.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CGN_CAMPAIGN_ACTUALS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CGN_CAMPAIGN_REQUIREMENTS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CGN_CAMPAIGN_TYPES.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CGN_CAMPAIGN_WORKERS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CGN_CAMPAIGN_WORK_TYPES.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CGN_QUEUE_ACTUALISATION.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Class1.cs" />
+    <Compile Include="CL_ACTUAL_CONFIGURATIONS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CL_ACTUAL_SETTINGS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CL_ACTUAL_SETTINGS_TRANSACTIONS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CL_ACTUAL_SETTINGS_TRANSACTIONS_TYPES.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CL_BLACKLIST.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CL_CLIENTS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CL_CLIENTS_CONTRAGENT.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CL_CLIENTS_NETS_DEPARTEMNTS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CL_CLIENTS_USERS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CL_CLIENT_REQUIREMENTS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CL_CLOSED_PERIODS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CL_CONTACTS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CL_CONTRACT.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CL_CONTRACT_ITEM.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CL_CONTRACT_WORK_TYPE.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CL_DEPARTMENTS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CL_JURI_NAMES.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CL_JURI_NAMES_EXTENSIONS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CL_JURI_NAMES_EXTENSIONS_TYPE.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CL_JURI_NETS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CL_LEGAL_ENTITY_TAXATION_TYPES.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CL_MAIL_TEMPLATES.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CL_NETS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CL_NETS_DEPARTMENTS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CL_PRIORITY.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CL_RANGE_REQUIREMENTS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CL_RATE.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CL_SUPERVISORS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CL_WORK_COSTS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CL_WR_WAGE.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db_updates.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FIRE_MACHINE.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FIRE_MACHINE_HISTORY.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FUN_MAGIC_BUTTON.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GREEN_LIST.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GREEN_LIST_HISTORY.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INV_HISTORY.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INV_INVOICE.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INV_ITEM.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INV_ITEM_LEGAL_ENTITY.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INV_ITEM_ORDER.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INV_ITEM_TYPE.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INV_ITEM_WORKER.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INV_SENT_EMAILS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INV_SIGN.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INV_SIGN_TYPE.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IVLEV_OR_ORDER_ACTUALS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IVLEV_PERS_OUT.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LE_OBLIGATION.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LE_OBLIGATION_HISTORY.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LE_SIGN.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LG_USERS_ACTS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LOG_CC_IN_OUT.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NT_BLACKLIST.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NT_NET_REQUIREMENTS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NT_RANGE_REQUIREMENTS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_ACTION_BONUSES_20x100.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_ACTION_TYPES.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_ACTUAL_COEF_TYPES.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_ACTUAL_COEF_VALUES.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_ATTRIBUTES.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_BANK_CARDS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_BONUS_NAMES.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_CHARACTERISTIC.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_CHARGE_GROUP.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_CH_ITEM.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_DATE_STATE_MIND.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_DISMISSAL_ITEMS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_DISMISSAL_ITEM_COST.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_DOCS_STATES.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_DOCUMENT_TYPES.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_DOC_STATE_ATTRIBUTES.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_DOC_TYPES_ATTRS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_EMAILS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_FILE_EXTENSIONS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_FIN_BDP_WORK_TYPES.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_FIN_WORK_TYPES.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_HOSTEL.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_IMG_NAMES.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_INFO_SITES.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_INTERVIEW_TYPE.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_KEEPING.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_KEEPING_STATUS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_KEEPING_UNITS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_LATERS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_MAIN_REGIONS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_MARRIED_TYPES.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_NATIONALITY_TYPES.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_OPTIONS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_OUTPUT_TYPE.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_PENALTY_STATUS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_PENALTY_TYPES.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_RANGE_REFERENCES.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_RecruiterTypes.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_RECRUITER_TYPE.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_REFERENCES.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_REFERENCES_CHECK_SEQURITY.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_REFERENCES_UNIT.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_REGIONAL_PENALTY_COSTS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_REGIONAL_SMS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_REGIONAL_SPECIFICS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_RELATIONSHIP_PENALTY_TYPES.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_SHEDULE.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_SHEDULE_TYPE.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_SHIFTS_BEFORE_PAY.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_SIZES.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_SMS_EVENTS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_SMS_TEMPLATES.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_SMS_VARIABLES.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_STATUS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_STATUSES.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_STATUS_GROUP.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_SUPERVISOR_TYPES.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_TEL_CODE_ZONES.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_WAGE_OPTIONS_TYPE.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPT_WORK_TYPES.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OR_LUOV.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OR_ORDER.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OR_ORDER_ACTUALS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OR_ORDER_COMMENTS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OR_ORDER_COSTS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OR_ORDER_COSTS_HISTORY.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OR_ORDER_HISTORY.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OR_ORDER_REQUIREMENTS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OR_ORDER_WORKERS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OR_ORDER_WORKER_HISTORY.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OR_PRE_ADD.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OR_QUEUE_ACTUALISATION.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OR_RANGE_REQUIREMENTS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OR_TRAIN_CENTER_AVAILABLE.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OR_TRAIN_CENTER_AVAILABLE_CAMPAIGNS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OR_TRAIN_CENTER_WORKERS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OR_TRAIN_CENTER_WORKERS_CAMPAIGN.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="REASONS_FIRE_MACHINE.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RpDb.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RpDb.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RpDb.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RpDb.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RpDb.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="SC_AUTHORIZATION_LOG.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SC_BANK_SIGNS_RESP.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SC_PLACES_SMS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SC_RELATED_UNITS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SC_ROLES.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SC_UNIT.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SC_UNIT_PLACES.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SC_USERS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SC_USER_ROLES.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SMS_RECEIVED_MSG.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SMS_RECEIVE_REQUESTS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SMS_SEND_CONDITIONS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SMS_SEND_CONDITIONS_TYPES.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SMS_TEMPLATES.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SMS_TEMPLATES_HISTORY.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SMS_TEMPLATES_PARAMS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SYS_CONDITIONS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SYS_FIELDS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SYS_FIELDS_TYPES.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TEMPORARY_AC_ACCURAL.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TEMPORARY_WR_DISMISSAL_ITEMS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tmpCL_WORK_COSTS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tmp_calc_file.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tmp_calc_worker.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TMP_COUNTERS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tmp_old_costs.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tmp_old_order_costs.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TMP_RETURN_KEEPING.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_20x100COUNTER.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_ACTION_15x15.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_ACTION_BONUSES20x100.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_ACTION_BRING_FRIEND_2012_CALCS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_ACTION_BRING_FRIEND_2012_UNITS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_ACTION_STOKMANN_2012.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_BANK_PROFILES.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_CARDS_LOST.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_CARDS_ROSEURO.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_CHARGE.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_CHARGE_HISTORY.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_CH_CARD.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_CH_CARD_ITEM.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_DataType.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_DISMISSAL_HIST_ACCRUAL.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_DISMISSAL_ITEMS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_DISMISSAL_ITEMS_HISTORY.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_DOCUMENTS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_DOCUMENT_TYPES.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_EDUCATION.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_FAMILY.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_GROUPS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_HISTORY.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_IMAGES.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_INTERNAL_CONTRACT.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_INTERVIEW.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_INTERVIEW_AND_WORKER.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_INVOICE_NUMBERS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_KEEPING.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_KEEPING_HISTORY.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_KLADR.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_KLADR_COUNTRIES.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_KLADR_LESS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_LABOR_CONTRACTS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_LENTA_CARD.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_LOG_KEEPING.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_LOG_RETURN_KEEPING.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_MEDICAL_BOOKS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_MIN_RESTS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_NDFL.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_PAYMENT.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_PAYMENT_ACCRUALS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_PAYMENT_HISTORY.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_PAYMENT_HISTORY_ACCRUAL.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_PAYMENT_TYPE.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_PENALTIES.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_PENALTY_HISTORY.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_PREVIOUS_WORK.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_REALLY.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_RECOMMENDATION.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_RECRUITER.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_RECRUITER_HISTORY.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_RECRUITER_PERIOD.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_RECRUITER_PERIOD_HISTORY.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_ROSEURO_IDS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_SHEDULE_ITEM.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_SMS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_SMS_TYPES.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_SUPERVISORS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_TEMP_PROFILES.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_WAGES.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_WAGES_OPTIONS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_WAGES_OPTIONS_LMK.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_WAGES_PERIODS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_WAITING_FOR_FMS_RESPONSE.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_WORKERS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_WORKERS_EXTENSIONS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_WORKERS_EXTENSIONS_TYPE.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_WORKER_ACTION_BRING_FRIEND.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_WORKER_ACTION_PAYMENTS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_WORKER_ACTION_PAYMENTS_HISTORY.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_WORKER_COMMENTS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_WORKER_DOCS_ATTRIBUTES.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_WORKER_DOCUMENTS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_WORKER_DOCUMENT_ATTR_CONTENT.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_WORKER_DOC_CONTENT.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_WORKER_REFERENCES.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_WORKER_VACATIONS.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WR_WORKER_WORK_TYPE.cs">
+      <DependentUpon>RpDb.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <EntityDeploy Include="RpDb.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RpDb.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="RpDb.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RpDb.edmx</DependentUpon>
+      <LastGenOutput>RpDb.Context.cs</LastGenOutput>
+    </None>
+    <None Include="RpDb.edmx.diagram">
+      <DependentUpon>RpDb.edmx</DependentUpon>
+    </None>
+    <None Include="RpDb.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RpDb.edmx</DependentUpon>
+      <LastGenOutput>RpDb.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

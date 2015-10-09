@@ -1,0 +1,704 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c7933e61309e4663975a59a31e5d3739" Name="Diagram1">
+        <EntityTypeShape EntityType="BdpUsovModel.AC_ACCRUAL_CHARGE" Width="1.5" PointX="33.5" PointY="211.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.AC_ACCRUAL_KEEPING" Width="1.5" PointX="37.5" PointY="198" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.AC_ACCRUAL_ORDER" Width="1.5" PointX="44" PointY="201.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.AC_ACCRUAL_RECRUITER" Width="1.5" PointX="36.75" PointY="208.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.AC_ACCRUAL_TYPE" Width="1.5" PointX="24" PointY="176.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.AC_ACCRUAL_WR_CHARGE" Width="1.5" PointX="39.75" PointY="195.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.AC_ACCRUALS_WORKER_ACTION_PAYMENTS" Width="1.5" PointX="33.5" PointY="184.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.AC_ACCURAL" Width="1.5" PointX="26.25" PointY="194.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.AC_BANKS" Width="1.5" PointX="0.75" PointY="198.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.AC_BANKS_UNITS" Width="1.5" PointX="3" PointY="192.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.AC_BANKS_UNITS_ACTIONS" Width="1.5" PointX="5.25" PointY="203.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.AC_INTEGRATION_TRANSFERS" Width="1.5" PointX="14.25" PointY="209.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.AC_INTEGRATION_TRANSFERS_ACCURALS" Width="1.5" PointX="37.5" PointY="202.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.AC_INTEGRATION_TRANSFERS_PAYMENT" Width="1.5" PointX="16.5" PointY="212.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.AC_MONEY_HIST" Width="1.5" PointX="7.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.ACT_ACTION_NUMBER_SHIFTS" Width="1.5" PointX="8.25" PointY="182.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.ACT_ACTIONS" Width="1.5" PointX="6" PointY="192.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.ACTION" Width="1.5" PointX="37.75" PointY="179.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.ACTION_PAYMENTS" Width="1.5" PointX="33.75" PointY="196" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.ACTION_PAYMENTS_HISTORY" Width="1.5" PointX="40" PointY="198.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.ALFA_NEW_REGIONS" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.ARCH_STATUSES" Width="1.5" PointX="2.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.BANK_TRANSFERS" Width="1.5" PointX="21" PointY="231.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.BANK_TRANSFERS_HISTORY" Width="1.5" PointX="23.25" PointY="208.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.BANK_TRANSFERS_PAYMENT_HISTORY" Width="1.5" PointX="28.5" PointY="218.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.BANK_TRANSFERS_STATUS" Width="1.5" PointX="21" PointY="234.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CC_BLOCK" Width="1.5" PointX="17.25" PointY="188.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CC_CALL_RESULT_TYPES" Width="1.5" PointX="29.25" PointY="175.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CC_CALL_RESULTS" Width="1.5" PointX="31.5" PointY="202.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CC_CALLBACK_BLOCK" Width="1.5" PointX="0.75" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CC_IPTEL_CALL_RESULT_TYPES" Width="1.5" PointX="15.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CC_IPTEL_CALL_RESULTS" Width="1.5" PointX="18" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CC_IPTEL_LOG_TYPES" Width="1.5" PointX="29.25" PointY="230.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CC_IPTEL_LOGS" Width="1.5" PointX="31.5" PointY="206.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CC_IPTEL_SID_INFO" Width="1.5" PointX="5.75" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CC_IPTEL_TASK_CAMPAIGN" Width="1.5" PointX="8.25" PointY="205.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CC_IPTEL_TASK_ORDER" Width="1.5" PointX="28.5" PointY="210.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CC_IPTEL_TASK_PRIORITY" Width="1.5" PointX="1.5" PointY="174.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CC_IPTEL_TASK_STATUS" Width="1.5" PointX="1.5" PointY="170.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CC_IPTEL_TASK_TYPES" Width="1.5" PointX="1.5" PointY="181.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CC_IPTEL_TASKS" Width="1.5" PointX="0.75" PointY="176.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CC_IPTEL_USERS_STATUSES" Width="1.5" PointX="14.25" PointY="213.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CC_IPTEL_WKAC" Width="1.5" PointX="7.75" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CC_MANAGER_TASK" Width="1.5" PointX="3" PointY="188.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CC_MANAGER_TASK_CANDIDATES" Width="1.5" PointX="5.25" PointY="181.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CC_MANAGER_TASK_TYPE" Width="1.5" PointX="0.75" PointY="167.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CC_MANAGER_TASK_WORKERS" Width="1.5" PointX="17.25" PointY="194.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CC_RECALL_TASK" Width="1.5" PointX="3" PointY="161.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CC_REG_GIVE_MONEY" Width="1.5" PointX="15.75" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CC_WORKER_REMINDS" Width="1.5" PointX="34.5" PointY="199.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CGN_BONUS_OPTIONS" Width="1.5" PointX="6" PointY="168.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CGN_CAMPAIGN" Width="1.5" PointX="3" PointY="196.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CGN_CAMPAIGN_ACTUALS" Width="1.5" PointX="5.75" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CGN_CAMPAIGN_REQUIREMENTS" Width="1.5" PointX="7.75" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CGN_CAMPAIGN_TYPES" Width="1.5" PointX="0.75" PointY="202.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CGN_CAMPAIGN_WORK_TYPES" Width="1.5" PointX="17.75" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CGN_CAMPAIGN_WORKERS" Width="1.5" PointX="5.25" PointY="213.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CGN_QUEUE_ACTUALISATION" Width="1.5" PointX="5.25" PointY="206.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CGNT_BILL" Width="1.5" PointX="10.75" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CGNT_BILL_ITEM" Width="1.5" PointX="13" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CGNT_CONTRAGENT" Width="1.5" PointX="15" PointY="176.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CGNT_FIN_UNIT" Width="1.5" PointX="3.75" PointY="171.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CGNT_FIN_UNIT_UNIT" Width="1.5" PointX="6" PointY="189.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CL_ACTUAL_CONFIGURATIONS" Width="1.5" PointX="15" PointY="229.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CL_ACTUAL_SETTINGS" Width="1.5" PointX="17.25" PointY="198.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CL_ACTUAL_SETTINGS_TRANSACTIONS" Width="1.5" PointX="20.25" PointY="211.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CL_ACTUAL_SETTINGS_TRANSACTIONS_TYPES" Width="1.5" PointX="18" PointY="223.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CL_BLACKLIST" Width="1.5" PointX="20.25" PointY="196.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CL_CLIENT_REQUIREMENTS" Width="1.5" PointX="31.5" PointY="225.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CL_CLIENTS" Width="1.5" PointX="9" PointY="189.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CL_CLIENTS_CONTRAGENT" Width="1.5" PointX="17.25" PointY="185.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CL_CLIENTS_NETS_DEPARTEMNTS" Width="1.5" PointX="20.25" PointY="189" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CL_CLIENTS_USERS" Width="1.5" PointX="17.25" PointY="202.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CL_CLOSED_PERIODS" Width="1.5" PointX="14.25" PointY="215.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CL_CONTACTS" Width="1.5" PointX="11.25" PointY="211.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CL_CONTRACT" Width="1.5" PointX="23.25" PointY="212.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CL_CONTRACT_ITEM" Width="1.5" PointX="31.5" PointY="221.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CL_CONTRACT_WORK_TYPE" Width="1.5" PointX="29.25" PointY="239.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CL_DEPARTMENTS" Width="1.5" PointX="15.75" PointY="173.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CL_JURI_NAMES" Width="1.5" PointX="21" PointY="225.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CL_JURI_NAMES_EXTENSIONS" Width="1.5" PointX="23.25" PointY="118.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CL_JURI_NAMES_EXTENSIONS_TYPE" Width="1.5" PointX="11" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CL_JURI_NETS" Width="1.5" PointX="27" PointY="239.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CL_LEGAL_ENTITY_TAXATION_TYPES" Width="1.5" PointX="18.75" PointY="227.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CL_MAIL_TEMPLATES" Width="1.5" PointX="11.25" PointY="215.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CL_NETS" Width="1.5" PointX="3.75" PointY="178.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CL_NETS_DEPARTMENTS" Width="1.5" PointX="18" PointY="172.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CL_PRIORITY" Width="1.5" PointX="6.75" PointY="175" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CL_RANGE_REQUIREMENTS" Width="1.5" PointX="20.25" PointY="184.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CL_RATE" Width="1.5" PointX="20.25" PointY="200.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CL_SUPERVISORS" Width="1.5" PointX="11.25" PointY="183.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CL_WORK_COSTS" Width="1.5" PointX="23.25" PointY="192.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CL_WR_WAGE" Width="1.5" PointX="17.25" PointY="181.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.db_updates" Width="1.5" PointX="17.75" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.FIRE_MACHINE" Width="1.5" PointX="17.25" PointY="191.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.FIRE_MACHINE_HISTORY" Width="1.5" PointX="22.5" PointY="185.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.FUN_MAGIC_BUTTON" Width="1.5" PointX="14.25" PointY="219.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.GREEN_LIST" Width="1.5" PointX="23.25" PointY="188.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.GREEN_LIST_HISTORY" Width="1.5" PointX="25.5" PointY="178.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.INV_HISTORY" Width="1.5" PointX="38.75" PointY="212.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.INV_INVOICE" Width="1.5" PointX="34.5" PointY="218.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.INV_ITEM" Width="1.5" PointX="36.75" PointY="221" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.INV_ITEM_LEGAL_ENTITY" Width="1.5" PointX="39" PointY="222.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.INV_ITEM_ORDER" Width="1.5" PointX="36" PointY="214.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.INV_ITEM_TYPE" Width="1.5" PointX="34.5" PointY="228.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.INV_ITEM_WORKER" Width="1.5" PointX="44" PointY="205.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.INV_SENT_EMAILS" Width="1.5" PointX="14.25" PointY="221.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.INV_SIGN" Width="1.5" PointX="39.75" PointY="219.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.INV_SIGN_TYPE" Width="1.5" PointX="3.75" PointY="220.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.IVLEV_OR_ORDER_ACTUALS" Width="1.5" PointX="17.75" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.IVLEV_PERS_OUT" Width="1.5" PointX="0.75" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.LE_OBLIGATION" Width="1.5" PointX="25.5" PointY="235.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.LE_OBLIGATION_HISTORY" Width="1.5" PointX="33.75" PointY="223.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.LE_SIGN" Width="1.5" PointX="6" PointY="196.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.LOG_CC_IN_OUT" Width="1.5" PointX="26.25" PointY="200.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.NT_BLACKLIST" Width="1.5" PointX="26.25" PointY="190.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.NT_NET_REQUIREMENTS" Width="1.5" PointX="3" PointY="216.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.NT_RANGE_REQUIREMENTS" Width="1.5" PointX="6" PointY="185.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_ACTION_BONUSES_20x100" Width="1.5" PointX="2.75" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_ACTION_TYPES" Width="1.5" PointX="3.75" PointY="168.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_ACTUAL_COEF_TYPES" Width="1.5" PointX="12.75" PointY="228.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_ACTUAL_COEF_VALUES" Width="1.5" PointX="12.75" PointY="231.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_ATTRIBUTES" Width="1.5" PointX="29.75" PointY="172.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_BANK_CARDS" Width="1.5" PointX="3" PointY="204.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_BONUS_NAMES" Width="1.5" PointX="18.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_CH_ITEM" Width="1.5" PointX="15.75" PointY="249.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_CHARACTERISTIC" Width="1.5" PointX="13.5" PointY="250" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_CHARGE_GROUP" Width="1.5" PointX="7.5" PointY="171.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_DATE_STATE_MIND" Width="1.5" PointX="27" PointY="230.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_DISMISSAL_ITEM_COST" Width="1.5" PointX="9" PointY="185.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_DISMISSAL_ITEMS" Width="1.5" PointX="6.75" PointY="178.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_DOC_STATE_ATTRIBUTES" Width="1.5" PointX="34.25" PointY="172" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_DOC_TYPES_ATTRS" Width="1.5" PointX="32" PointY="172" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_DOCS_STATES" Width="1.5" PointX="27" PointY="163.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_DOCUMENT_TYPES" Width="1.5" PointX="24.75" PointY="162.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_EMAILS" Width="1.5" PointX="3" PointY="226.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_FILE_EXTENSIONS" Width="1.5" PointX="24" PointY="230.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_FIN_BDP_WORK_TYPES" Width="1.5" PointX="31.5" PointY="115" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_FIN_WORK_TYPES" Width="1.5" PointX="10.75" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_HOSTEL" Width="1.5" PointX="9" PointY="199.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_IMG_NAMES" Width="1.5" PointX="18" PointY="177.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_INFO_SITES" Width="1.5" PointX="3" PointY="234" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_INTERVIEW_TYPE" Width="1.5" PointX="6" PointY="254.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_KEEPING" Width="1.5" PointX="24" PointY="168.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_KEEPING_STATUS" Width="1.5" PointX="37.25" PointY="225.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_KEEPING_UNITS" Width="1.5" PointX="6" PointY="200.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_LATERS" Width="1.5" PointX="12" PointY="164.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_MAIN_REGIONS" Width="1.5" PointX="3" PointY="239.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_MARRIED_TYPES" Width="1.5" PointX="12.75" PointY="180.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_NATIONALITY_TYPES" Width="1.5" PointX="12.75" PointY="177.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_OUTPUT_TYPE" Width="1.5" PointX="29.25" PointY="169.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_PENALTY_STATUS" Width="1.5" PointX="23" PointY="172.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_PENALTY_TYPES" Width="1.5" PointX="9.75" PointY="170.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_RANGE_REFERENCES" Width="1.5" PointX="3.75" PointY="174.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_RECRUITER_TYPE" Width="1.5" PointX="17.25" PointY="246.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_RecruiterTypes" Width="1.5" PointX="12.75" PointY="175.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_REFERENCES" Width="1.5" PointX="0.75" PointY="184" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_REFERENCES_CHECK_SEQURITY" Width="1.5" PointX="0.75" PointY="186.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_REFERENCES_UNIT" Width="1.5" PointX="3" PointY="184.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_REGIONAL_PENALTY_COSTS" Width="1.5" PointX="12" PointY="192.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_REGIONAL_SMS" Width="1.5" PointX="12" PointY="189" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_REGIONAL_SPECIFICS" Width="1.5" PointX="12.75" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_RELATIONSHIP_PENALTY_TYPES" Width="1.5" PointX="12" PointY="161.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_SHEDULE" Width="1.5" PointX="3.75" PointY="264.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_SHEDULE_TYPE" Width="1.5" PointX="1.5" PointY="264.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_SHIFTS_BEFORE_PAY" Width="1.5" PointX="3" PointY="202.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_SIZES" Width="1.5" PointX="12.75" PointY="172.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_SMS_EVENTS" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_SMS_TEMPLATES" Width="1.5" PointX="9.75" PointY="176.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_SMS_VARIABLES" Width="1.5" PointX="14.75" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_STATUS" Width="1.5" PointX="26.25" PointY="243" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_STATUS_GROUP" Width="1.5" PointX="24" PointY="243.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_STATUSES" Width="1.5" PointX="12.75" PointY="168" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_SUPERVISOR_TYPES" Width="1.5" PointX="18" PointY="220.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_TEL_CODE_ZONES" Width="1.5" PointX="3" PointY="254.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_WAGE_OPTIONS_TYPE" Width="1.5" PointX="34.5" PointY="231.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_WORK_TYPES" Width="1.5" PointX="29.25" PointY="224.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OR_LUOV" Width="1.5" PointX="34.5" PointY="203.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OR_ORDER" Width="1.5" PointX="23.25" PointY="197" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OR_ORDER_ACTUALS" Width="1.5" PointX="16.75" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OR_ORDER_COMMENTS" Width="1.5" PointX="25.5" PointY="217.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OR_ORDER_COSTS" Width="1.5" PointX="25.5" PointY="220.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OR_ORDER_COSTS_HISTORY" Width="1.5" PointX="30.75" PointY="211.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OR_ORDER_HISTORY" Width="1.5" PointX="28.5" PointY="213.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OR_ORDER_REQUIREMENTS" Width="1.5" PointX="18.75" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OR_ORDER_WORKER_HISTORY" Width="1.5" PointX="41.75" PointY="202.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OR_ORDER_WORKERS" Width="1.5" PointX="31.5" PointY="193.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OR_PRE_ADD" Width="1.5" PointX="34.5" PointY="192.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OR_QUEUE_ACTUALISATION" Width="1.5" PointX="25.5" PointY="226.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OR_RANGE_REQUIREMENTS" Width="1.5" PointX="34.5" PointY="208" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OR_TRAIN_CENTER_AVAILABLE" Width="1.5" PointX="25.5" PointY="232.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OR_TRAIN_CENTER_AVAILABLE_CAMPAIGNS" Width="1.5" PointX="5.25" PointY="210.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OR_TRAIN_CENTER_WORKERS" Width="1.5" PointX="33.75" PointY="215" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OR_TRAIN_CENTER_WORKERS_CAMPAIGN" Width="1.5" PointX="7.5" PointY="210.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.REASONS_FIRE_MACHINE" Width="1.5" PointX="20.25" PointY="177.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.SC_AUTHORIZATION_LOG" Width="1.5" PointX="4.75" PointY="20" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.SC_BANK_SIGNS_RESP" Width="1.5" PointX="5.25" PointY="260.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.SC_PLACES_SMS" Width="1.5" PointX="5.25" PointY="257.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.SC_RELATED_UNITS" Width="1.5" PointX="3" PointY="257.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.SC_ROLES" Width="1.5" PointX="9.75" PointY="218.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.SC_UNIT" Width="1.5" PointX="0.75" PointY="190.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.SC_UNIT_PLACES" Width="1.5" PointX="3" PointY="260" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.SC_USERS" Width="1.5" PointX="12" PointY="196.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.SMS_RECEIVE_REQUESTS" Width="1.5" PointX="12.75" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.SMS_RECEIVED_MSG" Width="1.5" PointX="15" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.SMS_SEND_CONDITIONS_TYPES" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.SMS_TEMPLATES" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.SMS_TEMPLATES_HISTORY" Width="1.5" PointX="5.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.SMS_TEMPLATES_PARAMS" Width="1.5" PointX="8.25" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.SYS_CONDITIONS" Width="1.5" PointX="6" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.SYS_FIELDS" Width="1.5" PointX="6" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.SYS_FIELDS_TYPES" Width="1.5" PointX="3.75" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.TEMPORARY_AC_ACCURAL" Width="1.5" PointX="6.75" PointY="20" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.TEMPORARY_WR_DISMISSAL_ITEMS" Width="1.5" PointX="19.75" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.tmp_calc_file" Width="1.5" PointX="35.25" PointY="182.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.tmp_calc_worker" Width="1.5" PointX="37.5" PointY="189.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.TMP_RETURN_KEEPING" Width="1.5" PointX="26.25" PointY="186.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_ACTION_15x15" Width="1.5" PointX="34.5" PointY="188.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_ACTION_BONUSES20x100" Width="1.5" PointX="8.75" PointY="20" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_ACTION_BRING_FRIEND_2012_CALCS" Width="1.5" PointX="17.25" PointY="205.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_ACTION_BRING_FRIEND_2012_UNITS" Width="1.5" PointX="3" PointY="278.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_ACTION_STOKMANN_2012" Width="1.5" PointX="17.25" PointY="208.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_BANK_PROFILES" Width="1.5" PointX="20.25" PointY="204.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_CARDS_LOST" Width="1.5" PointX="26.25" PointY="204.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_CARDS_ROSEURO" Width="1.5" PointX="3" PointY="208.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_CH_CARD" Width="1.5" PointX="12.75" PointY="225.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_CH_CARD_ITEM" Width="1.5" PointX="18" PointY="229.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_CHARGE" Width="1.5" PointX="25.25" PointY="182.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_CHARGE_HISTORY" Width="1.5" PointX="37.5" PointY="193.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_DataType" Width="1.5" PointX="8.75" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_DISMISSAL_HIST_ACCRUAL" Width="1.5" PointX="38.75" PointY="186.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_DISMISSAL_ITEMS" Width="1.5" PointX="28.25" PointY="182.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_DISMISSAL_ITEMS_HISTORY" Width="1.5" PointX="30.5" PointY="179.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_DOCUMENT_TYPES" Width="1.5" PointX="19.75" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_DOCUMENTS" Width="1.5" PointX="19.75" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_EDUCATION" Width="1.5" PointX="20.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_FAMILY" Width="1.5" PointX="20.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_GROUPS" Width="1.5" PointX="9.75" PointY="178.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_HISTORY" Width="1.5" PointX="15" PointY="165" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_IMAGES" Width="1.5" PointX="20.25" PointY="180.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_INTERNAL_CONTRACT" Width="1.5" PointX="26.25" PointY="209.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_INTERVIEW" Width="1.5" PointX="8.25" PointY="259.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_INTERVIEW_AND_WORKER" Width="1.5" PointX="10.5" PointY="260.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_INVOICE_NUMBERS" Width="1.5" PointX="20.75" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_KEEPING" Width="1.5" PointX="29.25" PointY="195.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_KEEPING_HISTORY" Width="1.5" PointX="39.5" PointY="208.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_KLADR" Width="1.5" PointX="6.75" PointY="216.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_KLADR_COUNTRIES" Width="1.5" PointX="24.75" PointY="165.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_KLADR_LESS" Width="1.5" PointX="13.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_LABOR_CONTRACTS" Width="1.5" PointX="29.25" PointY="199.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_LENTA_CARD" Width="1.5" PointX="17.25" PointY="237.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_LOG_KEEPING" Width="1.5" PointX="0.75" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_LOG_RETURN_KEEPING" Width="1.5" PointX="21.75" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_MEDICAL_BOOKS" Width="1.5" PointX="17.25" PointY="240" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_MIN_RESTS" Width="1.5" PointX="12" PointY="186.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_NDFL" Width="1.5" PointX="10.75" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_PAYMENT" Width="1.5" PointX="35.25" PointY="178.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_PAYMENT_ACCRUALS" Width="1.5" PointX="37.5" PointY="205" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_PAYMENT_HISTORY" Width="1.5" PointX="26.25" PointY="213.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_PAYMENT_HISTORY_ACCRUAL" Width="1.5" PointX="36.5" PointY="211.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_PAYMENT_TYPE" Width="1.5" PointX="33" PointY="179.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_PENALTIES" Width="1.5" PointX="15" PointY="225.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_PENALTY_HISTORY" Width="1.5" PointX="17.25" PointY="215.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_PREVIOUS_WORK" Width="1.5" PointX="21.75" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_REALLY" Width="1.5" PointX="12.75" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_RECOMMENDATION" Width="1.5" PointX="14.75" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_RECRUITER" Width="1.5" PointX="17.25" PointY="243.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_RECRUITER_HISTORY" Width="1.5" PointX="28.5" PointY="221.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_RECRUITER_PERIOD" Width="1.5" PointX="19.5" PointY="243.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_RECRUITER_PERIOD_HISTORY" Width="1.5" PointX="21.75" PointY="220.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_ROSEURO_IDS" Width="1.5" PointX="16" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_SHEDULE_ITEM" Width="1.5" PointX="6" PointY="264.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_SMS" Width="1.5" PointX="3" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_SMS_TYPES" Width="1.5" PointX="0.75" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_SUPERVISORS" Width="1.5" PointX="20.25" PointY="215.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_TEMP_PROFILES" Width="1.5" PointX="8.25" PointY="252.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_WAGES" Width="1.5" PointX="31.5" PointY="215.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_WAGES_OPTIONS" Width="1.5" PointX="36.75" PointY="218" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_WAGES_OPTIONS_LMK" Width="1.5" PointX="39" PointY="216.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_WAGES_PERIODS" Width="1.5" PointX="21.75" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_WAITING_FOR_FMS_RESPONSE" Width="1.5" PointX="29.25" PointY="191.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_WORKER_ACTION_BRING_FRIEND" Width="1.5" PointX="30.5" PointY="184" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_WORKER_ACTION_PAYMENTS" Width="1.5" PointX="20.25" PointY="192.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_WORKER_ACTION_PAYMENTS_HISTORY" Width="1.5" PointX="22.5" PointY="181.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_WORKER_COMMENTS" Width="1.5" PointX="16.75" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_WORKER_DOC_CONTENT" Width="1.5" PointX="31.5" PointY="188.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_WORKER_DOCS_ATTRIBUTES" Width="1.5" PointX="36.5" PointY="185" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_WORKER_DOCUMENT_ATTR_CONTENT" Width="1.5" PointX="38.75" PointY="183.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_WORKER_DOCUMENTS" Width="1.5" PointX="29.25" PointY="187.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_WORKER_REFERENCES" Width="1.5" PointX="3" PointY="165" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_WORKER_VACATIONS" Width="1.5" PointX="29.25" PointY="203.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_WORKER_WORK_TYPE" Width="1.5" PointX="31.5" PointY="228.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_WORKERS" Width="1.5" PointX="15" PointY="180.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_WORKERS_EXTENSIONS" Width="1.5" PointX="13.25" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_WORKERS_EXTENSIONS_TYPE" Width="1.5" PointX="11" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.ARCHIVE_WR_WAGES" Width="1.5" PointX="22.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.CGN_BONUS_CLIENTS" Width="1.5" PointX="20.25" PointY="208.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.LG_USERS_ACTS" Width="1.5" PointX="2.75" PointY="23" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.OPT_OPTIONS" Width="1.5" PointX="15" PointY="158.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.SC_USER_ROLES" Width="1.5" PointX="29.25" PointY="207.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.SMS_SEND_CONDITIONS" Width="1.5" PointX="5.25" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.TMP_COUNTERS" Width="1.5" PointX="9.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.tmp_old_costs" Width="1.5" PointX="22.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.tmp_old_order_costs" Width="1.5" PointX="22.75" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.tmpCL_WORK_COSTS" Width="1.5" PointX="22.75" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="BdpUsovModel.WR_20x100COUNTER" Width="1.5" PointX="17.25" PointY="256.5" IsExpanded="true" />
+        <AssociationConnector Association="BdpUsovModel.FK__AC_ACCRUA__ACC_I__0B679CE2" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__AC_ACCRUA__WPH_I__0C5BC11B" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__AC_ACCRUA__ACC_I__4D35603F" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__AC_ACCRUA__WKH_I__4C413C06" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__AC_ACCRUA__ACC_I__6BB9E75F" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__AC_ACCRUA__OOWH___6AC5C326" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__AC_ACCRUA__ACC_I__3469B275" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__AC_ACCRUA__WRRH___355DD6AE" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_TO_AC_ACCRUAL_TYPE" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__AC_ACCRUA__ACC_I__04508AFF" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__AC_ACCRUA__WCH_I__0544AF38" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_AC_ACCRUALS_WORKER_ACTION_PAYMENTS_WR_WORKER_ACTION_PAYMENTS_HISTORY" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_AC_ACCRUALS_WORKER_ACTIONS_AC_ACCURAL" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.ACTION_PAYMENTS_HISTORY__AC_ACCRUAL__FK" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_AC_CALC_ACCRUAL_AC_ACCURAL" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_TO_WR_WORKERS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_CONTRACTS_AC_ACCURAL" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_DISMISSAL_HIST_ACCRUAL_AC_ACCURAL" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_PAYMENT_ACCRUALS_AC_ACCURAL" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.R_30" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.AB_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_AC_BANK_TRANSFERS_BANK_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_BANK_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_BankCards_AcBanks" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_SC_BANK_SIGNS_RESP_AC_BANKS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_BANK_PROFILES_AC_BANKS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_AC_BANKS_UNITS_ACTIONS_AC_BANKS_UNITS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.UN_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.US_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_AC_INTEGRATION_TRANSFERS_PAYMENT_AC_INTEGRATION_TRANSFERS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_AC_INTEGRATION_TRANSFERS_SC_USERS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_AC_INTEGRATION_TRANSFERS2_SC_USERS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_CONTRACTS_AC_INTEGRATION_TRANSFERS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_AC_INTEGRATION_TRANSFERS_PAYMENT_WR_PAYMENT" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_OPT_ACTION_NUMBER_SHIFTS_ACT_ACTIONS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_ACT_ACTIONS_OPT_ACTION_TYPES" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_ACT_ACTIONS_SC_UNIT" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_ACT_ACTIONS_WR_GROUPS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_WORKER_ACTION_PAYMENTS_ACT_REGIONAL_ACTIONS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.ACTION_PAYMENTS_HISTORY__ACTION__FK" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.ACTION_PAYMENTS__OR_ORDER_WORKERS__FK" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.ACTION_PAYMENTS_HISTORY__ACTION_PAYMENTS__FK" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_BANK_TRANSFERS_HISTORY_AC_BANK_TRANSFERS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_BANK_TRANSFERS_PAYMENT_HISTORY_AC_BANK_TRANSFERS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_BANK_TRANSFERS_HISTORY_BANK_TRANSFERS_STATUS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_BANK_TRANSFERS_HISTORY_SC_USERS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_BANK_TRANSFERS_PAYMENT_HISTORY_WR_PAYMENT_HISTORY" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.R_27" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_CC_CALL_RESULTS_CT" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_CC_CALL_RESULTS_OR" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_CC_CALL_RESULTS_USR" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_CC_CALL_RESULTS_WRK" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_CC_IPTEL_CALL_RESULTS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_CC_IPTEL_LOGS_A" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_CC_IPTEL_LOGS_O" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_CC_IPTEL_LOGS_U" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__CC_IPTEL___CGN_I__5792F321" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__CC_IPTEL___CIT_I__569ECEE8" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__CC_IPTEL___CIT_I__50E5F592" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__CC_IPTEL___OR_ID__51DA19CB" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_CIT_PRIORITY" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_CIT_STATUS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_CC_IPTEL_TASKS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__CC_RECALL__CIT_I__5C57A83E" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_CALL_TASK_CC_IPTEL_TASKS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_CC_IPTEL_USERS_STATUSES_SC_USERS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_CALL_TASK_OPT_CALL_LIST_TYPES" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_CC_MANAGER_CALL_TASK_DATA_SC_UNIT" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_CC_MANAGER_CALL_TASK_DATA_SC_USERS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_COLD_CALL_LIST_CANDIDATES_CALL_TASK" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_COLD_CALL_LIST_WORKERS_CALL_TASK" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_COLD_CALL_LIST_WORKERS_WR_WORKERS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_CC_WORKER_REMINDS_O" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_CC_WORKER_REMINDS_U" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_CC_WORKER_REMINDS_W" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_CGN_BONUS_OPTIONS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_CAMPAIGN_TYPE" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_CGN_BONUS_CLIENTS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_CGN_CAMPAIGN_UN_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_CGN_QUEUE_ACTUALISATION" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_OR_TRAIN_CENTER_AVAILABLE_CAMPAIGNS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_OR_TRAIN_CENTER_WORKERS_CAMPAIGN_WORKER" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__CGNT_BILL__BL_ID__10AB74EC" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__CGNT_BILL__CGNT___0BE6BFCF" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__CGNT_BILL__FWT_I__119F9925" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__CGNT_CONT__CUN_I__77DFC722" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__CL_CLIENT__CGNT___7D98A078" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__CGNT_FIN___CUN_I__7226EDCC" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__CGNT_FIN___UN_ID__731B1205" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_ACTUAL_CONFIGURATIONS_OPT_ACTUAL_COEF_TYPES" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_ACTUAL_CONFIGURATIONS_OPT_COEF_VALUES" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_ACTUAL_SETTINGS_ACTUAL_CONFIGURATIONS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_ACTUAL_SETTINGS_ACTUAL_SETTING_TRANSACTIONS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_ACTUAL_SETTINGS_CL_CLIENTS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_ACTUAL_SETTING_TRANSACTIONS_ACTUAL_TRANSACTION_TYPES" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_ACTUAL_SETTING_TRANSACTIONS_SC_USERS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__CL_BLACKL__US_ID__5708E33C" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_CL_BLACKLIST_CLIENT" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_CL_BLACKLIST_WORKER" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__CL_CLIENT__WT_NA__2CDD9F46" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__CL_CLIENT__CL_ID__6D0D32F4" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__CL_CLIENT__CL_ID__7CA47C3F" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__CL_CLIENT__CL_PR__41B8C09B" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__CL_RANGE___CL_ID__24485945" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__CL_RATE__CL_ID__532343BF" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__CL_WR_WAG__CL_ID__2B155265" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_CGN_BONUS_CLIENTS_CL" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_CL_CLIENTS_NETS_DEPARTEMNTS_CL_CLIENTS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_CL_CLIENTS_SC_UNIT" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_CL_MAIL_TEMPLATES_CL_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_CL_SUPERVISORS_C" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_GREEN_LIST_CL_CLIENTS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.R_19" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.R_20" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.R_23" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.R_34" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_CL_CLIENTS_NETS_DEPARTEMNTS_CL_NETS_DEPARTMENTS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__CL_CLIENT__US_ID__6E01572D" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_CL_CLOSED_PERIODS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__CL_CONTRA__CLJN___40106F4B" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__CL_CONTRA__CON_I__4D6A6A69" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__CL_CONTRA__CON_M__3F1C4B12" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__CL_CONTRA__RP_SI__41049384" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__CL_CONTRA__US_AD__41F8B7BD" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__INV_INVOI__CON_I__31583BA0" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__LE_OBLIGA__CON_I__26DAAD2D" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__OR_ORDER___CON_I__5D6BC808" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__CL_CONTRA__CCI_M__4C764630" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__CL_CONTRA__CCWT___4E5E8EA2" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__CL_RATE__CCI_ID__541767F8" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__CL_CONTRA__CJNN___46BD6CDA" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__CL_CONTRA__WT_NA__47B19113" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_CL_NETS_DEPARTMENTS_CL_DEPARTMENTS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__LE_SIGN__CLJN_ID__62EF9734" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_CL_JURI_NAMES_EXTENSIONS_TO_CL_JURI_NAMES" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_CL_JURI_NAMES_TO_CL_LEGAL_ENTITY_TAXATION_TYPE" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_CL_JURI_NETS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_CL_JURI_NAMES_EXTENSIONS_TO_CL_JURI_NAMES_EXTENSIONS_TYPE" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_CL_JURI_NAMES_EXTENSIONS_TYPE_TO_WR_DataType" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_CL_NETS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__NT_BLACKL__NT_ID__664B26CC" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__NT_RANGE___NT_ID__1F83A428" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_CL_NETS_DEPARTMENTS_CL_NETS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__OR_ORDER__OR_PRI__42ACE4D4" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__CL_RANGE___RR_ID__2630A1B7" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__CL_RANGE___WT_NA__253C7D7E" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__OR_ORDER___CLIEN__6324A15E" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_CL_SUPERVISORS_U" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.R_33" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__CL_WR_WAG__WRW_I__2C09769E" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_FIRE_MACHINE_HISTORY_FIRE_MACHINE" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_FIRE_MACHINE_WR_WORKERS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_FIRE_MACHINE_HISTORY_REASONS_FIRE_MACHINE" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_FUN_MAGIC_BUTTON" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_GREEN_LIST_HISTORY_GREEN_LIST" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_GREEN_LIST_WR_WORKERS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__INV_HISTO__INV_I__3805392F" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__INV_HISTO__STATU__38F95D68" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__INV_HISTO__US_ID__39ED81A1" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__INV_INVOI__US_ID__324C5FD9" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__INV_ITEM__INV_ID__4282C7A2" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__INV_SIGN__INV_ID__5D36BDDE" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__INV_ITEM___INV_I__483BA0F8" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__INV_ITEM___INV_I__4DF47A4E" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__INV_ITEM___INV_I__53AD53A4" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__INV_ITEM__INV_IT__4376EBDB" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__INV_ITEM___LEOH___54A177DD" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__INV_ITEM___OOCH___4EE89E87" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__INV_ITEM___OOWH___492FC531" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__INV_SENT___FROM___1392CE8F" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__INV_SENT___TO_US__1486F2C8" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__INV_SIGN__INV_SI__5E2AE217" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__LE_SIGN__INV_SIG__64D7DFA6" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__LE_OBLIGA__LEO_I__2B9F624A" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__LE_OBLIGA__US_ID__2C938683" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__LE_SIGN__UN_ID__63E3BB6D" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_LOG_CC_IN_OUT" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_LOG_CC_IN_OUT_USER" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__NT_BLACKL__US_ID__673F4B05" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.fk_blacklist_workers" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__NT_NET_RE__UN_ID__2AF556D4" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__NT_RANGE___RR_ID__2077C861" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__NT_RANGE___UN_ID__216BEC9A" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_OPT_DOC_TYPES_ATTRS_OPT_ATTRIBUTES" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__OPT_CH_IT__CH_ID__0D64F3ED" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__WR_CH_CAR__CH_IT__16EE5E27" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__OPT_PENAL__OCG_I__7A3D10E0" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_WORKER_VACATIONS_OPT_DATE_STATE_MIND" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__OPT_DISMI__OPTD___707E9C7C" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__OPT_DISMI__UN_ID__453F38BC" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_DISMISSAL_ITEMS_OPTD_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__OPT_DOC_S__DOC_S__58BC2184" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_OPT_DOC_STATE_ATTRIBUTES_OPT_DOC_TYPES_ATTRS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_WORKER_DOCS_ATTRIBUTES_OPT_DOC_STATE_ATTRIBUTES" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_OPT_DOC_TYPES_ATTRS_OPT_DOCUMENT_TYPES" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__OPT_DOCS___DOC_T__5C8CB268" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__OPT_DOCS___STATE__5D80D6A1" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__WR_WORKER__DOC_S__03A67F89" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_WAITINGFOR_FMS_RESPONSE_OPT_DOCUMENT_TYPES" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_OPT_EMAILS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_INTERNAL_CONTRACT_OPT_FILE_EXTENSIONS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__OPT_FIN_B__FWT_I__062DE679" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__OPT_FIN_B__WT_ID__07220AB2" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__OPT_HOSTE__ID_DI__66161CA2" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__OPT_HOSTE__ID_RE__670A40DB" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__OPT_HOSTE__ID_ST__67FE6514" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__OPT_HOSTE__ID_ST__68F2894D" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__OPT_HOSTE__ID_TO__69E6AD86" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__OPT_HOSTE__UN_ID__6ADAD1BF" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.R_130" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_SITES_UNID" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_INTERVIEW_OPT_INTERVIEW_TYPE" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__WR_KEEPIN__KP_ID__3A228BCB" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_OPT_KEEPING_UNITS_OPT_KEEPING" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.R_17" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__WR_KEEPIN__OKS_I__477C86E9" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_OPT_KEEPING_UNITS_SC_UNIT" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__OPT_LATER__PEN_T__7C255952" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__OPT_MAIN___UN_ID__7187CF4E" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__OPT_MAIN___UN_ID__727BF387" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.R_21" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.R_22" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_ORR_OUTPUT_TYPE" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__WR_CHARGE__OPS_I__7E97B1A9" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__WR_CHARGE__WRC_I__77EAB41A" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__WR_PENALT__OPS_I__05AEC38C" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_PEN_STATUS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__OPT_REGIO__PEN_T__308E3499" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__WR_CHARGE__CHARG__76F68FE1" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_OPT_RELATIONSHIP_PENALTY_TYPES_OPT_PENALTY_TYPES" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_OPT_RELATIONSHIP_PENALTY_TYPES_OPT_PENALTY_TYPES1" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_PEN_TYPES" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__OR_RANGE___RR_ID__2A01329B" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__WR_RECRUI__ORT_I__24334AAC" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_RECRUITER_TYPE" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_OPT_REFERENCES_UNIT_OPT_REFERENCES" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.R_15" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_OPT_REFERENCES_UNIT_OPT_REFERENCES_CHECK_SEQURITY" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_OPT_REFERENCES_UNIT_SC_UNIT" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__OPT_REGIO__UN_ID__318258D2" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_ORS_OPT_SMS_TEMPLATES" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_ORS_SC_UNIT" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_OPT_SHEDULE_OPT_SHEDULE_TYPE" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_SHEDULE_ITEM_OPT_SHEDULE" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__OPT_SHIFT__UN_ID__08362A7C" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__OPT_SHIFT__WRG_I__092A4EB5" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.R_10" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_SMS_TEMPLATES_OPT_SMS_EVENTS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_SC_PLACES_SMS_OPT_SMS_TEMPLATES" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__OPT_STATU__STATU__56BECA79" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__OR_ORDER___STATU__5C77A3CF" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_DISMISSAL_ITEMS_HISTORY_OPT_STATUS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_HISTORY" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.R_3" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.R_9" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_OPT_SUPERVISORS_T" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_OPT_OTCZ_UNIT" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__WR_WAGES___OPT_T__3592E0D8" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_CGN_BONUS_CLIENTS_WT" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_WAGES_WT_NAME" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.R_13" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.R_24" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_OR_LUOV" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_OR_LUOV_USER" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__OR_ORDER___OR_ID__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__OR_ORDER___OR_ID__5B837F96" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__OR_RANGE___OR_ID__290D0E62" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__WR_RECRUI__OR_ID__2FA4FD58" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_OR_ORDER_COMMENTS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_OR_PRE_ADD_U" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_OR_QUEUE_ACTUALISATION" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_OR_TRAIN_CENTER_AVAILABLE" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_ACTION_15x15_OR_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.R_25" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__OR_ORDER___ORC_I__13FCE2E3" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__OR_ORDER___US_ID__14F1071C" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__OR_ORDER___US_ID__5E5FEC41" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__OR_ORDER___US_ID__650CE9D0" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__OR_ORDER___WORKE__6418C597" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_OOWH" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_OR_ORDER_WORKERS_WR_WORKERS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_OR_TRAIN_CENTER_WORKERS_WORKER" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_OR_PRE_ADD_W" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_OR_TRAIN_CENTER_WORKERS_ORDER" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_OR_TRAIN_CENTER_WORKERS_CAMPAIGNS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_SC_BANK_SIGNS_RESP_SC_UNIT_PLACES" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_SC_BANK_SIGNS_RESP_SC_USERS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_SC_PLACES_SMS_SC_UNIT_PLACES" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_SC_RELATED_UNITS_SC_UNIT" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_SC_RELATED_UNITS_SC_UNIT1" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_SC_USER_ROLES_SC_ROLES" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.R_1" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_SC_UNIT_PLACES_SC_UNIT" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_ACTION_BRING_FRIEND_2012_UNITS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_MIN_RESTS_UNIT" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.R_11" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_INTERVIEW_SC_UNIT_PLACES" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__WR_CHARGE__US_ID__7F8BD5E2" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__WR_INTERN__US_AD__18027DF1" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__WR_INTERN__US_AD__23FE4082" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__WR_INTERN__US_AD__7C30464A" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__WR_KEEPIN__US_ID__3B16B004" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__WR_KEEPIN__US_ID__45943E77" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__WR_PENALT__US_ID__06A2E7C5" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__WR_RECRUI__US_ID__29EC2402" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_OPT_SUPERVISORS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_SC_USER_ROLES_SC_USERS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_BANK_PROFILES_SC_USERS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_CARDS_LOST_USER" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_CONTRACTS_SC_USERS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_PAYMENT_HISTORY_SC_USERS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_WORKER_VACATIONS_U" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.R_30a" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_SMS_RECEIVE_REQUESTS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_SMS_SEND_CONDITIONS_SMS_SEND_CONDITIONS_TYPES" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_SMS_SEND_CONDITIONS_SMS_TEMPLATES" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_SMS_TEMPLATES_HISTORY_SMS_TEMPLATES" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_SMS_TEMPLATES_PARAMS_SMS_TEMPLATES" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_SMS_TEMPLATES_PARAMS_SYS_CONDITIONS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_SMS_TEMPLATES_PARAMS_SYS_FIELDS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_SYS_FIELDS_SYS_FIELDS_TYPES" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.fk_tmp_cw_file" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.fk_tmp_cw_worker" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.R_16" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_ACTION_15x15_FUN_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_ACTION_15x15_UN_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_ACTION_BRING_FRIEND_2012_CALCS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_ACTION_BRING_FRIEND_2012_CALCSF" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_ACTION_STOKMANN_2012" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_ACTION_STOKMANN_2012F" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_BANK_PROFILES_WR_WORKERS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_CARDS_LOST" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__WR_CH_CAR__CH_CA__15FA39EE" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__WR_WORKER__CH_CA__18D6A699" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__WR_CHARGE__WRC_I__7DA38D70" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_CHARGE" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_WORKERS_EXTENSIONS_TYPE_TO_WR_DataType" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_DISMISSAL_HIST_ACCRUAL_WR_DISMISSAL_ITEMS_HISTORY" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_DISMISSAL_ITEMS_HISTORY_WR_DISMISSAL_ITEMS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_DISMISSAL_ITEMS_UN_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_MIN_RESTS_GROUP" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_WAGES_WRG_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_WORKERS_WRG_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.R_100" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_WAGES_WR_INTERNAL_CONTRACT1" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__WR_INTERV__IdInt__119F9925" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_INTERVIEW_WR_SHEDULE_ITEM" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__WR_INTERV__IdTem__1A89E4E1" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__WR_KEEPIN__WRK_I__44A01A3E" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_KEEPING" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_Table_2_WR_KLADR_LESS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_CONTRACTS_WR_WORKERS1" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_LENTA_CARD_WR_WORKERS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_WORKERS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_PAYMENT_ACCRUALS_WR_PAYMENT" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_PAYMENT_HISTORY_WR_PAYMENT" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_PAYMENT_WR_PAYMENT_TYPE" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_PAYMENT_HISTORY_ACCRUAL_WR_PAYMENT_HISTORY" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__WR_PENALT__PEN_I__04BA9F53" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__WR_RECRUI__WRR_I__233F2673" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_RECRUITER_MASTER" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_RECRUITER_SLAVE" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__WR_RECRUI__WRRP___2EB0D91F" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__WR_RECRUI__WRRP___28F7FFC9" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_SMS_WR_SMS_TYPES" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__WR_WAGES___WRW_I__349EBC9F" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__WR_WAGES__WRW_MA__255C790F" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__WR_WAGES___WRW_O__3A5795F5" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WORKER" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_WORKER_ACTION_BRING_FRIEND_WR_WORKER_ACTION_PAYMENTS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_WORKER_ACTION_BRING_FRIEND_WR_WORKERS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_WORKER_ACTION_PAYMENTS_HISTORY_WR_WORKER_ACTION_PAYMENTS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_WORKER_ACTION_PAYMENTS_WR_WORKERS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_WORKER_DOC_CONTENT_WR_WORKER_DOCUMENTS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__WR_WORKER__WORKE__00CA12DE" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_WORKER_DOCUMENT_ATTR_CONTENT_WR_WORKER_DOCS_ATTRIBUTES" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__WR_WORKER_DOCUME__049AA3C2" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_WORKER_VACATIONS_W" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK__WR_20x100Counter__436BFEE3" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.FK_WR_WORKERS_EXTENSIONS_TO_WR_WORKERS_EXTENSIONS_TYPE" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.CC_IPTEL_TASK_USERS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.CL_CLIENT_ANALOGUE" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.INV_SENT_INVOICES" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.SC_USER_UNITS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.SYS_FIELDS_TYPES_AVAILABLE_CONDITIONS" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.tmp_calc_worker_accrual" ManuallyRouted="false" />
+        <AssociationConnector Association="BdpUsovModel.CGN_BONUS_CALCULATED_ORDERS" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

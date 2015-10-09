@@ -5,6 +5,10 @@ VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmsWebApplication", "SmsWebApplication\SmsWebApplication.csproj", "{3A983512-A467-479C-A99F-28ED55F3667F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{75375F13-4EAF-4BB7-B3FF-012734475E39}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BL", "BL\BL.csproj", "{48FD0745-1E84-4789-B443-A5B402F8D583}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{3A983512-A467-479C-A99F-28ED55F3667F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A983512-A467-479C-A99F-28ED55F3667F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3A983512-A467-479C-A99F-28ED55F3667F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75375F13-4EAF-4BB7-B3FF-012734475E39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75375F13-4EAF-4BB7-B3FF-012734475E39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75375F13-4EAF-4BB7-B3FF-012734475E39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75375F13-4EAF-4BB7-B3FF-012734475E39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48FD0745-1E84-4789-B443-A5B402F8D583}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48FD0745-1E84-4789-B443-A5B402F8D583}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48FD0745-1E84-4789-B443-A5B402F8D583}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48FD0745-1E84-4789-B443-A5B402F8D583}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

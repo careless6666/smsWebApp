@@ -18,5 +18,5 @@ namespace SmsWebApplication.Models
         public string Message { get; set; }
         public bool SendSms { get; set; }
         public bool EnableTranslate { get; set; }
-    }
+    }r
 }
