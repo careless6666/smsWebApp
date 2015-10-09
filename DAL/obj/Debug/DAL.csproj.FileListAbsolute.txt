@@ -8,3 +8,5 @@ c:\Users\a.usov\Documents\Visual Studio 2013\Projects\SmsWebApplication\DAL\bin\
 c:\Users\a.usov\Documents\Visual Studio 2013\Projects\SmsWebApplication\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 c:\Users\a.usov\Documents\Visual Studio 2013\Projects\SmsWebApplication\DAL\obj\Debug\DAL.dll
 c:\Users\a.usov\Documents\Visual Studio 2013\Projects\SmsWebApplication\DAL\obj\Debug\DAL.pdb
+c:\Users\a.usov\Documents\Visual Studio 2013\Projects\SmsWebApplication\DAL\bin\Debug\BO.dll
+c:\Users\a.usov\Documents\Visual Studio 2013\Projects\SmsWebApplication\DAL\bin\Debug\BO.pdb

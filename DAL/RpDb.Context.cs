@@ -13,10 +13,10 @@ namespace DAL
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class BdpUsovEntities : DbContext
+    public partial class BdpEntities : DbContext
     {
-        public BdpUsovEntities()
-            : base("name=BdpUsovEntities")
+        public BdpEntities()
+            : base("name=BdpEntities")
         {
         }
     

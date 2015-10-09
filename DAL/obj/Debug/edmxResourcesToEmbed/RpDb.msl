@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="BdpUsovModelStoreContainer" CdmEntityContainer="BdpUsovEntities">
+  <EntityContainerMapping StorageEntityContainer="BdpUsovModelStoreContainer" CdmEntityContainer="BdpEntities">
     <EntitySetMapping Name="AC_ACCRUAL_CHARGE">
       <EntityTypeMapping TypeName="BdpUsovModel.AC_ACCRUAL_CHARGE">
         <MappingFragment StoreEntitySet="AC_ACCRUAL_CHARGE">

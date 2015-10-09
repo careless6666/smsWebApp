@@ -43,6 +43,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -336,6 +337,8 @@
     <Compile Include="CL_WR_WAGE.cs">
       <DependentUpon>RpDb.tt</DependentUpon>
     </Compile>
+    <Compile Include="Common\DalCommon.cs" />
+    <Compile Include="Common\IDalCommon.cs" />
     <Compile Include="db_updates.cs">
       <DependentUpon>RpDb.tt</DependentUpon>
     </Compile>
@@ -1009,6 +1012,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BO\BO.csproj">
+      <Project>{848eebfa-c4ac-487c-81f9-77aa34943678}</Project>
+      <Name>BO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

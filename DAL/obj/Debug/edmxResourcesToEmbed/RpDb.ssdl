@@ -183,24 +183,6 @@
     <Property Name="AP_ID" Type="int" Nullable="false" />
     <Property Name="ACC_ID" Type="numeric" Precision="10" Scale="0" Nullable="false" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'BdpUsov.dbo.ALFA_COUNTRY' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="ALFA_COUNTRY">
-          <Property Name="ACT_NAME" Type="varchar" MaxLength="50" />
-          <Property Name="ACT_ID" Type="varchar" MaxLength="50" />
-        </EntityType>-->
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'BdpUsov.dbo.ALFA_DUL' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="ALFA_DUL">
-          <Property Name="ADUL_NAME" Type="varchar" MaxLength="35" />
-          <Property Name="ADUL_ID" Type="varchar" MaxLength="2" />
-        </EntityType>-->
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'BdpUsov.dbo.ALFA_DUP' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="ALFA_DUP">
-          <Property Name="ADUP_NAME" Type="varchar" MaxLength="79" />
-          <Property Name="ADUP_ID" Type="smallint" />
-        </EntityType>-->
   <EntityType Name="ALFA_NEW_REGIONS">
     <Key>
       <PropertyRef Name="KLADR_ID" />
@@ -209,32 +191,6 @@ warning 6013: The table/view 'BdpUsov.dbo.ALFA_DUP' does not have a primary key 
     <Property Name="ALFA_ID" Type="nvarchar" MaxLength="16" />
     <Property Name="ALFA_TYPE" Type="nvarchar" MaxLength="16" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'BdpUsov.dbo.ALFA_REGION_TYPES' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="ALFA_REGION_TYPES">
-          <Property Name="ART_NAME" Type="varchar" MaxLength="35" />
-          <Property Name="ART_LESS_NAME" Type="varchar" MaxLength="15" />
-          <Property Name="ART_ID" Type="smallint" />
-        </EntityType>-->
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'BdpUsov.dbo.ALFA_REGIONS' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="ALFA_REGIONS">
-          <Property Name="AR_NAME" Type="varchar" MaxLength="40" />
-          <Property Name="AR_ID" Type="smallint" />
-        </EntityType>-->
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'BdpUsov.dbo.ALFA_STREET_TYPES' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="ALFA_STREET_TYPES">
-          <Property Name="AST_NAME" Type="varchar" MaxLength="35" />
-          <Property Name="AST_LESS_NAME" Type="varchar" MaxLength="15" />
-          <Property Name="AST_ID" Type="smallint" />
-        </EntityType>-->
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'BdpUsov.dbo.ALFA_VILLAGE_TYPES' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="ALFA_VILLAGE_TYPES">
-          <Property Name="AVT_NAME" Type="varchar" MaxLength="35" />
-          <Property Name="AVT_ID" Type="smallint" />
-        </EntityType>-->
   <EntityType Name="ARCH_STATUSES">
     <Key>
       <PropertyRef Name="AS_DATE" />
@@ -1248,18 +1204,6 @@ warning 6002: The table/view 'BdpUsov.dbo.CGN_BONUS_CLIENTS' does not have a pri
     <Property Name="CNT_DAYS" Type="numeric" Precision="4" Scale="0" Nullable="false" />
     <Property Name="PERS_OUT" Type="numeric" Precision="11" Scale="10" Nullable="false" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'BdpUsov.dbo.IVLEV_TMP_CNT' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="IVLEV_TMP_CNT">
-          <Property Name="cc" Type="numeric" Precision="18" Scale="0" />
-          <Property Name="cnt" Type="numeric" Precision="18" Scale="0" />
-        </EntityType>-->
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'BdpUsov.dbo.KP_STOP' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="KP_STOP">
-          <Property Name="US_ID" Type="numeric" Precision="10" Scale="0" />
-          <Property Name="DATE_RELEASE" Type="datetime" />
-        </EntityType>-->
   <EntityType Name="LE_OBLIGATION">
     <Key>
       <PropertyRef Name="LEO_ID" />
@@ -1835,12 +1779,6 @@ warning 6002: The table/view 'BdpUsov.dbo.OPT_OPTIONS' does not have a primary k
     <Property Name="NAME" Type="nvarchar(max)" Nullable="false" />
     <Property Name="KEY_CHAR_VALUE" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'BdpUsov.dbo.OPT_SMS_EVENTS_VARIABLES' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="OPT_SMS_EVENTS_VARIABLES">
-          <Property Name="ID_SMS_EVENT" Type="int" />
-          <Property Name="ID_SMS_VARIABLE" Type="int" />
-        </EntityType>-->
   <EntityType Name="OPT_SMS_TEMPLATES">
     <Key>
       <PropertyRef Name="OSMST_ID" />
@@ -2497,13 +2435,6 @@ warning 6002: The table/view 'BdpUsov.dbo.SMS_SEND_CONDITIONS' does not have a p
     <Property Name="ACC_IS_CALC_TRANSFERRED" Type="bit" Nullable="false" />
     <Property Name="AAT_ID" Type="int" Nullable="false" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'BdpUsov.dbo.TEMPORARY_WORKERS_OLD_INFO_SITES' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="TEMPORARY_WORKERS_OLD_INFO_SITES">
-          <Property Name="UN_ID" Type="int" />
-          <Property Name="WR_ID" Type="int" />
-          <Property Name="OIS_ID" Type="int" />
-        </EntityType>-->
   <EntityType Name="TEMPORARY_WR_DISMISSAL_ITEMS">
     <Key>
       <PropertyRef Name="UN_ID" />
@@ -2549,14 +2480,6 @@ warning 6013: The table/view 'BdpUsov.dbo.TEMPORARY_WORKERS_OLD_INFO_SITES' does
     <Property Name="AccId" Type="numeric" Precision="10" Scale="0" Nullable="false" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6013: The table/view 'BdpUsov.dbo.TMP_CAME' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="TMP_CAME">
-          <Property Name="TC_DATE" Type="datetime" />
-          <Property Name="TC_INFO_SITE" Type="varchar" MaxLength="250" />
-          <Property Name="TC_TRAINING_CENTER" Type="varchar" MaxLength="250" />
-          <Property Name="TC_CAME" Type="numeric" Precision="18" Scale="0" />
-        </EntityType>-->
-  <!--Errors Found During Generation:
 warning 6002: The table/view 'BdpUsov.dbo.TMP_COUNTERS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="TMP_COUNTERS">
     <Key>
@@ -2564,28 +2487,6 @@ warning 6002: The table/view 'BdpUsov.dbo.TMP_COUNTERS' does not have a primary 
     </Key>
     <Property Name="TMP_COUNTER" Type="numeric" Precision="3" Scale="0" Nullable="false" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'BdpUsov.dbo.TMP_INFO_SITES_COST' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="TMP_INFO_SITES_COST">
-          <Property Name="TC_DATE" Type="datetime" />
-          <Property Name="TC_INFO_SITE" Type="varchar" MaxLength="250" />
-          <Property Name="TC_COST" Type="numeric" Precision="18" Scale="2" />
-        </EntityType>-->
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'BdpUsov.dbo.TMP_IVLEV_CATS' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="TMP_IVLEV_CATS">
-          <Property Name="NT_NAME" Type="varchar" MaxLength="250" />
-          <Property Name="WT_NAME" Type="varchar" MaxLength="250" />
-          <Property Name="CAT" Type="numeric" Precision="1" Scale="0" />
-        </EntityType>-->
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'BdpUsov.dbo.TMP_LOSTS' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="TMP_LOSTS">
-          <Property Name="TL_DATE" Type="datetime" />
-          <Property Name="TL_LOST" Type="varchar" MaxLength="250" />
-          <Property Name="TL_TRAINING_CENTER" Type="varchar" MaxLength="250" />
-          <Property Name="TL_SUM" Type="numeric" Precision="18" Scale="2" />
-        </EntityType>-->
   <!--Errors Found During Generation:
 warning 6002: The table/view 'BdpUsov.dbo.tmp_old_costs' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="tmp_old_costs">
@@ -2626,21 +2527,6 @@ warning 6002: The table/view 'BdpUsov.dbo.tmp_old_order_costs' does not have a p
     <Property Name="RK_LAST_COUNT" Type="numeric" Precision="3" Scale="0" />
     <Property Name="RK_IS_TO_RETURN" Type="bit" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'BdpUsov.dbo.TMP_USERS_PLACES' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="TMP_USERS_PLACES">
-          <Property Name="TU_DATE" Type="datetime" />
-          <Property Name="TU_PLACE" Type="varchar" MaxLength="250" />
-          <Property Name="UN_ID" Type="numeric" Precision="10" Scale="0" />
-          <Property Name="WR_ID" Type="numeric" Precision="10" Scale="0" />
-        </EntityType>-->
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'BdpUsov.dbo.TMP_WR_HISTORY' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="TMP_WR_HISTORY">
-          <Property Name="UN_ID" Type="numeric" Precision="10" Scale="0" />
-          <Property Name="WR_ID" Type="numeric" Precision="10" Scale="0" />
-          <Property Name="US_ID" Type="numeric" Precision="10" Scale="0" />
-        </EntityType>-->
   <!--Errors Found During Generation:
 warning 6002: The table/view 'BdpUsov.dbo.tmpCL_WORK_COSTS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="tmpCL_WORK_COSTS">
@@ -6706,12 +6592,6 @@ warning 6002: The table/view 'BdpUsov.dbo.WR_20x100COUNTER' does not have a prim
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <!--Errors Found During Generation:
-error 6004: The table 'BdpUsov.dbo.OPT_SMS_EVENTS_VARIABLES' is referenced by a relationship, but cannot be found.
-        <Association Name="FK_OPT_SMS_EVENTS_VARIABLES_OPT_SMS_EVENTS" />-->
-  <!--Errors Found During Generation:
-error 6004: The table 'BdpUsov.dbo.OPT_SMS_EVENTS_VARIABLES' is referenced by a relationship, but cannot be found.
-        <Association Name="FK_OPT_SMS_EVENTS_VARIABLES_OPT_SMS_VARIABLES" />-->
   <Association Name="FK_OPT_SUPERVISORS">
     <End Role="SC_USERS" Type="Self.SC_USERS" Multiplicity="1" />
     <End Role="WR_SUPERVISORS" Type="Self.WR_SUPERVISORS" Multiplicity="0..1" />

@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Web.Mvc;
+using BO;
 
 namespace SmsWebApplication.Models
 {
     public class AddToOrderViewModel
     {
-        public List<SelectListItem> Units { get; set; }
+        public List<Unit> Units { get; set; }
         public List<SelectListItem> Networks { get; set; }
         public List<SelectListItem> Clients { get; set; }
         public List<SelectListItem> WorkTypes { get; set; }
@@ -18,5 +18,5 @@ namespace SmsWebApplication.Models
         public string Message { get; set; }
         public bool SendSms { get; set; }
         public bool EnableTranslate { get; set; }
-    }r
+    }
 }

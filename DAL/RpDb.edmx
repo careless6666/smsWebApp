@@ -19224,7 +19224,7 @@ warning 6002: The table/view 'BdpUsov.dbo.WR_20x100COUNTER' does not have a prim
           <End Role="CGN_CAMPAIGN" Type="Self.CGN_CAMPAIGN" Multiplicity="*" />
           <End Role="OR_ORDER_WORKERS" Type="Self.OR_ORDER_WORKERS" Multiplicity="*" />
         </Association>
-        <EntityContainer Name="BdpUsovEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="BdpEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="AC_ACCRUAL_CHARGE" EntityType="Self.AC_ACCRUAL_CHARGE" />
           <EntitySet Name="AC_ACCRUAL_KEEPING" EntityType="Self.AC_ACCRUAL_KEEPING" />
           <EntitySet Name="AC_ACCRUAL_ORDER" EntityType="Self.AC_ACCRUAL_ORDER" />
@@ -21085,7 +21085,7 @@ warning 6002: The table/view 'BdpUsov.dbo.WR_20x100COUNTER' does not have a prim
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="BdpUsovModelStoreContainer" CdmEntityContainer="BdpUsovEntities">
+        <EntityContainerMapping StorageEntityContainer="BdpUsovModelStoreContainer" CdmEntityContainer="BdpEntities">
           <EntitySetMapping Name="AC_ACCRUAL_CHARGE">
             <EntityTypeMapping TypeName="BdpUsovModel.AC_ACCRUAL_CHARGE">
               <MappingFragment StoreEntitySet="AC_ACCRUAL_CHARGE">
