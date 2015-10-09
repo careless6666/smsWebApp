@@ -17,22 +17,30 @@ namespace SmsWebApplication
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
-                        "~/Scripts/Pages.js"));
+                        "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/s-scripts").Include(
-                        "~/Scripts/modernizr-*"));
+                        "~/Scripts/Pages.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js",
-                      "~/Scripts/bootstrap-toggle.min.js"));
+                      "~/Scripts/bootstrap-toggle.min.js",
+                      "~/Scripts/bootstrap-datetimepicker.min.js",
+                      "~/Scripts/locales/bootstrap-datetimepicker.ru.js",
+                      "~/Scripts/knockout-3.3.0.js",
+                      "~/Scripts/knockout-custom.js",
+                      "~/Scripts/knockout.mapping-latest.js",
+                      "~/Scripts/jquery.ui.timepicker.js"
+                      ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css",
                       "~/Content/s-styles.css",
                       "~/Content/bootstrap-toggle.min.css",
-                      "~/Content/sidebar.css"));
+                      "~/Content/sidebar.css",
+                      "~/Content/bootstrap-datetimepicker.min.css"));
 
         }
     }

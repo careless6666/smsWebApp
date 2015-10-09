@@ -4,7 +4,9 @@
 
 @model SmsWebApplication.Models.ModelsList
 
-
+<script>
+    smsModule.Models = @Html.Raw(Json.Encode(Model))
+</script>
     <img src="@Url.Content("~/Content/images/city-street-night.png")" class="stub-img" />
 
 

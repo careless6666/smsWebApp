@@ -25,7 +25,7 @@
 }
 
 .s-sidebar {
-    /*display: table-cell;*/
+    z-index: 3;
 }
 
 .main-wrap {
@@ -45,6 +45,11 @@
     cursor: pointer;
 }
 
+.s-date-time {
+    width: 100%; 
+    max-width: 280px;
+}
+
 @media (max-width:767px) {
 
     .s-header {
@@ -62,6 +67,7 @@
     position: absolute;
     margin-left: 152px;
     width: calc(100% - 152px);
+    margin-top: 25px;
 }
 
 .s-header {
@@ -69,6 +75,8 @@
     height: 50px;
     background-color: #2e353d;
     margin-bottom: 21px;
+    position: fixed;
+    z-index: 2;
 }
 
     .stub-img {

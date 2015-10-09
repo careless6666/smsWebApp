@@ -11,7 +11,7 @@ namespace SmsWebApplication.Controllers
     {
         public ActionResult Index()
         {
-            return View(new ModelsList());
+            return View(new ModelsList { AddToOrderViewModel = new AddToOrderViewModel { TimeStart = DateTime.UtcNow.ToString("HH:mm"), TimeEnd = DateTime.UtcNow.ToString("HH:mm") } });
         }
 
         public ActionResult About()
