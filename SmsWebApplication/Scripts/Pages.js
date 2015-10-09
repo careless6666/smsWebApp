@@ -6,6 +6,7 @@ smsModule.Menu.Init = function () {
     function hideAllItems() {
         $('.s-menu-item-value').hide();
         $('#main-page').hide();
+        $('.stub-img').hide();
     }
     
     function showSelected(element) {
@@ -20,6 +21,7 @@ smsModule.Menu.Init = function () {
         }
         hideAllItems();
         $('#main-page').show();
+        $('.stub-img').show();
     }
 
     $('.s-menu').click(function () {

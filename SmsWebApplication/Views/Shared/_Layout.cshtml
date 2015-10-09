@@ -9,7 +9,7 @@
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/s-scripts")
-
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <script>
         $(document).ready(function () {
             smsModule.Init();
@@ -18,34 +18,145 @@
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a hef="#" class="navbar-brand s-menu" style="cursor: pointer;" >Application name</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li class="s-menu" data-action="addToOrderContainer"><a href="#">Добавление на заказ</a></li>
-                    <li class="s-menu">@Html.ActionLink("About", "About", "Home")</li>
-                    <li class="s-menu">@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-                <p class="nav navbar-text navbar-right">Hello, @User.Identity.Name!</p>
-            </div>
+@*<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a hef="#" class="navbar-brand s-menu" style="cursor: pointer;">App name</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="s-menu" data-action="addToOrderContainer"><a href="#">Добавление на заказ</a></li>
+                <li class="s-menu">@Html.ActionLink("Снятие с заказа", "About", "Home")</li>
+                <li class="s-menu">@Html.ActionLink("Рассылка", "Contact", "Home")</li>
+                <li class="s-menu">@Html.ActionLink("Запись на собеседование", "Contact", "Home")</li>
+                <li class="s-menu">@Html.ActionLink("Перемещение между собеседованиями", "Contact", "Home")</li>
+                <li class="s-menu">@Html.ActionLink("Напоминание о выходе на смену", "Contact", "Home")</li>
+                <li class="s-menu">@Html.ActionLink("Иные напоминания по заказу", "Contact", "Home")</li>
+            </ul>
+            <p class="nav navbar-text navbar-right">Hello, @User.Identity.Name!</p>
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+</div>*@
+<div id="wrapper">
+
+    <div class="nav-side-menu">
+        <div class="brand s-menu">ПРАВИЛЬНЫЕ ЛЮДИ</div>
+        <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+
+        <div class="menu-list">
+
+            <ul id="menu-content" class="menu-content collapse out">
+                <li class="s-menu" data-action="addToOrderContainer">
+                    <a href="#">
+                        <i class="glyphicon glyphicon-plus"></i> Добавление на заказ
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="glyphicon glyphicon-minus"></i> Снятие с заказа
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="glyphicon glyphicon-envelope"></i> Рассылка
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="glyphicon glyphicon-pencil"></i> Запись на собеседование
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="glyphicon glyphicon-random"></i> Перемещение между собеседованиями
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="glyphicon glyphicon-warning-sign"></i> Напоминание о выходе на смену
+                    </a>
+                </li>
+                
+                
+                <li data-toggle="collapse" data-target="#products" class="collapsed active">
+                    <a href="#"><i class="fa fa-gift fa-lg"></i> UI Elements <span class="arrow"></span></a>
+                </li>
+                <ul class="sub-menu collapse" id="products">
+                    <li class="active"><a href="#">CSS3 Animation</a></li>
+                    <li><a href="#">General</a></li>
+                    <li><a href="#">Buttons</a></li>
+                    <li><a href="#">Tabs & Accordions</a></li>
+                    <li><a href="#">Typography</a></li>
+                    <li><a href="#">FontAwesome</a></li>
+                    <li><a href="#">Slider</a></li>
+                    <li><a href="#">Panels</a></li>
+                    <li><a href="#">Widgets</a></li>
+                    <li><a href="#">Bootstrap Model</a></li>
+                </ul>
+
+
+                <li data-toggle="collapse" data-target="#service" class="collapsed">
+                    <a href="#"><i class="fa fa-globe fa-lg"></i> Services <span class="arrow"></span></a>
+                </li>
+                <ul class="sub-menu collapse" id="service">
+                    <li>New Service 1</li>
+                    <li>New Service 2</li>
+                    <li>New Service 3</li>
+                </ul>
+
+
+                <li data-toggle="collapse" data-target="#new" class="collapsed">
+                    <a href="#"><i class="fa fa-car fa-lg"></i> New <span class="arrow"></span></a>
+                </li>
+                <ul class="sub-menu collapse" id="new">
+                    <li>New New 1</li>
+                    <li>New New 2</li>
+                    <li>New New 3</li>
+                </ul>
+
+
+                <li>
+                    <a href="#">
+                        <i class="fa fa-user fa-lg"></i> Profile
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="fa fa-users fa-lg"></i> Users
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    @*<div class="s-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <span style="color: white; float: right; margin-top: 13px; margin-right: 25px;">@User.Identity.Name</span>
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>*@
+    <div class="s-content">
+        <div class="container body-content s-content">
+            @RenderBody()
+            <hr/>
+            <footer>
+                <p>&copy; @DateTime.Now.Year - Правильные люди</p>
+            </footer>
+        </div>
     </div>
 
+
+</div>
     
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

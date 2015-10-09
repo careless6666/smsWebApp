@@ -31,7 +31,8 @@ namespace SmsWebApplication
                       "~/Content/bootstrap.css",
                       "~/Content/site.css",
                       "~/Content/s-styles.css",
-                      "~/Content/bootstrap-toggle.min.css"));
+                      "~/Content/bootstrap-toggle.min.css",
+                      "~/Content/sidebar.css"));
 
         }
     }

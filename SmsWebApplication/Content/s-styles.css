@@ -18,3 +18,60 @@
 .s-btn {
     margin-bottom: 5px;
 }
+
+.s-content {
+    /*display: table-cell;*/
+    width: 100%;
+}
+
+.s-sidebar {
+    /*display: table-cell;*/
+}
+
+.main-wrap {
+    /*display: table;*/
+}
+
+.stub-img {
+    width: 50%;
+}
+
+.brand, .brand:active {
+    color: white;
+    font-size: large;
+}
+
+.brand:hover {
+    cursor: pointer;
+}
+
+@media (max-width:767px) {
+
+    .s-header {
+        display: none;
+    }
+
+    .stub-img {
+        margin-top: 6px;
+    }
+}
+
+@media (min-width:768px) {
+
+.s-content {
+    position: absolute;
+    margin-left: 152px;
+    width: calc(100% - 152px);
+}
+
+.s-header {
+    width: 100%; 
+    height: 50px;
+    background-color: #2e353d;
+    margin-bottom: 21px;
+}
+
+    .stub-img {
+        margin-top: 18px;
+    }
+}
