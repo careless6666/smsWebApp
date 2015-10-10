@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
 using SmsWebApplication.Models;
 
 namespace SmsWebApplication.Controllers
@@ -15,11 +16,13 @@ namespace SmsWebApplication.Controllers
 
         public ActionResult Index()
         {
+            var units = _blCommon.GetUnits();
+            units.Insert(0, new BO.Unit { Id = -1, Name = "Все" });
             var model = new ModelsList
             {
                 AddToOrderViewModel = new AddToOrderViewModel
                 {
-                    Units = _blCommon.GetUnits(),
+                    Units = units,
                     TimeStart = DateTime.UtcNow.ToString("HH:mm"),
                     TimeEnd = DateTime.UtcNow.ToString("HH:mm")
                 }
