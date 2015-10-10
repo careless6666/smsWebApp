@@ -1,1 +1,10 @@
-SmsWebApplication\bin
+/SmsWebApplication/bin/
+/SmsWebApplication/obj/
+/BL/obj/
+/BL/bin/
+/DAL/obj/
+/DAL/bin/
+/DI/obj/
+/DI/bin/
+/BO/obj/
+/BO/bin/
