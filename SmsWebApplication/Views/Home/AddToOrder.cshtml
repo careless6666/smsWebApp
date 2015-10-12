@@ -3,46 +3,58 @@
 
 <form class="form-horizontal" role="form">
     <div class="form-group">
-        <label class="control-label col-sm-2 s-label" for="DoNotSendSmsAddToOrder">Не отправлять смс:</label>
-        <div class="col-sm-10">
+        <label class="control-label col-sm-3 s-label" for="DoNotSendSmsAddToOrder">Не отправлять смс:</label>
+        <div class="col-sm-9">
             @*<input type="email" class="form-control" id="UnitAddToOrder" placeholder="Enter email">*@
             <input id="DoNotSendSmsAddToOrder" type="checkbox"/>
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-sm-2 s-label" for="UnitAddToOrder">Подразделение:</label>
-        <div class="col-sm-10">
+        <label class="control-label col-sm-3 s-label" for="UnitAddToOrder">Подразделение:</label>
+        <div class="col-sm-9">
             @*<input type="email" class="form-control" id="UnitAddToOrder" placeholder="Enter email">*@
-            <select id="UnitAddToOrder" class="form-control" data-bind="options: $root.AddToOrderViewModel.Units, optionsText: 'Name', optionsValue: 'Id'"></select>
+            <select id="UnitAddToOrder" class="s-form-control"
+                    data-bind="options: $root.AddToOrderViewModel.Units, optionsText: 'Name', optionsValue: 'Id', event: { change: $root.AddToOrderViewModel.ChangeUnit }">
+                <option></option>
+            </select>
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-sm-2 s-label" for="NetAddToOrder">Сеть:</label>
-        <div class="col-sm-10">
-            <select id="NetAddToOrder" class="form-control"></select>
+        <label class="control-label col-sm-3 s-label" for="NetAddToOrder">Сеть:</label>
+        <div class="col-sm-9">
+            <select id="NetAddToOrder" class="s-form-control" 
+                    data-bind="options: $root.AddToOrderViewModel.Networks, optionsText: 'Name', optionsValue: 'Id' , event: { change: $root.AddToOrderViewModel.ChangeNet}">
+                <option></option>
+            </select>
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-sm-2 s-label" for="ClientAddToOrder">Клиент:</label>
-        <div class="col-sm-10">
-            <select id="ClientAddToOrder" class="form-control"></select>
+        <label class="control-label col-sm-3 s-label" for="ClientAddToOrder">Клиент:</label>
+        <div class="col-sm-9">
+            <select id="ClientAddToOrder" class="s-form-control" data-bind="options: $root.AddToOrderViewModel.Clients, optionsText: 'Name', optionsValue: 'Id'">
+                <option></option>
+            </select>
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-sm-2 s-label" for="WorkTypeAddToOrder">Тип работ:</label>
-        <div class="col-sm-10">
-            <select id="WorkTypeAddToOrder" class="form-control"></select>
+        <label class="control-label col-sm-3 s-label" for="WorkTypeAddToOrder">Тип работ:</label>
+        <div class="col-sm-9">
+            <select id="WorkTypeAddToOrder" class="form-control">
+                <option value="-1">Все</option>
+            </select>
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-sm-2 s-label" for="DepartmentAddToOrder">Отдел:</label>
-        <div class="col-sm-10">
-            <select id="DepartmentAddToOrder" class="form-control"></select>
+        <label class="control-label col-sm-3 s-label" for="DepartmentAddToOrder">Отдел:</label>
+        <div class="col-sm-9">
+            <select id="DepartmentAddToOrder" class="form-control">
+                <option value="-1">Все</option>
+            </select>
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-sm-2 s-label">Дата начала с:</label>
-        <div class="col-sm-10">
+        <label class="control-label col-sm-3 s-label">Дата начала с:</label>
+        <div class="col-sm-9">
             @*<input id="StartDateAddToOrder" class="form-control"/>*@
 
 
@@ -56,8 +68,8 @@
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-sm-2 s-label">Дата начала по:</label>
-        <div class="col-sm-10">
+        <label class="control-label col-sm-3 s-label">Дата начала по:</label>
+        <div class="col-sm-9">
             <div class="input-group date form_date s-date-time" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
                 <input class="form-control" size="16" type="text" value="" readonly>
                 <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
@@ -67,27 +79,27 @@
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-sm-2 s-label" for="StartTimeAddToOrder">Время начала с:</label>
-        <div class="col-sm-10">
+        <label class="control-label col-sm-3 s-label" for="StartTimeAddToOrder">Время начала с:</label>
+        <div class="col-sm-9">
             @*<input id="StartTimeAddToOrder" class="form-control" data-bind="localTimepicker: $root.AddToOrderViewModel.TimeStart"/>*@
             <div class="input-group date form_time s-date-time" data-date="" data-date-format="hh:ii" data-link-field="dtp_input3" data-link-format="hh:ii">
                 <input class="form-control" size="16" type="text" value="" data-bind="value: $root.AddToOrderViewModel.TimeStart">
                 <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                 <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
             </div>
-            <input type="hidden" id="StartTimeAddToOrder" value="" data-bind="value: $root.AddToOrderViewModel.TimeStart" />
+            <input type="hidden" id="StartTimeAddToOrder" value="" data-bind="value: $root.AddToOrderViewModel.TimeStart"/>
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-sm-2 s-label" for="EndTimeAddToOrder">Время начала по:</label>
-        <div class="col-sm-10">
+        <label class="control-label col-sm-3 s-label" for="EndTimeAddToOrder">Время начала по:</label>
+        <div class="col-sm-9">
             @*<input id="EndTimeAddToOrder" class="form-control"  />*@
             <div class="input-group date form_time s-date-time" data-date="" data-date-format="hh:ii" data-link-field="dtp_input3" data-link-format="hh:ii">
                 <input class="form-control" size="16" type="text" value="" data-bind="value: $root.AddToOrderViewModel.TimeEnd">
                 <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                 <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
             </div>
-            <input type="hidden" id="EndTimeAddToOrder" value="" data-bind="value: $root.AddToOrderViewModel.TimeEnd" />
+            <input type="hidden" id="EndTimeAddToOrder" value="" data-bind="value: $root.AddToOrderViewModel.TimeEnd"/>
         </div>
     </div>
     <div class="form-group">
@@ -130,4 +142,6 @@
         </div>
     </div>
 </form>
+
+
 

@@ -35,39 +35,62 @@ smsModule.Menu.Init = function () {
 
 smsModule.Init = function() {
     smsModule.Menu.Init();
-    smsModule.ControlsInitialization();
+    smsModule.ControlsInitialization.AddToOrder();
     smsModule.Knockout.Mappings.Map();
 }
 
-smsModule.ControlsInitialization = function() {
-    $("#DoNotSendSmsAddToOrder").bootstrapToggle({ on: 'Да', off: 'Нет' });
-    $("#TranslitAddToOrder").bootstrapToggle({ on: 'Да', off: 'Нет' });
+smsModule.ControlsInitialization = new function() {
+    return {
+        AddToOrder: function () {
+            $("#DoNotSendSmsAddToOrder").bootstrapToggle({ on: 'Да', off: 'Нет' });
+            $("#TranslitAddToOrder").bootstrapToggle({ on: 'Да', off: 'Нет' });
 
-    $('.form_date').datetimepicker({
-        language: 'ru',
-        weekStart: 1,
-        todayBtn: 1,
-        autoclose: 1,
-        todayHighlight: 1,
-        startView: 2,
-        minView: 2,
-        forceParse: 0,
-        format: 'dd.mm.yyyy'
-    });
+            $('.form_date').datetimepicker({
+                language: 'ru',
+                weekStart: 1,
+                todayBtn: 1,
+                autoclose: 1,
+                todayHighlight: 1,
+                startView: 2,
+                minView: 2,
+                forceParse: 0,
+                format: 'dd.mm.yyyy'
+            });
 
-    $('.form_time').datetimepicker({
-        language: 'fr',
-        weekStart: 1,
-        todayBtn: 1,
-        autoclose: 1,
-        todayHighlight: 1,
-        startView: 1,
-        minView: 0,
-        maxView: 1,
-        forceParse: 0
-    });
+            $('.form_time').datetimepicker({
+                language: 'fr',
+                weekStart: 1,
+                todayBtn: 1,
+                autoclose: 1,
+                todayHighlight: 1,
+                startView: 1,
+                minView: 0,
+                maxView: 1,
+                forceParse: 0
+            });
+
+            $("#UnitAddToOrder").select2({
+                placeholder: "Выберите подразделение",
+                allowClear: true
+            });
+
+            $("#NetAddToOrder").select2({
+                placeholder: "Выберите подразделение",
+                allowClear: true
+            });
+
+            $("#ClientAddToOrder").select2({
+                placeholder: "Выберите сеть",
+                allowClear: true
+            });
+            
+        }
+    }
+};
+
+
+
     
-}
 
 
 smsModule.Knockout = new function () { };
@@ -79,10 +102,58 @@ smsModule.Knockout.Mappings.MapChildModel = function(data) {
 }
 
 smsModule.Knockout.Mappings.Map = function () {
-    var viewModel = ko.mapping.fromJS(smsModule.Models);
-    ko.mapping.fromJS(smsModule.Models, viewModel);
-    ko.applyBindings(viewModel);
+
+    var self = this;
+    //add hadlers
+    smsModule.Models.AddToOrderViewModel.ChangeUnit = function () {
+        $.ajax({
+            url: getNetsUrl,
+            data: {
+                unitId: $('#UnitAddToOrder').select2('data').id
+            },
+            success: function (data) {
+                var jsonData = JSON.parse(ko.toJSON(self.viewModel));
+                jsonData.AddToOrderViewModel.Networks = data;
+                ko.mapping.fromJS(jsonData, self.viewModel);
+                //reset selection 
+                $('#NetAddToOrder').select2('data', null);
+                //select first element
+                if ($('#NetAddToOrder option:eq(0)').length > 0)
+                    $('#NetAddToOrder').select2().select2('val', $('#NetAddToOrder option:eq(0)').val());
+
+            }
+        });
+    }
+
+    smsModule.Models.AddToOrderViewModel.ChangeNet = function() {
+        $.ajax({
+            url: getClientsUrl,
+            data: {
+                netId: $('#NetAddToOrder').select2('data').id,
+                unitId: $('#UnitAddToOrder').select2('data').id
+                
+            },
+            success: function(data) {
+                        var jsonData = JSON.parse(ko.toJSON(self.viewModel));
+                        jsonData.AddToOrderViewModel.Clients = data;
+                        ko.mapping.fromJS(jsonData, self.viewModel);
+                        //reset selection 
+                        $('#ClientAddToOrder').select2('data', null);
+                        //select first element
+                        if ($('#ClientAddToOrder option:eq(0)').length > 0)
+                            $('#ClientAddToOrder').select2().select2('val', $('#ClientAddToOrder option:eq(0)').val());
+
+            }
+        });
+    };
+
+    //bind modal
+    self.viewModel = ko.mapping.fromJS(smsModule.Models);
+    ko.mapping.fromJS(smsModule.Models, self.viewModel);
+    ko.applyBindings(self.viewModel);
+
+
+    
 }
 
- 
 

@@ -246,7 +246,6 @@
     <Compile Include="CGN_QUEUE_ACTUALISATION.cs">
       <DependentUpon>RpDb.tt</DependentUpon>
     </Compile>
-    <Compile Include="Class1.cs" />
     <Compile Include="CL_ACTUAL_CONFIGURATIONS.cs">
       <DependentUpon>RpDb.tt</DependentUpon>
     </Compile>

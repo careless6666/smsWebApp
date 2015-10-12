@@ -33,7 +33,32 @@
 }
 
 .stub-img {
-    width: 50%;
+    width: 100%;
+}
+
+.s-avt-container {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.s-avt-text {
+    position: absolute;
+    display: inline-block;
+    color: wheat;
+    left: 0;
+    right: 0;
+    font-size: xx-large;
+    color: white;
+}
+
+.s-form-control {
+    width: 100%;
+    max-width: 280px;
+}
+
+.s-avt-parent-container {
+    text-align: center;
+    display: table;
 }
 
 .brand, .brand:active {

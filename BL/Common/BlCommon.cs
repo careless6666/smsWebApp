@@ -16,14 +16,14 @@ namespace BL.Common
             return _dalDalCommon.GetUnits();
         }
 
-        public List<Client> GetNetByUnit(int unitId)
+        public List<Nets> GetNetByUnit(int unitId)
         {
-            throw new System.NotImplementedException();
+            return _dalDalCommon.GetNetByUnit(unitId);
         }
 
         public List<Client> GetClientByNetAndUnit(int netId, int unitId)
         {
-            throw new System.NotImplementedException();
+            return _dalDalCommon.GetClientByNetAndUnit(netId, unitId);
         }
 
         public List<string> GetWorkTypes(int unitId, int netId, int clientId)

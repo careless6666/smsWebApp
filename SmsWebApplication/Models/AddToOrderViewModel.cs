@@ -7,8 +7,8 @@ namespace SmsWebApplication.Models
     public class AddToOrderViewModel
     {
         public List<Unit> Units { get; set; }
-        public List<SelectListItem> Networks { get; set; }
-        public List<SelectListItem> Clients { get; set; }
+        public List<Nets> Networks { get; set; }
+        public List<Client> Clients { get; set; }
         public List<SelectListItem> WorkTypes { get; set; }
         public List<SelectListItem> Deparment { get; set; }
         public string DateStart { get; set; }

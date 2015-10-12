@@ -31,7 +31,9 @@ namespace SmsWebApplication
                       "~/Scripts/knockout-3.3.0.js",
                       "~/Scripts/knockout-custom.js",
                       "~/Scripts/knockout.mapping-latest.js",
-                      "~/Scripts/jquery.ui.timepicker.js"
+                      "~/Scripts/jquery.ui.timepicker.js",
+                      "~/Scripts/select2.min.js",
+                      "~/Scripts/select2_locale_ru.js"
                       ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
@@ -40,7 +42,9 @@ namespace SmsWebApplication
                       "~/Content/s-styles.css",
                       "~/Content/bootstrap-toggle.min.css",
                       "~/Content/sidebar.css",
-                      "~/Content/bootstrap-datetimepicker.min.css"));
+                      "~/Content/bootstrap-datetimepicker.min.css",
+                      "~/Content/select2.css",
+                      "~/Content/select2-bootstrap.css"));
 
         }
     }
