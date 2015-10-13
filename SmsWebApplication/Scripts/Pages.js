@@ -234,6 +234,52 @@ smsModule.Knockout.Mappings.Map = function () {
         });
     };
 
+    vm.GetDefaultTemplate = function(data) {
+        data.AddToOrderVM.Message(data.AddToOrderVM.DefaultTemplate());
+    }
+
+    
+    vm.PreviewMessageBuilder = function(data) {
+        var message = data.AddToOrderVM.Message();
+        var trans = data.AddToOrderVM.EnableTranslite();
+        //replace template data to fake data
+        var d = new Date();
+        message = message.replace('<%Дата начала%>', '' + d.getDate() + '.' + d.getMonth() + '.' + d.getFullYear());
+        message = message.replace('<%Дата окончания%>', '' + d.getDate() + '.' + d.getMonth() + '.' + d.getFullYear());
+        message = message.replace('<%Время начала%>', '' + d.getHours() + ':' + d.getMinutes());
+        message = message.replace('<%Время окончания%>', '' + (d.getHours() + 3) + ':' + d.getMinutes());
+        message = message.replace('<%Клиент%>', trans ? 'Nash klient' : 'Наш клиент');
+        message = message.replace('<%Тип работы%>', trans ? 'RTZ' : 'РТЗ');
+        message = message.replace('<%Отдел%>', trans ? 'Ovoshhi i frukty': 'Овощи и фрукты');
+        message = message.replace('<%Адрес%>', trans ? 'l. Kolonczova 5' : 'ул. Колонцова 5');
+
+        data.AddToOrderVM.PreviewMessage(message);
+    };
+
+    vm.ValidateDates = function(data) {
+        var dateStart = data.AddToOrderVM.DateStart();
+        var dateEnd = data.AddToOrderVM.DateEnd();
+        if (dateEnd === '' || dateStart === '')
+            data.AddToOrderVM.DatesValis(false);
+
+        try {
+            var dateArr = dateStart.split('.');
+            var d1 = new Date(dateArr[2], dateArr[1] - 1, dateArr[0]);
+            dateArr = dateEnd.split('.');
+            var d2 = new Date(dateArr[2], dateArr[1] - 1, dateArr[0]);
+            if (d1 > d2) {
+                data.AddToOrderVM.DatesValis(true);
+            } else {
+                data.AddToOrderVM.DatesValis(false);
+            }
+        } catch (e) {
+            data.AddToOrderVM.DatesValis(true);
+        } 
+
+    }
+
+    vm.DatesValis = false;
+
     vm.ItemClick = smsModule.Variables.ItemClick;
 
     vm.TranslitText = function (data) {
@@ -252,7 +298,7 @@ smsModule.Knockout.Mappings.Map = function () {
         data.AddToOrderVM.Message(transResult);
     }
 
-    //bind modal
+    //bind modal, not all source model, because use modified json object
     var jm = smsModule.Models.AddToOrderViewModel;
     vm.TimeStart = jm.TimeStart;
     vm.TimeEnd = jm.TimeEnd;
@@ -260,7 +306,8 @@ smsModule.Knockout.Mappings.Map = function () {
     vm.DateEnd = jm.DateEnd;
     vm.Message = jm.Message;
     vm.EnableTranslite = jm.EnableTranslite;
-
+    vm.DefaultTemplate = jm.DefaultTemplate;
+    vm.PreviewMessage = '';
 
     self.viewModel = ko.mapping.fromJS(smsModule.Models.AddToOrderVM);
     ko.mapping.fromJS(smsModule.Models.AddToOrderVM, self.viewModel);

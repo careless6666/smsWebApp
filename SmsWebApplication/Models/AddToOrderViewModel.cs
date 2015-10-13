@@ -16,6 +16,7 @@ namespace SmsWebApplication.Models
         public string SelectedWorkTypesAddToOrder { get; set; }
         public List<Department> Deparment { get; set; }
         public string SelectedDepartmentAddToOrder { get; set; }
+        public string DefaultTemplate { get; set; }
         public string DateStart { get; set; }
         public string DateEnd { get; set; }
         public string TimeStart { get; set; }

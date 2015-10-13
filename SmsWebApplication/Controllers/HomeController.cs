@@ -36,7 +36,8 @@ namespace SmsWebApplication.Controllers
                     TimeStart = "",// DateTime.UtcNow.ToString("HH:mm"),
                     TimeEnd = "", //DateTime.UtcNow.ToString("HH:mm"),
                     Message = "",
-                    EnableTranslite = false
+                    EnableTranslite = false,
+                    DefaultTemplate = "Вы добавлены на смену с <%Время начала%> до <%Время окончания%> Объект: <%Клиент%> Тип работ: <%Тип работы%> Адрес: <%Адрес%> PRALUDI"
                 }
             };
             return View(model);
