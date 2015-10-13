@@ -118,6 +118,9 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="UnidecodeSharp">
+      <HintPath>..\..\..\..\..\Downloads\UnidecodeSharp.dll</HintPath>
+    </Reference>
     <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
       <HintPath>..\packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
       <Private>True</Private>
@@ -160,6 +163,7 @@
     <Content Include="Content\css\select2.png" />
     <Content Include="Content\css\select2x2.png" />
     <Content Include="Content\css\spinner.gif" />
+    <Content Include="Content\formValidation.css" />
     <Content Include="Content\images\c23.jpg" />
     <Content Include="Content\images\city-street-night-wide.png" />
     <Content Include="Content\images\city-street-night.png" />
@@ -189,6 +193,8 @@
     <Content Include="Content\select2-bootstrap.scss" />
     <Content Include="Content\select2-bootstrap.less" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
+    <Content Include="Scripts\formValidations\formValidation.js" />
+    <Content Include="Scripts\formValidations\formValidationBootstrap.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />
     <Content Include="Scripts\jquery-2.1.4.min.map" />

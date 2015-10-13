@@ -16,14 +16,14 @@ namespace DAL.Common
             }
         }
 
-        public List<Nets> GetNetByUnit(int unitId)
+        public List<Nets> GetNetByUnit(List<int> unitId)
         {
             using (var db = new BdpEntities())
             {
-                if(unitId != -1)
+                if(unitId != null && unitId.Count > 0)
                 return (from nets in db.CL_NETS
                         from client in nets.CL_CLIENTS
-                        where client.UN_ID == unitId
+                        where unitId.Contains((int)client.UN_ID) 
                         select new Nets { Id = (int)nets.NT_ID, Name = nets.NT_NAME}).Distinct().OrderBy(x=>x.Name).ToList();
 
                 return (from nets in db.CL_NETS
@@ -32,7 +32,7 @@ namespace DAL.Common
             }
         }
 
-        public List<Client> GetClientByNetAndUnit(int netId, int unitId)
+        public List<Client> GetClientByNetAndUnit(List<int> netId = null, List<int> unitId = null)
         {
             using (var db = new BdpEntities())
             {
@@ -41,51 +41,65 @@ namespace DAL.Common
 
                 var queryableData = clients;
 
-                var pe = Expression.Parameter(typeof(CL_CLIENTS), "client");
-
-                var left = Expression.Property(pe, clients.ElementType.GetProperty("NT_ID"));
-                var right = Expression.Constant((decimal?)netId, typeof(decimal?));
-                var netCondition = Expression.Equal(left, right);
-
-                left = Expression.Property(pe, clients.ElementType.GetProperty("UN_ID"));
-                right = Expression.Constant((decimal)unitId, typeof(decimal));
-                var unitCondition = Expression.Equal(left, right);
-
-                var cleft = Expression.Constant(0, typeof(int));
-                var cright = Expression.Constant(0, typeof(int));
-                var stubCondition = Expression.Equal(cleft, cright);
-
-                Expression resultCondition = Expression.Empty();
-
-                if (netId != -1 && unitId != -1)
-                    resultCondition = Expression.And(netCondition, unitCondition);
-
-                else if (netId == -1 && unitId != -1)
-                    resultCondition = unitCondition;
-
-                else if (unitId == -1 && netId != -1)
-                    resultCondition = netCondition;
-
-                if (resultCondition.NodeType == ExpressionType.Default)
-                    resultCondition = stubCondition;
-
-                var expQuery = Expression.Call(typeof (Queryable), "Where", new[] {clients.ElementType}, clients.Expression,
-                                Expression.Lambda<Func<CL_CLIENTS, bool>>(resultCondition, pe));
-
-                var res = (IQueryable<CL_CLIENTS>)queryableData.Provider.CreateQuery(expQuery);
+                if (netId != null && netId.Any())
+                    queryableData = queryableData.Where(x => netId.Contains((int) x.NT_ID));
                 
-                return (from client in res select new Client {Id = (int)client.CL_ID, Name = client.CL_NAME}).OrderBy(x=>x.Name).ToList();
+
+                if (unitId != null && unitId.Any())
+                    queryableData = queryableData.Where(x => unitId.Contains((int)x.UN_ID));
+
+                if(netId == null && unitId == null || !netId.Any() && !unitId.Any())
+                    return new List<Client>();
+                
+                return (from client in queryableData select new Client {Id = (int)client.CL_ID, Name = client.CL_NAME}).OrderBy(x=>x.Name).ToList();
             }
         }
 
-        public List<string> GetWorkTypes(int unitId, int netId, int clientId)
+        public List<string> GetWorkTypes(List<int> unitId, List<int> netId, List<int> clientId)
         {
-            throw new NotImplementedException();
+            using (var db = new BdpEntities())
+            {
+                var query = (from ccwt in db.CL_CONTRACT_WORK_TYPE
+                    join cjn in db.CL_JURI_NETS on ccwt.CJNN_ID equals cjn.CJNN_ID
+                    join cci in db.CL_CONTRACT_ITEM on ccwt.CCWT_ID equals cci.CCWT_ID
+                    join cr in db.CL_RATE on cci.CCI_ID equals cr.CCI_ID
+                    join cc in db.CL_CLIENTS on cr.CL_ID equals cc.CL_ID
+                            where !cr.IS_MISTAKEN && cr.CR_DATE_TO >= DateTime.UtcNow
+                            select new { NetworkId = (int)cjn.NT_ID, ClientId = (int)cc.CL_ID, UnitId = (int)cc.UN_ID, WorkTypeName = ccwt.WT_NAME})
+                            .Distinct();
+
+                
+                if (clientId != null && clientId.Any())
+                    query = query.Where(x=> clientId.Contains(x.ClientId));
+
+                if (netId != null && netId.Any())
+                    query = query.Where(x => netId.Contains(x.NetworkId));
+
+                if (unitId != null && unitId.Any())
+                    query = query.Where(x => unitId.Contains(x.UnitId));
+
+                if(unitId == null && netId == null && clientId == null || !netId.Any() && !unitId.Any() && !clientId.Any())
+                    return new List<string>();
+
+                return (from wt in query select wt.WorkTypeName).OrderBy(q=>q).Distinct().ToList();
+            }
         }
 
-        public List<Client> GetGeparmentByClient(int clientId)
+        public List<Department> GetGeparmentByClient(List<int> clientId)
         {
-            throw new NotImplementedException();
+            using (var db = new BdpEntities())
+            {
+                if(clientId == null || !clientId.Any())
+                    return new List<Department>();
+
+                return (from cnd in db.CL_CLIENTS_NETS_DEPARTEMNTS
+                    where clientId.Contains((int) cnd.CL_ID)
+                    select new Department
+                    {
+                        Id = (int) cnd.CL_NETS_DEPARTMENTS.CL_DEPARTMENTS.DEP_ID,
+                        Name = cnd.CL_NETS_DEPARTMENTS.CL_DEPARTMENTS.DEP_NAME
+                    }).ToList();
+            }
         }
     }
 }

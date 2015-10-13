@@ -8,6 +8,8 @@
     smsModule.Models = @Html.Raw(Json.Encode(Model));
     var getNetsUrl = '@Url.Action("GetNets")';
     var getClientsUrl = '@Url.Action("GetClients")';
+    var getWorkTypesUrl = '@Url.Action("GetWorkTypes")';
+    var getDepartmentsUrl = '@Url.Action("GetDepartments")';
 </script>
 <div class="s-avt-parent-container">
     @*<div class="s-avt-container">
@@ -24,5 +26,5 @@
 
 
 <div class="s-menu-item-value" data-action="addToOrderContainer">
-    @Html.Partial("AddToOrder")
+    @Html.Partial("AddToOrder", Model.AddToOrderViewModel)
 </div>

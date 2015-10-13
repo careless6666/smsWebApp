@@ -102,6 +102,7 @@
     margin-bottom: 21px;
     position: fixed;
     z-index: 2;
+    /*display: none;*/
 }
 
     .stub-img {

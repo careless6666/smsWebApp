@@ -12,13 +12,13 @@ smsModule.Menu.Init = function () {
         $('#main-page').hide();
         $('.stub-img').hide();
     }
-    
+
     function showSelected(element) {
         hideAllItems();
         var act = $(element).attr("data-action");
 
         for (var i = 0; i < $('.s-menu-item-value').length; i++) {
-            if(($($('.s-menu-item-value')[i])).attr("data-action") === act) {
+            if (($($('.s-menu-item-value')[i])).attr("data-action") === act) {
                 $($('.s-menu-item-value')[i]).show();
                 return;
             }
@@ -33,17 +33,28 @@ smsModule.Menu.Init = function () {
     });
 }
 
-smsModule.Init = function() {
+smsModule.Variables = new function () { };
+smsModule.Variables.ItemClick = function (container, event) {
+    container(container() + '<%' + $(event.target).text() + '%>');
+};
+
+
+smsModule.Init = function () {
     smsModule.Menu.Init();
     smsModule.ControlsInitialization.AddToOrder();
     smsModule.Knockout.Mappings.Map();
 }
 
-smsModule.ControlsInitialization = new function() {
+smsModule.ControlsInitialization = new function () {
     return {
         AddToOrder: function () {
             $("#DoNotSendSmsAddToOrder").bootstrapToggle({ on: 'Да', off: 'Нет' });
             $("#TranslitAddToOrder").bootstrapToggle({ on: 'Да', off: 'Нет' });
+            $("#TranslitAddToOrder").change(function() {
+                $("#TranslitAddToOrder").click();
+            });
+
+            //TranslitAddToOrder
 
             $('.form_date').datetimepicker({
                 language: 'ru',
@@ -69,91 +80,206 @@ smsModule.ControlsInitialization = new function() {
                 forceParse: 0
             });
 
-            $("#UnitAddToOrder").select2({
-                placeholder: "Выберите подразделение",
+            $("#SelectedUnitAddToOrder").select2({
+                placeholder: "Все",
                 allowClear: true
             });
 
-            $("#NetAddToOrder").select2({
-                placeholder: "Выберите подразделение",
+            $("#SelectedNetworkAddToOrder").select2({
+                placeholder: "Все",
                 allowClear: true
             });
 
-            $("#ClientAddToOrder").select2({
-                placeholder: "Выберите сеть",
+            $("#SelectedClientAddToOrder").select2({
+                placeholder: "Все",
                 allowClear: true
             });
-            
+
+            $("#SelectedWorkTypesAddToOrder").select2({
+                placeholder: "Вcе",
+                allowClear: true
+            });
+
+            $("#SelectedDepartmentAddToOrder").select2({
+                placeholder: "Вcе",
+                allowClear: true
+            });
+
         }
     }
 };
 
 
 
-    
+
 
 
 smsModule.Knockout = new function () { };
 
 smsModule.Knockout.Mappings = new function () { };
 
-smsModule.Knockout.Mappings.MapChildModel = function(data) {
+smsModule.Knockout.Mappings.MapChildModel = function (data) {
     ko.mapping.fromJS(data, {}, this);
 }
 
 smsModule.Knockout.Mappings.Map = function () {
 
+    function rebindSelectList(element, list) {
+        var $el = element;
+        $el.empty(); // remove old options
+        $.each(list, function (value, key) {
+            $el.append($("<option></option>")
+               .attr("value", key.Id).text(key.Name));
+        });
+    }
+
+    function getSelect2Ids(element) {
+        var arr = $(element).select2('data');
+        var res = [];
+        $.each(arr, function (index, value) {
+            res.push(value.id);
+        });
+        return res;
+    }
+
     var self = this;
     //add hadlers
-    smsModule.Models.AddToOrderViewModel.ChangeUnit = function () {
+    smsModule.Models.AddToOrderVM = new function AddToOrderVM() { };
+    smsModule.Models.AddToOrderVM.AddToOrderVM = new function () { };
+    var vm = smsModule.Models.AddToOrderVM.AddToOrderVM;
+    vm.ChangeUnit = function () {
         $.ajax({
             url: getNetsUrl,
             data: {
-                unitId: $('#UnitAddToOrder').select2('data').id
+                unitId: JSON.stringify(getSelect2Ids($('#SelectedUnitAddToOrder')))
             },
             success: function (data) {
-                var jsonData = JSON.parse(ko.toJSON(self.viewModel));
-                jsonData.AddToOrderViewModel.Networks = data;
-                ko.mapping.fromJS(jsonData, self.viewModel);
+                //var jsonData = JSON.parse(ko.toJSON(self.viewModel));
+                //jsonData.AddToOrderViewModel.Networks = data;
+                //ko.mapping.fromJS(jsonData, self.viewModel);
+                rebindSelectList($('#SelectedNetworkAddToOrder'), data);
                 //reset selection 
-                $('#NetAddToOrder').select2('data', null);
+                $('#SelectedNetworkAddToOrder').select2('data', null);
                 //select first element
-                if ($('#NetAddToOrder option:eq(0)').length > 0)
-                    $('#NetAddToOrder').select2().select2('val', $('#NetAddToOrder option:eq(0)').val());
-
+                //if ($('#SelectedNetworkAddToOrder option:eq(0)').length > 0) {
+                //  $('#SelectedNetworkAddToOrder').select2().select2('val', $('#SelectedNetworkAddToOrder option:eq(0)').val());
+                // }
+                vm.ChangeNet();
             }
         });
     }
 
-    smsModule.Models.AddToOrderViewModel.ChangeNet = function() {
+    vm.ChangeNet = function () {
         $.ajax({
             url: getClientsUrl,
             data: {
-                netId: $('#NetAddToOrder').select2('data').id,
-                unitId: $('#UnitAddToOrder').select2('data').id
-                
+                netId: JSON.stringify(getSelect2Ids($('#SelectedNetworkAddToOrder'))),
+                unitId: JSON.stringify(getSelect2Ids($('#SelectedUnitAddToOrder')))
+
             },
-            success: function(data) {
-                        var jsonData = JSON.parse(ko.toJSON(self.viewModel));
-                        jsonData.AddToOrderViewModel.Clients = data;
-                        ko.mapping.fromJS(jsonData, self.viewModel);
-                        //reset selection 
-                        $('#ClientAddToOrder').select2('data', null);
-                        //select first element
-                        if ($('#ClientAddToOrder option:eq(0)').length > 0)
-                            $('#ClientAddToOrder').select2().select2('val', $('#ClientAddToOrder option:eq(0)').val());
+            success: function (data) {
+                //var jsonData = JSON.parse(ko.toJSON(self.viewModel));
+                // jsonData.AddToOrderViewModel.Clients = data;
+                //ko.mapping.fromJS(jsonData, self.viewModel);
+                rebindSelectList($('#SelectedClientAddToOrder'), data);
+                //reset selection 
+                $('#SelectedClientAddToOrder').select2('data', null);
+                //select first element
+                //if ($('#SelectedClientAddToOrder option:eq(0)').length > 0)
+                // $('#SelectedClientAddToOrder').select2().select2('val', $('#SelectedClientAddToOrder option:eq(0)').val());
+                vm.ChangeWorkType();
+                vm.UpdateDeparments();
+            }
+        });
+    };
+
+    vm.ChangeWorkType = function () {
+        $.ajax({
+            url: getWorkTypesUrl,
+            data: {
+                netId: JSON.stringify(getSelect2Ids($('#SelectedNetworkAddToOrder'))),
+                unitId: JSON.stringify(getSelect2Ids($('#SelectedUnitAddToOrder'))),
+                clientId: JSON.stringify(getSelect2Ids($('#SelectedClientAddToOrder')))
+
+            },
+            success: function (data) {
+                rebindSelectList($('#SelectedWorkTypesAddToOrder'), data);
+                //reset selection 
+                $('#SelectedWorkTypesAddToOrder').select2('data', null);
+                //select first element
+                //if ($('#SelectedClientAddToOrder option:eq(0)').length > 0)
+                //    $('#SelectedClientAddToOrder').select2().select2('val', $('#SelectedClientAddToOrder option:eq(0)').val());
+
+            }
+        });
+        vm.UpdateDeparments();
+    };
+
+    vm.UpdateDeparments = function () {
+        $.ajax({
+            url: getDepartmentsUrl,
+            data: {
+                clientId: JSON.stringify(getSelect2Ids($('#SelectedClientAddToOrder')))
+
+            },
+            success: function (data) {
+                rebindSelectList($('#SelectedDepartmentAddToOrder'), data);
+                //reset selection 
+                $('#SelectedDepartmentAddToOrder').select2('data', null);
+                //select first element
+                //if ($('#SelectedClientAddToOrder option:eq(0)').length > 0)
+                //    $('#SelectedClientAddToOrder').select2().select2('val', $('#SelectedClientAddToOrder option:eq(0)').val());
 
             }
         });
     };
 
+    vm.ItemClick = smsModule.Variables.ItemClick;
+
+    vm.TranslitText = function (data) {
+        var varsArr = [{ id: "<%Data nachala%>", value: "<%Дата начала%>" }, {id: "<%Vremya nachala%>", value:"<%Время начала%>" },
+        { id:"<%Data okonchaniya%>", value: "<%Дата окончания%>"}, { id:"<%Vremya okonchaniya%>", value: "<%Время окончания%>"},
+        { id:"<%Klient%>", value: "<%Клиент%>" }, { id:"<%Tip raboty'%>", value: "<%Тип работы%>" }, { id:"<%Otdel%>", value: "<%Отдел%>" }, { id:"<%Adres%>", value: "<%Адрес%>" }];
+        
+        var message = data.AddToOrderVM.Message();
+        var enableTranslite = !data.AddToOrderVM.EnableTranslite();
+        data.AddToOrderVM.EnableTranslite(enableTranslite);
+        var transResult = smsModule.translate(message, !enableTranslite);
+
+        for (var i = 0; i < varsArr.length; i++) 
+            transResult = transResult.replace(varsArr[i].id, varsArr[i].value);
+        
+        data.AddToOrderVM.Message(transResult);
+    }
+
     //bind modal
-    self.viewModel = ko.mapping.fromJS(smsModule.Models);
-    ko.mapping.fromJS(smsModule.Models, self.viewModel);
+    var jm = smsModule.Models.AddToOrderViewModel;
+    vm.TimeStart = jm.TimeStart;
+    vm.TimeEnd = jm.TimeEnd;
+    vm.DateStart = jm.DateStart;
+    vm.DateEnd = jm.DateEnd;
+    vm.Message = jm.Message;
+    vm.EnableTranslite = jm.EnableTranslite;
+
+
+    self.viewModel = ko.mapping.fromJS(smsModule.Models.AddToOrderVM);
+    ko.mapping.fromJS(smsModule.Models.AddToOrderVM, self.viewModel);
     ko.applyBindings(self.viewModel);
 
 
-    
+
 }
 
+
+smsModule.translate = function (text, engToRus) {
+    var rus = "щ   ш  ч  ц  ю  я  ё  ж  ъ  ы  э  а б в г д е з и й к л м н о п р с т у ф х ь".split(/ +/g),
+    eng = "shh sh ch cz yu ya yo zh `` y' e` a b v g d e z i j k l m n o p r s t u f x `".split(/ +/g);
+    var x;
+
+    for (x = 0; x < rus.length; x++) {
+        text = text.split(engToRus ? eng[x] : rus[x]).join(engToRus ? rus[x] : eng[x]);
+        text = text.split(engToRus ? eng[x].toUpperCase() : rus[x].toUpperCase()).join(engToRus ? rus[x].toUpperCase() : eng[x].toUpperCase());
+    }
+    return text;
+}
 

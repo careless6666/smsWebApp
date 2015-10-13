@@ -43,3 +43,4 @@ c:\Users\a.usov\Documents\Visual Studio 2013\Projects\SmsWebApplication\SmsWebAp
 c:\Users\a.usov\Documents\Visual Studio 2013\Projects\SmsWebApplication\SmsWebApplication\bin\BL.pdb
 c:\Users\a.usov\Documents\Visual Studio 2013\Projects\SmsWebApplication\SmsWebApplication\bin\EntityFramework.SqlServer.dll
 c:\Users\a.usov\Documents\Visual Studio 2013\Projects\SmsWebApplication\SmsWebApplication\bin\EntityFramework.SqlServer.xml
+C:\Users\a.usov\Documents\Visual Studio 2013\Projects\SmsWebApplication\SmsWebApplication\bin\UnidecodeSharp.dll

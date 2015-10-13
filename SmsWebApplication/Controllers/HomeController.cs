@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
+using BinaryAnalysis.UnidecodeSharp;
 using BO;
+using Newtonsoft.Json;
 using SmsWebApplication.Models;
 
 namespace SmsWebApplication.Controllers
@@ -17,20 +20,23 @@ namespace SmsWebApplication.Controllers
         public ActionResult Index()
         {
             var units = _blCommon.GetUnits();
-            units.Insert(0, new Unit { Id = -1, Name = "Все" });
-            var nets = _blCommon.GetNetByUnit(-1);
-            nets.Insert(0, new Nets{Id = -1, Name = "Все"});
-            var clients = _blCommon.GetClientByNetAndUnit(-1, -1);
-            clients.Insert(0, new Client {Id = -1, Name = "Все"});
+            var nets = _blCommon.GetNetByUnit(null);
+            
             var model = new ModelsList
             {
                 AddToOrderViewModel = new AddToOrderViewModel
                 {
                     Units = units,
                     Networks = nets,
-                    Clients = clients,
-                    TimeStart = DateTime.UtcNow.ToString("HH:mm"),
-                    TimeEnd = DateTime.UtcNow.ToString("HH:mm")
+                    Clients = new List<Client>(),
+                    WorkTypes = new List<string>(),
+                    Deparment = new List<Department>(),
+                    DateStart = DateTime.UtcNow.Date.ToString("dd.MM.yyyy"),
+                    DateEnd = DateTime.UtcNow.AddDays(7).Date.ToString("dd.MM.yyyy"),
+                    TimeStart = "",// DateTime.UtcNow.ToString("HH:mm"),
+                    TimeEnd = "", //DateTime.UtcNow.ToString("HH:mm"),
+                    Message = "",
+                    EnableTranslite = false
                 }
             };
             return View(model);
@@ -54,16 +60,35 @@ namespace SmsWebApplication.Controllers
             return View();
         }
 
-        public ActionResult GetNets(int unitId)
+        public ActionResult GetNets(string unitId)
         {
-            var nets =_blCommon.GetNetByUnit(unitId);
+            var list = JsonConvert.DeserializeObject<int[]>(unitId);
+            var nets =_blCommon.GetNetByUnit(list.ToList());
             return Json(nets.ToArray(), JsonRequestBehavior.AllowGet);
         }
 
-        public ActionResult GetClients(int netId, int unitId)
+        public ActionResult GetClients(string netId, string unitId)
         {
-            var nets = _blCommon.GetClientByNetAndUnit(netId, unitId);
-            return Json(nets.ToArray(), JsonRequestBehavior.AllowGet);
+            var units = JsonConvert.DeserializeObject<int[]>(unitId);
+            var nets = JsonConvert.DeserializeObject<int[]>(netId);
+            var clients = _blCommon.GetClientByNetAndUnit(nets.ToList(), units.ToList());
+            return Json(clients.ToArray(), JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult GetWorkTypes(string netId, string unitId, string clientId)
+        {
+            var units = JsonConvert.DeserializeObject<int[]>(unitId);
+            var nets = JsonConvert.DeserializeObject<int[]>(netId);
+            var clients = JsonConvert.DeserializeObject<int[]>(clientId);
+            var clientsRes = _blCommon.GetWorkTypes(units.ToList(), nets.ToList(), clients.ToList());
+            return Json(clientsRes.Select(x=> new {Id = x, Name = x}), JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult GetDepartments(string clientId)
+        {
+            var clients = JsonConvert.DeserializeObject<int[]>(clientId);
+            var deparments = _blCommon.GetGeparmentByClient(clients.ToList());
+            return Json(deparments, JsonRequestBehavior.AllowGet);
         }
     }
 }

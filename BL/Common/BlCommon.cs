@@ -16,24 +16,24 @@ namespace BL.Common
             return _dalDalCommon.GetUnits();
         }
 
-        public List<Nets> GetNetByUnit(int unitId)
+        public List<Nets> GetNetByUnit(List<int> unitId)
         {
             return _dalDalCommon.GetNetByUnit(unitId);
         }
 
-        public List<Client> GetClientByNetAndUnit(int netId, int unitId)
+        public List<Client> GetClientByNetAndUnit(List<int> netId, List<int> unitId)
         {
             return _dalDalCommon.GetClientByNetAndUnit(netId, unitId);
         }
 
-        public List<string> GetWorkTypes(int unitId, int netId, int clientId)
+        public List<string> GetWorkTypes(List<int> unitId, List<int> netId, List<int> clientId)
         {
-            throw new System.NotImplementedException();
+            return _dalDalCommon.GetWorkTypes(unitId, netId, clientId);
         }
 
-        public List<Client> GetGeparmentByClient(int clientId)
+        public List<Department> GetGeparmentByClient(List<int> clientIds)
         {
-            throw new System.NotImplementedException();
+            return _dalDalCommon.GetGeparmentByClient(clientIds);
         }
     }
 }
