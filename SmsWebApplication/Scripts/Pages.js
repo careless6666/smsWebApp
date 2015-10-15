@@ -308,6 +308,7 @@ smsModule.Knockout.Mappings.Map = function () {
 
     vm.SaveTemplate = function(data) {
         $.ajax({
+            type: 'POST',
             url: saveAddToOrder,
             data: $.postify({
                 Units: getSelect2Ids($('#SelectedUnitAddToOrder')),

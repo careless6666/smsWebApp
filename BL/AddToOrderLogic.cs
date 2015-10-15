@@ -1,12 +1,21 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Web;
 using BO;
+using DAL.Common;
 using DAL.Models;
 
 namespace BL
 {
     public class AddToOrderLogic
     {
+        private IDalCommon _dalCommon;
+
+        public AddToOrderLogic(IDalCommon dalCommon)
+        {
+            _dalCommon = dalCommon;
+        }
+
         /// <summary>
         /// Сохраним шаблон для добавления на заказ
         /// </summary>
@@ -72,6 +81,10 @@ namespace BL
             smsParams.AddRange(addTemplateParams(addToOrderModel.Deparment, ConditionTypes.Equals, KeyCharVariables.Department));
 
             smsTemplate.SmsTemplatesParamses = smsParams;
+            
+            smsTemplate.User = new User { LadpName = HttpContext.Current.User.Identity.Name };
+
+            _dalCommon.SaveTemplate(smsTemplate);
         }
 
         IEnumerable<SmsTemplatesParams> addTemplateParams<T>(List<T> itemslist, ConditionTypes condition, KeyCharVariables field)

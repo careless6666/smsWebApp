@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using BO;
 using DAL.Models;
 
@@ -44,7 +45,7 @@ namespace BL.Common
         /// <param name="addToOrderModel">модель добавления на заказ</param>
         public void SaveSmsTemplate(AddToOrderModel addToOrderModel)
         {
-            var ao = new AddToOrderLogic();
+            var ao = new AddToOrderLogic(_dalDalCommon);
             ao.SaveTemplate(addToOrderModel);
         }
 

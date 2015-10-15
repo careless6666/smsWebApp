@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using BO;
 
 namespace DAL.Models
 {
@@ -12,6 +13,7 @@ namespace DAL.Models
         public string Message { get; set; }
         public bool IsNeedTranslit { get; set; }
         public bool IsDefault { get; set; }
+        public User User { get; set; }
 
         public string GetVarName(string name)
         {

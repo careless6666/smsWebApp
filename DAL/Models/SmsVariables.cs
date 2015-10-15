@@ -8,5 +8,7 @@
         public string Name { get; set; }
         
         public string KeyCharName { get; set; }
+
+        public int Id { get; set; }
     }
 }

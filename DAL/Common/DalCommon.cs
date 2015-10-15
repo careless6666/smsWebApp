@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
 using BO;
+using DAL.DbClasses;
 using DAL.Models;
 
 namespace DAL.Common 
@@ -104,38 +105,93 @@ namespace DAL.Common
             }
         }
 
-        public void SaveTemplate(ISmsTemplates template)
+        public Result SaveTemplate(ISmsTemplates template)
         {
+            var res = new Result();
             using (var context = new BdpEntities())
             {
                 using (var dbContextTransaction = context.Database.BeginTransaction())
                 {
                     try
                     {
-                        
+                        var templ = new SMS_TEMPLATES();
+                        //условия отправки шаблона
+                        templ = AddSendConditionParams(templ, template.SmsSendConditionses, context);
+                        //параметры шаблона
+                        templ = AddSmsTemplatesParams(templ, template.SmsTemplatesParamses, context);
+                        //событие шаблона
+                        templ.OPT_SMS_EVENTS =
+                            context.OPT_SMS_EVENTS.Single(
+                                x => x.KEY_CHAR_VALUE.Equals(template.Event.EventType.ToString()));
+
+                        templ.IS_SEND = template.IsSend;
+                        templ.MESSAGE = template.Message;
+                        templ.IS_NEED_TRANSLIT = template.IsNeedTranslit;
+                        templ.IS_DEFAULT = template.IsDefault;
+
+                        //запись в историю
+                        templ.SMS_TEMPLATES_HISTORY.Add(new SMS_TEMPLATES_HISTORY
+                        {
+                            EDIT_DATE = DateTime.UtcNow,
+                            US_ID = context.SC_USERS.Single(x=>x.SCU_LDAP_ACCOUNT.Equals(template.User.LadpName)).US_ID,
+                        });
+
+                        context.SMS_TEMPLATES.Add(templ);
+
+                        context.SaveChanges();
+                        dbContextTransaction.Commit();
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
                         dbContextTransaction.Rollback();
+                        res.ErrorMessage = ex.Message;
+                        res.Exception = res.Exception;
                     }
+                    return res;
                 }
             }
         }
 
-        void SaveoOtVariables(ISmsTemplates template, BdpEntities context)
+        /// <summary>
+        /// Условия отправки шаблона
+        /// </summary>
+        /// <param name="templ">шаблон</param>
+        /// <param name="smsSendConditionses">список условий</param>
+        /// <param name="context"></param>
+        /// <returns></returns>
+        SMS_TEMPLATES AddSendConditionParams(SMS_TEMPLATES templ, IEnumerable<SmsSendConditions> smsSendConditionses, BdpEntities context)
         {
-            var smsEvent =
-                context.OPT_SMS_EVENTS.Single(x => x.KEY_CHAR_VALUE.Equals(template.Event.EventType.ToString()));
-
-            foreach (var smsVariablese in template.Event.Variables)
+            foreach (var smsSendConditionse in smsSendConditionses)
             {
-                //context.OPT_SMS_E
-                //context.OPT_SMS_VARIABLES.Add(new OPT_SMS_VARIABLES
-                //{
-                //    NAME = smsVariablese.Name,
-                //    KEY_CHAR_VALUE = smsVariablese.KeyCharName
-                //});
+                templ.SMS_SEND_CONDITIONS_PARAMS.Add(new SMS_SEND_CONDITIONS_PARAMS
+                {
+                    VALUE = smsSendConditionse.Value,
+                    ID_SMS_SEND_CONDITIONS = context.SMS_SEND_CONDITIONS.Single(x=>x.KEY_CHAR_VALUE.Equals(smsSendConditionse.TypeCondition.ToString())).ID,
+                    ID_TYPE = context.SMS_SEND_CONDITIONS_TYPES.Single(x=>x.KEY_CHAR_VALUE.Equals(smsSendConditionse.Parameter)).ID
+                });
             }
+            return templ;
+        }
+
+        /// <summary>
+        /// Параметры шаблона
+        /// </summary>
+        /// <param name="templ"></param>
+        /// <param name="smsTemplatesParamses"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
+        SMS_TEMPLATES AddSmsTemplatesParams(SMS_TEMPLATES templ, IEnumerable<SmsTemplatesParams> smsTemplatesParamses, BdpEntities context)
+        {
+            foreach (var smsTemplatesParamse in smsTemplatesParamses)
+            {
+                templ.SMS_TEMPLATES_PARAMS.Add(new SMS_TEMPLATES_PARAMS
+                {
+                    VALUE = smsTemplatesParamse.Value,
+                    ID_CONDITION = context.SYS_CONDITIONS.Single(x=>x.KEY_CHAR_VALUE.Equals(smsTemplatesParamse.TypeCondition.ToString())).ID,
+                    ID_FIELD = context.SYS_FIELDS.Single(x=>x.KEY_CHAR_VALUE.Equals(smsTemplatesParamse.Field)).ID
+                });
+            }
+            return templ;
         }
     }
 }
