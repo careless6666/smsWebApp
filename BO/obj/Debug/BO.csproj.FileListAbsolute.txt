@@ -2,4 +2,3 @@ c:\Users\a.usov\Documents\Visual Studio 2013\Projects\SmsWebApplication\BO\bin\D
 c:\Users\a.usov\Documents\Visual Studio 2013\Projects\SmsWebApplication\BO\bin\Debug\BO.pdb
 c:\Users\a.usov\Documents\Visual Studio 2013\Projects\SmsWebApplication\BO\obj\Debug\BO.dll
 c:\Users\a.usov\Documents\Visual Studio 2013\Projects\SmsWebApplication\BO\obj\Debug\BO.pdb
-C:\Users\a.usov\Documents\Visual Studio 2013\Projects\SmsWebApplication\BO\obj\Debug\BO.csprojResolveAssemblyReference.cache

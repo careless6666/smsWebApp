@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddToOrderLogic.cs" />
     <Compile Include="Common\BlCommon.cs" />
     <Compile Include="Common\IBlCommon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

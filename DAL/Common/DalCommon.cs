@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
 using BO;
+using DAL.Models;
 
 namespace DAL.Common 
 {
@@ -99,6 +101,40 @@ namespace DAL.Common
                         Id = (int) cnd.CL_NETS_DEPARTMENTS.CL_DEPARTMENTS.DEP_ID,
                         Name = cnd.CL_NETS_DEPARTMENTS.CL_DEPARTMENTS.DEP_NAME
                     }).ToList();
+            }
+        }
+
+        public void SaveTemplate(ISmsTemplates template)
+        {
+            using (var context = new BdpEntities())
+            {
+                using (var dbContextTransaction = context.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        
+                    }
+                    catch (Exception)
+                    {
+                        dbContextTransaction.Rollback();
+                    }
+                }
+            }
+        }
+
+        void SaveoOtVariables(ISmsTemplates template, BdpEntities context)
+        {
+            var smsEvent =
+                context.OPT_SMS_EVENTS.Single(x => x.KEY_CHAR_VALUE.Equals(template.Event.EventType.ToString()));
+
+            foreach (var smsVariablese in template.Event.Variables)
+            {
+                //context.OPT_SMS_E
+                //context.OPT_SMS_VARIABLES.Add(new OPT_SMS_VARIABLES
+                //{
+                //    NAME = smsVariablese.Name,
+                //    KEY_CHAR_VALUE = smsVariablese.KeyCharName
+                //});
             }
         }
     }

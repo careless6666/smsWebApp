@@ -1,6 +1,7 @@
 ﻿using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using SmsWebApplication.Mappers;
 
 namespace SmsWebApplication
 {
@@ -13,6 +14,7 @@ namespace SmsWebApplication
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             ControllerBuilder.Current.SetControllerFactory(new NInjectControllerFactory());
+            MapperConfig.RegisterMappings();
         }
     }
 }

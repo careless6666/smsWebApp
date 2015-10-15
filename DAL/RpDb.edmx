@@ -1784,6 +1784,12 @@ warning 6002: The table/view 'BdpUsov.dbo.OPT_OPTIONS' does not have a primary k
           <Property Name="NAME" Type="nvarchar(max)" Nullable="false" />
           <Property Name="KEY_CHAR_VALUE" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'BdpUsov.dbo.OPT_SMS_EVENTS_VARIABLES' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="OPT_SMS_EVENTS_VARIABLES">
+          <Property Name="ID_SMS_EVENT" Type="int" />
+          <Property Name="ID_SMS_VARIABLE" Type="int" />
+        </EntityType>-->
         <EntityType Name="OPT_SMS_TEMPLATES">
           <Key>
             <PropertyRef Name="OSMST_ID" />
@@ -2362,7 +2368,7 @@ warning 6002: The table/view 'BdpUsov.dbo.SMS_SEND_CONDITIONS' does not have a p
           <Property Name="ID" Type="int" Nullable="false" />
           <Property Name="ID_SMS_EVENT" Type="int" Nullable="false" />
           <Property Name="IS_SEND" Type="bit" Nullable="false" />
-          <Property Name="NAME" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar(max)" />
           <Property Name="MESSAGE" Type="text" Nullable="false" />
           <Property Name="IS_NEED_TRANSLIT" Type="bit" Nullable="false" />
           <Property Name="IS_DEFAULT" Type="bit" Nullable="false" />
@@ -6597,6 +6603,12 @@ warning 6002: The table/view 'BdpUsov.dbo.WR_20x100COUNTER' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <!--Errors Found During Generation:
+error 6004: The table 'BdpUsov.dbo.OPT_SMS_EVENTS_VARIABLES' is referenced by a relationship, but cannot be found.
+        <Association Name="FK_OPT_SMS_EVENTS_VARIABLES_OPT_SMS_EVENTS" />-->
+        <!--Errors Found During Generation:
+error 6004: The table 'BdpUsov.dbo.OPT_SMS_EVENTS_VARIABLES' is referenced by a relationship, but cannot be found.
+        <Association Name="FK_OPT_SMS_EVENTS_VARIABLES_OPT_SMS_VARIABLES" />-->
         <Association Name="FK_OPT_SUPERVISORS">
           <End Role="SC_USERS" Type="Self.SC_USERS" Multiplicity="1" />
           <End Role="WR_SUPERVISORS" Type="Self.WR_SUPERVISORS" Multiplicity="0..1" />
@@ -13095,7 +13107,7 @@ warning 6002: The table/view 'BdpUsov.dbo.WR_20x100COUNTER' does not have a prim
           <Property Name="ID" Type="Int32" Nullable="false" />
           <Property Name="ID_SMS_EVENT" Type="Int32" Nullable="false" />
           <Property Name="IS_SEND" Type="Boolean" Nullable="false" />
-          <Property Name="NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="MESSAGE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="IS_NEED_TRANSLIT" Type="Boolean" Nullable="false" />
           <Property Name="IS_DEFAULT" Type="Boolean" Nullable="false" />

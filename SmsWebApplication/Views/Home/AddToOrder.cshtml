@@ -8,7 +8,7 @@
     <div class="form-group">
         <label class="control-label col-sm-3 s-label" for="DoNotSendSmsAddToOrder">Не отправлять смс:</label>
         <div class="col-sm-9">
-            <input id="DoNotSendSmsAddToOrder" type="checkbox"/>
+            <input id="DoNotSendSmsAddToOrder" type="checkbox" data-bind="cheked: $root.AddToOrderVM.isSendSms, click: function(data, event) {$root.AddToOrderVM.SendSms(data)}"/>
         </div>
     </div>
     <div class="form-group">
@@ -144,7 +144,7 @@
     </div>
     <div class="form-group">
         <div class="col-sm-12">
-            <button class="btn btn-primary s-btn" type="submit">Сохранить шаблон</button>
+            <button class="btn btn-primary s-btn" type="submit" data-bind="click: $root.AddToOrderVM.SaveTemplate.bind($data)">Сохранить шаблон</button>
             <button class="btn btn-success s-btn" type="button" data-toggle="modal" data-target="#myModal" data-bind="click: $root.AddToOrderVM.PreviewMessageBuilder.bind($data)">Предварительный просмотр</button>
             <button class="btn btn-info s-btn" type="button" data-bind="click: $root.AddToOrderVM.GetDefaultTemplate.bind($data)">Загрузить шаблон по умолчанию</button>
             <button class="btn btn-primary s-btn" type="button">Сохранить шаблон по умочанию</button>

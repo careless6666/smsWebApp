@@ -22,7 +22,7 @@ namespace SmsWebApplication.Models
         public string TimeStart { get; set; }
         public string TimeEnd { get; set; }
         public string Message { get; set; }
-        public bool SendSms { get; set; }
+        public bool IsSendSms => false;
         public bool EnableTranslite { get; set; }
     }
 }

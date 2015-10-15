@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using BO;
+using DAL.Models;
 
 namespace BL.Common
 {
@@ -35,5 +37,17 @@ namespace BL.Common
         {
             return _dalDalCommon.GetGeparmentByClient(clientIds);
         }
+
+        /// <summary>
+        /// Сохраним шаблон для добавления на заказ
+        /// </summary>
+        /// <param name="addToOrderModel">модель добавления на заказ</param>
+        public void SaveSmsTemplate(AddToOrderModel addToOrderModel)
+        {
+            var ao = new AddToOrderLogic();
+            ao.SaveTemplate(addToOrderModel);
+        }
+
+        
     }
 }

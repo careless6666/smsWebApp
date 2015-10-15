@@ -49,6 +49,9 @@ smsModule.ControlsInitialization = new function () {
     return {
         AddToOrder: function () {
             $("#DoNotSendSmsAddToOrder").bootstrapToggle({ on: 'Да', off: 'Нет' });
+            $("#DoNotSendSmsAddToOrder").change(function() {
+                $("#DoNotSendSmsAddToOrder").click();
+            });
             $("#TranslitAddToOrder").bootstrapToggle({ on: 'Да', off: 'Нет' });
             $("#TranslitAddToOrder").change(function() {
                 $("#TranslitAddToOrder").click();
@@ -298,6 +301,38 @@ smsModule.Knockout.Mappings.Map = function () {
         data.AddToOrderVM.Message(transResult);
     }
 
+    vm.SendSms = function(data) {
+        var enableSendSms = !data.AddToOrderVM.isSendSms();
+        data.AddToOrderVM.isSendSms(enableSendSms);
+    }
+
+    vm.SaveTemplate = function(data) {
+        $.ajax({
+            url: saveAddToOrder,
+            data: $.postify({
+                Units: getSelect2Ids($('#SelectedUnitAddToOrder')),
+                Networks: getSelect2Ids($('#SelectedNetworkAddToOrder')),
+                Clients: getSelect2Ids($('#SelectedClientAddToOrder')),
+                WorkTypes: getSelect2Ids($('#SelectedWorkTypesAddToOrder')),
+                Deparment: getSelect2Ids($('#SelectedDepartmentAddToOrder')),
+                IsDefaultTemplate: false,
+                DateStart: data.AddToOrderVM.DateStart() === '' ? null : data.AddToOrderVM.DateStart(),
+                DateEnd: data.AddToOrderVM.DateEnd(),
+                TimeStart: data.AddToOrderVM.TimeStart(),
+                TimeEnd: data.AddToOrderVM.TimeEnd(),
+                Message: data.AddToOrderVM.Message(),
+                SendSms: data.AddToOrderVM.isSendSms(),
+                EnableTranslite: data.AddToOrderVM.EnableTranslite()
+               })
+            ,
+            success: function (data) {
+                alert('Success');
+
+            }
+        });
+    }
+
+
     //bind modal, not all source model, because use modified json object
     var jm = smsModule.Models.AddToOrderViewModel;
     vm.TimeStart = jm.TimeStart;
@@ -308,13 +343,12 @@ smsModule.Knockout.Mappings.Map = function () {
     vm.EnableTranslite = jm.EnableTranslite;
     vm.DefaultTemplate = jm.DefaultTemplate;
     vm.PreviewMessage = '';
+    vm.isSendSms = jm.IsSendSms;
 
     self.viewModel = ko.mapping.fromJS(smsModule.Models.AddToOrderVM);
     ko.mapping.fromJS(smsModule.Models.AddToOrderVM, self.viewModel);
     ko.applyBindings(self.viewModel);
-
-
-
+    
 }
 
 
@@ -330,3 +364,37 @@ smsModule.translate = function (text, engToRus) {
     return text;
 }
 
+// postify.js
+// Converts an object to an ASP.NET MVC  model-binding-friendly format
+// Author: Nick Riggs
+// http://www.nickriggs.com
+
+$.postify = function (value) {
+    var result = {};
+
+    var buildResult = function (object, prefix) {
+        for (var key in object) {
+
+            var postKey = isFinite(key)
+                ? (prefix != "" ? prefix : "") + "[" + key + "]"
+                : (prefix != "" ? prefix + "." : "") + key;
+
+            switch (typeof (object[key])) {
+                case "number": case "string": case "boolean":
+                    result[postKey] = object[key];
+                    break;
+
+                case "object":
+                    if (object[key].toUTCString)
+                        result[postKey] = object[key].toUTCString().replace("UTC", "GMT");
+                    else {
+                        buildResult(object[key], postKey != "" ? postKey : key);
+                    }
+            }
+        }
+    };
+
+    buildResult(value, "");
+
+    return result;
+};

@@ -407,6 +407,14 @@
     <Compile Include="LOG_CC_IN_OUT.cs">
       <DependentUpon>RpDb.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\AddOrderSmsTemplate.cs" />
+    <Compile Include="Models\ConditionTypes.cs" />
+    <Compile Include="Models\ISmsTemplates.cs" />
+    <Compile Include="Models\SmsEvents.cs" />
+    <Compile Include="Models\SmsEventTypes.cs" />
+    <Compile Include="Models\SmsSendConditions.cs" />
+    <Compile Include="Models\SmsTemplatesParams.cs" />
+    <Compile Include="Models\SmsVariables.cs" />
     <Compile Include="NT_BLACKLIST.cs">
       <DependentUpon>RpDb.tt</DependentUpon>
     </Compile>

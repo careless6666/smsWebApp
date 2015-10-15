@@ -11,5 +11,7 @@ namespace BL.Common
         List<string> GetWorkTypes(List<int> unitId, List<int> netId, List<int> clientId);
 
         List<Department> GetGeparmentByClient(List<int> clientIds);
+
+        void SaveSmsTemplate(AddToOrderModel addToOrderModel);
     }
 }
