@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "";
 }
 
 @model SmsWebApplication.Models.ModelsList
@@ -11,6 +11,7 @@
     var getWorkTypesUrl = '@Url.Action("GetWorkTypes")';
     var getDepartmentsUrl = '@Url.Action("GetDepartments")';
     var saveAddToOrder = '@Url.Action("SaveAddToOrder")';
+    var loadDefaultTemplate = '@Url.Action("LoadDefaultTemplate")';
 </script>
 <div class="s-avt-parent-container">
     @*<div class="s-avt-container">

@@ -12,6 +12,8 @@ namespace BL.Common
 
         List<Department> GetGeparmentByClient(List<int> clientIds);
 
-        void SaveSmsTemplate(AddToOrderModel addToOrderModel);
+        Result<bool> SaveSmsTemplate(AddToOrderModel addToOrderModel);
+
+        Result<string> LoadDefaultTemplate(string eventType);
     }
 }

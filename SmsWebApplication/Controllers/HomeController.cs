@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Web.Helpers;
 using System.Web.Mvc;
 using BO;
 using Newtonsoft.Json;
@@ -76,15 +77,12 @@ namespace SmsWebApplication.Controllers
 
         public ActionResult SaveAddToOrder(AddToOrderModel addToOrderModel)
         {
-            try
-            {
-                _blCommon.SaveSmsTemplate(addToOrderModel);
-                return Json(new {Result = true});
-            }
-            catch (Exception ex)
-            {
-                return Json(new { Result = false, Message = ex.Message});
-            }
+            return Json(_blCommon.SaveSmsTemplate(addToOrderModel));
+        }
+
+        public ActionResult LoadDefaultTemplate(string eventType)
+        {
+            return Json(_blCommon.LoadDefaultTemplate(eventType));
         }
     }
 }

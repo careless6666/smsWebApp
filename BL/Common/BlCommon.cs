@@ -43,12 +43,15 @@ namespace BL.Common
         /// Сохраним шаблон для добавления на заказ
         /// </summary>
         /// <param name="addToOrderModel">модель добавления на заказ</param>
-        public void SaveSmsTemplate(AddToOrderModel addToOrderModel)
+        public Result<bool> SaveSmsTemplate(AddToOrderModel addToOrderModel)
         {
             var ao = new AddToOrderLogic(_dalDalCommon);
-            ao.SaveTemplate(addToOrderModel);
+            return ao.SaveTemplate(addToOrderModel);
         }
 
-        
+        public Result<string> LoadDefaultTemplate(string eventType)
+        {
+            return _dalDalCommon.LoadDefaultTemplate(eventType);
+        }
     }
 }

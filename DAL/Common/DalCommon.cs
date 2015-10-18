@@ -105,51 +105,95 @@ namespace DAL.Common
             }
         }
 
-        public Result SaveTemplate(ISmsTemplates template)
+        public Result<bool> SaveTemplate(ISmsTemplates template)
         {
-            var res = new Result();
+            var res = new Result<bool>();
             using (var context = new BdpEntities())
             {
                 using (var dbContextTransaction = context.Database.BeginTransaction())
                 {
                     try
                     {
-                        var templ = new SMS_TEMPLATES();
-                        //условия отправки шаблона
-                        templ = AddSendConditionParams(templ, template.SmsSendConditionses, context);
-                        //параметры шаблона
-                        templ = AddSmsTemplatesParams(templ, template.SmsTemplatesParamses, context);
-                        //событие шаблона
-                        templ.OPT_SMS_EVENTS =
-                            context.OPT_SMS_EVENTS.Single(
-                                x => x.KEY_CHAR_VALUE.Equals(template.Event.EventType.ToString()));
-
-                        templ.IS_SEND = template.IsSend;
-                        templ.MESSAGE = template.Message;
-                        templ.IS_NEED_TRANSLIT = template.IsNeedTranslit;
-                        templ.IS_DEFAULT = template.IsDefault;
-
-                        //запись в историю
-                        templ.SMS_TEMPLATES_HISTORY.Add(new SMS_TEMPLATES_HISTORY
+                        var existTemplate = CheckExistTemplate(template.SmsTemplatesParamses, context, template.Event.EventType, template.IsDefault);
+                        if (existTemplate != null)
                         {
-                            EDIT_DATE = DateTime.UtcNow,
-                            US_ID = context.SC_USERS.Single(x=>x.SCU_LDAP_ACCOUNT.Equals(template.User.LadpName)).US_ID,
-                        });
+                            //условия отправки шаблона
+                            existTemplate.SMS_SEND_CONDITIONS_PARAMS.ToList().ForEach(x=> context.SMS_SEND_CONDITIONS_PARAMS.Remove(x));
+                            existTemplate = AddSendConditionParams(existTemplate, template.SmsSendConditionses, context);
 
-                        context.SMS_TEMPLATES.Add(templ);
+                            existTemplate.IS_SEND = template.IsSend;
+                            existTemplate.MESSAGE = template.Message;
+                            existTemplate.IS_NEED_TRANSLIT = template.IsNeedTranslit;
+                            existTemplate.IS_DEFAULT = template.IsDefault;
 
+                            //запись в историю
+                            existTemplate.SMS_TEMPLATES_HISTORY.Add(new SMS_TEMPLATES_HISTORY
+                            {
+                                EDIT_DATE = DateTime.UtcNow,
+                                US_ID = context.SC_USERS.Single(x => x.SCU_LDAP_ACCOUNT.Equals(template.User.LadpName)).US_ID,
+                            });
+                        }
+                        else
+                        {
+                            var templ = new SMS_TEMPLATES();
+                            //условия отправки шаблона
+                            templ = AddSendConditionParams(templ, template.SmsSendConditionses, context);
+                            //параметры шаблона
+                            templ = AddSmsTemplatesParams(templ, template.SmsTemplatesParamses, context);
+                            //событие шаблона
+                            templ.OPT_SMS_EVENTS =
+                                context.OPT_SMS_EVENTS.Single(
+                                    x => x.KEY_CHAR_VALUE.Equals(template.Event.EventType.ToString()));
+
+                            templ.IS_SEND = template.IsSend;
+                            templ.MESSAGE = template.Message;
+                            templ.IS_NEED_TRANSLIT = template.IsNeedTranslit;
+                            templ.IS_DEFAULT = template.IsDefault;
+
+                            //запись в историю
+                            templ.SMS_TEMPLATES_HISTORY.Add(new SMS_TEMPLATES_HISTORY
+                            {
+                                EDIT_DATE = DateTime.UtcNow,
+                                US_ID = context.SC_USERS.Single(x => x.SCU_LDAP_ACCOUNT.Equals(template.User.LadpName)).US_ID,
+                            });
+
+                            context.SMS_TEMPLATES.Add(templ);
+                        }
+                        
                         context.SaveChanges();
                         dbContextTransaction.Commit();
                     }
                     catch (Exception ex)
                     {
                         dbContextTransaction.Rollback();
+                        res.ResultOperation = false;
                         res.ErrorMessage = ex.Message;
                         res.Exception = res.Exception;
                     }
                     return res;
                 }
             }
+        }
+
+        public Result<string> LoadDefaultTemplate(string eventType)
+        {
+            var res= new Result<string>();
+            try
+            {
+                using (var context = new BdpEntities())
+                {
+                    res.ResultObject =
+                        context.SMS_TEMPLATES.Single(
+                            x => x.IS_DEFAULT && x.OPT_SMS_EVENTS.KEY_CHAR_VALUE.Equals(eventType)).MESSAGE;
+                }
+            }
+            catch (Exception ex)
+            {
+                res.ResultOperation = false;
+                res.ErrorMessage = ex.Message;
+                res.Exception = ex;
+            }
+            return res;
         }
 
         /// <summary>
@@ -192,6 +236,26 @@ namespace DAL.Common
                 });
             }
             return templ;
+        }
+
+        SMS_TEMPLATES CheckExistTemplate(IEnumerable<SmsTemplatesParams> smsTemplatesParamses, BdpEntities context, SmsEventTypes eventType, bool isDefault)
+        {
+            var count = smsTemplatesParamses.Count();
+            var templates = context.SMS_TEMPLATES.Where(x=>x.SMS_TEMPLATES_PARAMS.Count == count &&
+                                                                                                 x.IS_DEFAULT.Equals(isDefault) &&
+                                                                                                 x.OPT_SMS_EVENTS.KEY_CHAR_VALUE.Equals(eventType.ToString())
+                                                            );
+
+            foreach (var smsTemplatesParamse in smsTemplatesParamses)
+            {
+                templates = 
+                    templates.Where(
+                       x => x.SMS_TEMPLATES_PARAMS.Any(z => z.VALUE.Equals(smsTemplatesParamse.Value) &&
+                        z.SYS_FIELDS.KEY_CHAR_VALUE.Equals(smsTemplatesParamse.Field) && 
+                         z.SYS_CONDITIONS.KEY_CHAR_VALUE.Equals(smsTemplatesParamse.TypeCondition.ToString())));
+            }
+
+            return templates.FirstOrDefault();
         }
     }
 }

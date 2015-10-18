@@ -146,8 +146,8 @@
         <div class="col-sm-12">
             <button class="btn btn-primary s-btn" type="submit" data-bind="click: $root.AddToOrderVM.SaveTemplate.bind($data)">Сохранить шаблон</button>
             <button class="btn btn-success s-btn" type="button" data-toggle="modal" data-target="#myModal" data-bind="click: $root.AddToOrderVM.PreviewMessageBuilder.bind($data)">Предварительный просмотр</button>
-            <button class="btn btn-info s-btn" type="button" data-bind="click: $root.AddToOrderVM.GetDefaultTemplate.bind($data)">Загрузить шаблон по умолчанию</button>
-            <button class="btn btn-primary s-btn" type="button">Сохранить шаблон по умочанию</button>
+            <button class="btn btn-info s-btn" type="button" data-bind="click: $root.AddToOrderVM.LoadDefaultTemplate.bind($data)">Загрузить шаблон по умолчанию</button>
+            <button class="btn btn-primary s-btn" type="button"  data-bind="click: $root.AddToOrderVM.SaveDefaultTemplate.bind($data)">Сохранить шаблон по умочанию</button>
         </div>
     </div>
 </form>

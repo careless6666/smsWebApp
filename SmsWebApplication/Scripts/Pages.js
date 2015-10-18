@@ -151,6 +151,10 @@ smsModule.Knockout.Mappings.Map = function () {
     smsModule.Models.AddToOrderVM.AddToOrderVM = new function () { };
     var vm = smsModule.Models.AddToOrderVM.AddToOrderVM;
     vm.ChangeUnit = function () {
+
+        smsModule.Utils.LockElement($('#s2id_SelectedNetworkAddToOrder'), true);
+        smsModule.Utils.AnimateElement($('#s2id_SelectedNetworkAddToOrder'), true);
+
         $.ajax({
             url: getNetsUrl,
             data: {
@@ -168,11 +172,22 @@ smsModule.Knockout.Mappings.Map = function () {
                 //  $('#SelectedNetworkAddToOrder').select2().select2('val', $('#SelectedNetworkAddToOrder option:eq(0)').val());
                 // }
                 vm.ChangeNet();
+            },
+            error:function(data) {
+                smsModule.Utils.ShowErrorNotify('не удалось получить список сетей');
+            },
+            complete: function() {
+                smsModule.Utils.LockElement($('#s2id_SelectedNetworkAddToOrder'), false);
+                smsModule.Utils.AnimateElement($('#s2id_SelectedNetworkAddToOrder'), false);
             }
         });
     }
 
     vm.ChangeNet = function () {
+
+        smsModule.Utils.LockElement($('#s2id_SelectedClientAddToOrder'), true);
+        smsModule.Utils.AnimateElement($('#s2id_SelectedClientAddToOrder'), true);
+
         $.ajax({
             url: getClientsUrl,
             data: {
@@ -192,11 +207,22 @@ smsModule.Knockout.Mappings.Map = function () {
                 // $('#SelectedClientAddToOrder').select2().select2('val', $('#SelectedClientAddToOrder option:eq(0)').val());
                 vm.ChangeWorkType();
                 vm.UpdateDeparments();
+            },
+            error: function(data) {
+                smsModule.Utils.ShowErrorNotify('не удалось получить список сетей');
+            },
+            complete:function() {
+                smsModule.Utils.LockElement($('#s2id_SelectedClientAddToOrder'), false);
+                smsModule.Utils.AnimateElement($('#s2id_SelectedClientAddToOrder'), false);
             }
         });
     };
 
     vm.ChangeWorkType = function () {
+
+        smsModule.Utils.LockElement($('#s2id_SelectedWorkTypesAddToOrder'), true);
+        smsModule.Utils.AnimateElement($('#s2id_SelectedWorkTypesAddToOrder'), true);
+
         $.ajax({
             url: getWorkTypesUrl,
             data: {
@@ -212,13 +238,23 @@ smsModule.Knockout.Mappings.Map = function () {
                 //select first element
                 //if ($('#SelectedClientAddToOrder option:eq(0)').length > 0)
                 //    $('#SelectedClientAddToOrder').select2().select2('val', $('#SelectedClientAddToOrder option:eq(0)').val());
-
+            },
+            error:function(data) {
+                smsModule.Utils.ShowErrorNotify('не удалось получить список типов работ');
+            },
+            complete:function() {
+                smsModule.Utils.LockElement($('#s2id_SelectedWorkTypesAddToOrder'), false);
+                smsModule.Utils.AnimateElement($('#s2id_SelectedWorkTypesAddToOrder'), false);
             }
         });
         vm.UpdateDeparments();
     };
 
     vm.UpdateDeparments = function () {
+
+        smsModule.Utils.LockElement($('#s2id_SelectedDepartmentAddToOrder'), true);
+        smsModule.Utils.AnimateElement($('#s2id_SelectedDepartmentAddToOrder'), true);
+
         $.ajax({
             url: getDepartmentsUrl,
             data: {
@@ -232,7 +268,13 @@ smsModule.Knockout.Mappings.Map = function () {
                 //select first element
                 //if ($('#SelectedClientAddToOrder option:eq(0)').length > 0)
                 //    $('#SelectedClientAddToOrder').select2().select2('val', $('#SelectedClientAddToOrder option:eq(0)').val());
-
+            },
+            error: function(data) {
+                smsModule.Utils.ShowErrorNotify('не удалось получить список отделов');
+            },
+            complete: function() {
+                smsModule.Utils.LockElement($('#s2id_SelectedDepartmentAddToOrder'), false);
+                smsModule.Utils.AnimateElement($('#s2id_SelectedDepartmentAddToOrder'), false);
             }
         });
     };
@@ -327,11 +369,75 @@ smsModule.Knockout.Mappings.Map = function () {
                })
             ,
             success: function (data) {
-                alert('Success');
-
+                if (data.ResultOperation) {
+                    smsModule.Utils.ShowSuccessNotify('Данные успешно сохранены');
+                } else {
+                    smsModule.Utils.ShowErrorNotify(data.ErrorMessage);
+                }
+            },
+            error: function(data) {
+                smsModule.Utils.ShowErrorNotify('не удалось сохранить шаблон');
             }
         });
     }
+
+    vm.SaveDefaultTemplate = function (data) {
+        $.ajax({
+            type: 'POST',
+            url: saveAddToOrder,
+            data: $.postify({
+                Units: getSelect2Ids($('#SelectedUnitAddToOrder')),
+                Networks: getSelect2Ids($('#SelectedNetworkAddToOrder')),
+                Clients: getSelect2Ids($('#SelectedClientAddToOrder')),
+                WorkTypes: getSelect2Ids($('#SelectedWorkTypesAddToOrder')),
+                Deparment: getSelect2Ids($('#SelectedDepartmentAddToOrder')),
+                IsDefaultTemplate: true,
+                DateStart: data.AddToOrderVM.DateStart() === '' ? null : data.AddToOrderVM.DateStart(),
+                DateEnd: data.AddToOrderVM.DateEnd(),
+                TimeStart: data.AddToOrderVM.TimeStart(),
+                TimeEnd: data.AddToOrderVM.TimeEnd(),
+                Message: data.AddToOrderVM.Message(),
+                SendSms: data.AddToOrderVM.isSendSms(),
+                EnableTranslite: data.AddToOrderVM.EnableTranslite()
+            })
+            ,
+            success: function (data) {
+                if (data.ResultOperation) {
+                    smsModule.Utils.ShowSuccessNotify('Данные успешно сохранены');
+                } else {
+                    smsModule.Utils.ShowErrorNotify(data.ErrorMessage);
+                }
+
+            },
+            error: function(data) {
+                smsModule.Utils.ShowErrorNotify('не удалось сохранить шаблон');
+            }
+        });
+    }
+
+    vm.LoadDefaultTemplate = function (data) {
+        var obsData = data;
+        $.ajax({
+            type: 'POST',
+            url: loadDefaultTemplate,
+            data: {
+                eventType: 'AddToOrder'
+            },
+            success: function (data) {
+                if (data.ResultOperation) {
+                    obsData.AddToOrderVM.Message(data.ResultObject);
+                } else {
+                    smsModule.Utils.ShowErrorNotify(data.ErrorMessage);
+                }
+            },
+            error: function(data) {
+                smsModule.Utils.ShowErrorNotify('не удалось загрузить шаблон по умолчанию');
+            }
+
+        });
+    }
+
+
 
 
     //bind modal, not all source model, because use modified json object
@@ -399,3 +505,68 @@ $.postify = function (value) {
 
     return result;
 };
+
+
+smsModule.Utils = new function() {};
+/**
+ * 
+ * @param {} element - single or group of elements for locking
+ * @param {} type - lock or unlock elements
+ * @returns {} 
+ */
+smsModule.Utils.LockElement = function (element, type) {
+    if (element.constructor === Array) {
+        $.each(element, function (key, value) {
+            $(value).attr('disabled', type);
+        });
+    } else {
+        $(element).attr('disabled', type);
+    }
+}
+/**
+ * 
+ * @param {} element - container for animations
+ * @param {} type - show or hide animations
+ * @returns {} 
+ */
+smsModule.Utils.AnimateElement = function (element, type) {
+    if (type) {
+        $(element).plainOverlay('show');
+    } else {
+        $(element).plainOverlay('hide');
+    }
+}
+
+smsModule.Utils.ShowErrorNotify = function(message) {
+    $.notify({
+        // options
+        title: "<strong>Ошибка: </strong> ",
+        icon: 'glyphicon glyphicon-warning-sign',
+        message: message
+    }, {
+        // settings
+        type: 'danger',
+        placement: {
+            from: "bottom",
+            align: "center"
+        },
+        timer: 60000
+    });
+}
+
+smsModule.Utils.ShowSuccessNotify = function (message) {
+    $.notify({
+        // options
+        title: "<strong>Информация: </strong> ",
+        icon: 'glyphicon glyphicon-info-sign',
+        message: message
+    }, {
+        // settings
+        type: 'success',
+        placement: {
+            from: "bottom",
+            align: "center"
+        },
+        timer: 2000
+    });
+}

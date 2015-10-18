@@ -16,7 +16,6 @@ namespace DAL.DbClasses
             SMS_TEMPLATES_PARAMS = new HashSet<SMS_TEMPLATES_PARAMS>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ID { get; set; }
 
         public int ID_SMS_EVENT { get; set; }

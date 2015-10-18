@@ -20,7 +20,7 @@ namespace BL
         /// Сохраним шаблон для добавления на заказ
         /// </summary>
         /// <param name="addToOrderModel"></param>
-        public void SaveTemplate(AddToOrderModel addToOrderModel)
+        public Result<bool> SaveTemplate(AddToOrderModel addToOrderModel)
         {
             ISmsTemplates smsTemplate = new AddOrderSmsTemplate();
 
@@ -65,26 +65,51 @@ namespace BL
             //параметры шаблона
             var smsParams = new List<SmsTemplatesParams>();
 
-            //подразделения
-            smsParams.AddRange(addTemplateParams(addToOrderModel.Units, ConditionTypes.Equals, KeyCharVariables.Unit));
+            if (!addToOrderModel.IsDefaultTemplate)
+            {
+                //подразделения
+                smsParams.AddRange(addTemplateParams(addToOrderModel.Units, ConditionTypes.Equals, KeyCharVariables.Unit));
 
-            //сети
-            smsParams.AddRange(addTemplateParams(addToOrderModel.Networks, ConditionTypes.Equals, KeyCharVariables.Net));
+                //сети
+                smsParams.AddRange(addTemplateParams(addToOrderModel.Networks, ConditionTypes.Equals,
+                    KeyCharVariables.Net));
 
-            //клиенты
-            smsParams.AddRange(addTemplateParams(addToOrderModel.Clients, ConditionTypes.Equals, KeyCharVariables.Client));
+                //клиенты
+                smsParams.AddRange(addTemplateParams(addToOrderModel.Clients, ConditionTypes.Equals,
+                    KeyCharVariables.Client));
 
-            //типы работ
-            smsParams.AddRange(addTemplateParams(addToOrderModel.WorkTypes, ConditionTypes.Equals, KeyCharVariables.WorkType));
+                //типы работ
+                smsParams.AddRange(addTemplateParams(addToOrderModel.WorkTypes, ConditionTypes.Equals,
+                    KeyCharVariables.WorkType));
 
-            //отделы
-            smsParams.AddRange(addTemplateParams(addToOrderModel.Deparment, ConditionTypes.Equals, KeyCharVariables.Department));
+                //отделы
+                smsParams.AddRange(addTemplateParams(addToOrderModel.Deparment, ConditionTypes.Equals,
+                    KeyCharVariables.Department));
+            }
+            else
+            {
+                var list = new List<int>();
+                //подразделения
+                smsParams.AddRange(addTemplateParams(list, ConditionTypes.Equals, KeyCharVariables.Unit));
+
+                //сети
+                smsParams.AddRange(addTemplateParams(list, ConditionTypes.Equals, KeyCharVariables.Net));
+
+                //клиенты
+                smsParams.AddRange(addTemplateParams(list, ConditionTypes.Equals, KeyCharVariables.Client));
+
+                //типы работ
+                smsParams.AddRange(addTemplateParams(list, ConditionTypes.Equals, KeyCharVariables.WorkType));
+
+                //отделы
+                smsParams.AddRange(addTemplateParams(list, ConditionTypes.Equals, KeyCharVariables.Department));
+            }
 
             smsTemplate.SmsTemplatesParamses = smsParams;
             
             smsTemplate.User = new User { LadpName = HttpContext.Current.User.Identity.Name };
 
-            _dalCommon.SaveTemplate(smsTemplate);
+            return _dalCommon.SaveTemplate(smsTemplate);
         }
 
         IEnumerable<SmsTemplatesParams> addTemplateParams<T>(List<T> itemslist, ConditionTypes condition, KeyCharVariables field)
