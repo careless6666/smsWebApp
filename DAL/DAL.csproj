@@ -1,0 +1,397 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{75375F13-4EAF-4BB7-B3FF-012734475E39}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DAL</RootNamespace>
+    <AssemblyName>DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\DalCommon.cs" />
+    <Compile Include="Common\IDalCommon.cs" />
+    <Compile Include="DbClasses\ACTION.cs" />
+    <Compile Include="DbClasses\ACTION_PAYMENTS.cs" />
+    <Compile Include="DbClasses\ACTION_PAYMENTS_HISTORY.cs" />
+    <Compile Include="DbClasses\ACT_ACTIONS.cs" />
+    <Compile Include="DbClasses\ACT_ACTION_NUMBER_SHIFTS.cs" />
+    <Compile Include="DbClasses\AC_ACCRUALS_WORKER_ACTION_PAYMENTS.cs" />
+    <Compile Include="DbClasses\AC_ACCRUAL_CHARGE.cs" />
+    <Compile Include="DbClasses\AC_ACCRUAL_KEEPING.cs" />
+    <Compile Include="DbClasses\AC_ACCRUAL_ORDER.cs" />
+    <Compile Include="DbClasses\AC_ACCRUAL_RECRUITER.cs" />
+    <Compile Include="DbClasses\AC_ACCRUAL_TYPE.cs" />
+    <Compile Include="DbClasses\AC_ACCRUAL_WR_CHARGE.cs" />
+    <Compile Include="DbClasses\AC_ACCURAL.cs" />
+    <Compile Include="DbClasses\AC_BANKS.cs" />
+    <Compile Include="DbClasses\AC_BANKS_UNITS.cs" />
+    <Compile Include="DbClasses\AC_BANKS_UNITS_ACTIONS.cs" />
+    <Compile Include="DbClasses\AC_INTEGRATION_TRANSFERS.cs" />
+    <Compile Include="DbClasses\AC_INTEGRATION_TRANSFERS_ACCURALS.cs" />
+    <Compile Include="DbClasses\AC_INTEGRATION_TRANSFERS_PAYMENT.cs" />
+    <Compile Include="DbClasses\AC_MONEY_HIST.cs" />
+    <Compile Include="DbClasses\ALFA_NEW_REGIONS.cs" />
+    <Compile Include="DbClasses\ARCHIVE_WR_WAGES.cs" />
+    <Compile Include="DbClasses\ARCH_STATUSES.cs" />
+    <Compile Include="DbClasses\BANK_TRANSFERS.cs" />
+    <Compile Include="DbClasses\BANK_TRANSFERS_HISTORY.cs" />
+    <Compile Include="DbClasses\BANK_TRANSFERS_PAYMENT_HISTORY.cs" />
+    <Compile Include="DbClasses\BANK_TRANSFERS_STATUS.cs" />
+    <Compile Include="DbClasses\BdpEntities.cs" />
+    <Compile Include="DbClasses\CC_BLOCK.cs" />
+    <Compile Include="DbClasses\CC_CALLBACK_BLOCK.cs" />
+    <Compile Include="DbClasses\CC_CALL_RESULTS.cs" />
+    <Compile Include="DbClasses\CC_CALL_RESULT_TYPES.cs" />
+    <Compile Include="DbClasses\CC_IPTEL_CALL_RESULTS.cs" />
+    <Compile Include="DbClasses\CC_IPTEL_CALL_RESULT_TYPES.cs" />
+    <Compile Include="DbClasses\CC_IPTEL_LOGS.cs" />
+    <Compile Include="DbClasses\CC_IPTEL_LOG_TYPES.cs" />
+    <Compile Include="DbClasses\CC_IPTEL_SID_INFO.cs" />
+    <Compile Include="DbClasses\CC_IPTEL_TASKS.cs" />
+    <Compile Include="DbClasses\CC_IPTEL_TASK_CAMPAIGN.cs" />
+    <Compile Include="DbClasses\CC_IPTEL_TASK_ORDER.cs" />
+    <Compile Include="DbClasses\CC_IPTEL_TASK_PRIORITY.cs" />
+    <Compile Include="DbClasses\CC_IPTEL_TASK_STATUS.cs" />
+    <Compile Include="DbClasses\CC_IPTEL_TASK_TYPES.cs" />
+    <Compile Include="DbClasses\CC_IPTEL_USERS_STATUSES.cs" />
+    <Compile Include="DbClasses\CC_IPTEL_WKAC.cs" />
+    <Compile Include="DbClasses\CC_MANAGER_TASK.cs" />
+    <Compile Include="DbClasses\CC_MANAGER_TASK_CANDIDATES.cs" />
+    <Compile Include="DbClasses\CC_MANAGER_TASK_TYPE.cs" />
+    <Compile Include="DbClasses\CC_MANAGER_TASK_WORKERS.cs" />
+    <Compile Include="DbClasses\CC_RECALL_TASK.cs" />
+    <Compile Include="DbClasses\CC_REG_GIVE_MONEY.cs" />
+    <Compile Include="DbClasses\CC_WORKER_REMINDS.cs" />
+    <Compile Include="DbClasses\CGNT_BILL.cs" />
+    <Compile Include="DbClasses\CGNT_BILL_ITEM.cs" />
+    <Compile Include="DbClasses\CGNT_CONTRAGENT.cs" />
+    <Compile Include="DbClasses\CGNT_FIN_UNIT.cs" />
+    <Compile Include="DbClasses\CGNT_FIN_UNIT_UNIT.cs" />
+    <Compile Include="DbClasses\CGN_BONUS_CLIENTS.cs" />
+    <Compile Include="DbClasses\CGN_BONUS_OPTIONS.cs" />
+    <Compile Include="DbClasses\CGN_CAMPAIGN.cs" />
+    <Compile Include="DbClasses\CGN_CAMPAIGN_ACTUALS.cs" />
+    <Compile Include="DbClasses\CGN_CAMPAIGN_REQUIREMENTS.cs" />
+    <Compile Include="DbClasses\CGN_CAMPAIGN_TYPES.cs" />
+    <Compile Include="DbClasses\CGN_CAMPAIGN_WORKERS.cs" />
+    <Compile Include="DbClasses\CGN_CAMPAIGN_WORK_TYPES.cs" />
+    <Compile Include="DbClasses\CGN_QUEUE_ACTUALISATION.cs" />
+    <Compile Include="DbClasses\CL_ACTUAL_CONFIGURATIONS.cs" />
+    <Compile Include="DbClasses\CL_ACTUAL_SETTINGS.cs" />
+    <Compile Include="DbClasses\CL_ACTUAL_SETTINGS_TRANSACTIONS.cs" />
+    <Compile Include="DbClasses\CL_ACTUAL_SETTINGS_TRANSACTIONS_TYPES.cs" />
+    <Compile Include="DbClasses\CL_BLACKLIST.cs" />
+    <Compile Include="DbClasses\CL_CLIENTS.cs" />
+    <Compile Include="DbClasses\CL_CLIENTS_CONTRAGENT.cs" />
+    <Compile Include="DbClasses\CL_CLIENTS_NETS_DEPARTEMNTS.cs" />
+    <Compile Include="DbClasses\CL_CLIENTS_USERS.cs" />
+    <Compile Include="DbClasses\CL_CLIENT_REQUIREMENTS.cs" />
+    <Compile Include="DbClasses\CL_CLOSED_PERIODS.cs" />
+    <Compile Include="DbClasses\CL_CONTACTS.cs" />
+    <Compile Include="DbClasses\CL_CONTRACT.cs" />
+    <Compile Include="DbClasses\CL_CONTRACT_ITEM.cs" />
+    <Compile Include="DbClasses\CL_CONTRACT_WORK_TYPE.cs" />
+    <Compile Include="DbClasses\CL_DEPARTMENTS.cs" />
+    <Compile Include="DbClasses\CL_JURI_NAMES.cs" />
+    <Compile Include="DbClasses\CL_JURI_NAMES_EXTENSIONS.cs" />
+    <Compile Include="DbClasses\CL_JURI_NAMES_EXTENSIONS_TYPE.cs" />
+    <Compile Include="DbClasses\CL_JURI_NETS.cs" />
+    <Compile Include="DbClasses\CL_LEGAL_ENTITY_TAXATION_TYPES.cs" />
+    <Compile Include="DbClasses\CL_MAIL_TEMPLATES.cs" />
+    <Compile Include="DbClasses\CL_NETS.cs" />
+    <Compile Include="DbClasses\CL_NETS_DEPARTMENTS.cs" />
+    <Compile Include="DbClasses\CL_PRIORITY.cs" />
+    <Compile Include="DbClasses\CL_RANGE_REQUIREMENTS.cs" />
+    <Compile Include="DbClasses\CL_RATE.cs" />
+    <Compile Include="DbClasses\CL_SUPERVISORS.cs" />
+    <Compile Include="DbClasses\CL_WORK_COSTS.cs" />
+    <Compile Include="DbClasses\CL_WR_WAGE.cs" />
+    <Compile Include="DbClasses\db_updates.cs" />
+    <Compile Include="DbClasses\FIRE_MACHINE.cs" />
+    <Compile Include="DbClasses\FIRE_MACHINE_HISTORY.cs" />
+    <Compile Include="DbClasses\FUN_MAGIC_BUTTON.cs" />
+    <Compile Include="DbClasses\GREEN_LIST.cs" />
+    <Compile Include="DbClasses\GREEN_LIST_HISTORY.cs" />
+    <Compile Include="DbClasses\INV_HISTORY.cs" />
+    <Compile Include="DbClasses\INV_INVOICE.cs" />
+    <Compile Include="DbClasses\INV_ITEM.cs" />
+    <Compile Include="DbClasses\INV_ITEM_LEGAL_ENTITY.cs" />
+    <Compile Include="DbClasses\INV_ITEM_ORDER.cs" />
+    <Compile Include="DbClasses\INV_ITEM_TYPE.cs" />
+    <Compile Include="DbClasses\INV_ITEM_WORKER.cs" />
+    <Compile Include="DbClasses\INV_SENT_EMAILS.cs" />
+    <Compile Include="DbClasses\INV_SIGN.cs" />
+    <Compile Include="DbClasses\INV_SIGN_TYPE.cs" />
+    <Compile Include="DbClasses\IVLEV_OR_ORDER_ACTUALS.cs" />
+    <Compile Include="DbClasses\IVLEV_PERS_OUT.cs" />
+    <Compile Include="DbClasses\LE_OBLIGATION.cs" />
+    <Compile Include="DbClasses\LE_OBLIGATION_HISTORY.cs" />
+    <Compile Include="DbClasses\LE_SIGN.cs" />
+    <Compile Include="DbClasses\LG_USERS_ACTS.cs" />
+    <Compile Include="DbClasses\LOG_CC_IN_OUT.cs" />
+    <Compile Include="DbClasses\NT_BLACKLIST.cs" />
+    <Compile Include="DbClasses\NT_NET_REQUIREMENTS.cs" />
+    <Compile Include="DbClasses\NT_RANGE_REQUIREMENTS.cs" />
+    <Compile Include="DbClasses\OPT_ACTION_BONUSES_20x100.cs" />
+    <Compile Include="DbClasses\OPT_ACTION_TYPES.cs" />
+    <Compile Include="DbClasses\OPT_ACTUAL_COEF_TYPES.cs" />
+    <Compile Include="DbClasses\OPT_ACTUAL_COEF_VALUES.cs" />
+    <Compile Include="DbClasses\OPT_ATTRIBUTES.cs" />
+    <Compile Include="DbClasses\OPT_BANK_CARDS.cs" />
+    <Compile Include="DbClasses\OPT_BONUS_NAMES.cs" />
+    <Compile Include="DbClasses\OPT_CHARACTERISTIC.cs" />
+    <Compile Include="DbClasses\OPT_CHARGE_GROUP.cs" />
+    <Compile Include="DbClasses\OPT_CH_ITEM.cs" />
+    <Compile Include="DbClasses\OPT_DATE_STATE_MIND.cs" />
+    <Compile Include="DbClasses\OPT_DISMISSAL_ITEMS.cs" />
+    <Compile Include="DbClasses\OPT_DISMISSAL_ITEM_COST.cs" />
+    <Compile Include="DbClasses\OPT_DOCS_STATES.cs" />
+    <Compile Include="DbClasses\OPT_DOCUMENT_TYPES.cs" />
+    <Compile Include="DbClasses\OPT_DOC_STATE_ATTRIBUTES.cs" />
+    <Compile Include="DbClasses\OPT_DOC_TYPES_ATTRS.cs" />
+    <Compile Include="DbClasses\OPT_EMAILS.cs" />
+    <Compile Include="DbClasses\OPT_FILE_EXTENSIONS.cs" />
+    <Compile Include="DbClasses\OPT_FIN_BDP_WORK_TYPES.cs" />
+    <Compile Include="DbClasses\OPT_FIN_WORK_TYPES.cs" />
+    <Compile Include="DbClasses\OPT_HOSTEL.cs" />
+    <Compile Include="DbClasses\OPT_IMG_NAMES.cs" />
+    <Compile Include="DbClasses\OPT_INFO_SITES.cs" />
+    <Compile Include="DbClasses\OPT_INTERVIEW_TYPE.cs" />
+    <Compile Include="DbClasses\OPT_KEEPING.cs" />
+    <Compile Include="DbClasses\OPT_KEEPING_STATUS.cs" />
+    <Compile Include="DbClasses\OPT_KEEPING_UNITS.cs" />
+    <Compile Include="DbClasses\OPT_LATERS.cs" />
+    <Compile Include="DbClasses\OPT_MAIN_REGIONS.cs" />
+    <Compile Include="DbClasses\OPT_MARRIED_TYPES.cs" />
+    <Compile Include="DbClasses\OPT_NATIONALITY_TYPES.cs" />
+    <Compile Include="DbClasses\OPT_OPTIONS.cs" />
+    <Compile Include="DbClasses\OPT_OUTPUT_TYPE.cs" />
+    <Compile Include="DbClasses\OPT_PENALTY_STATUS.cs" />
+    <Compile Include="DbClasses\OPT_PENALTY_TYPES.cs" />
+    <Compile Include="DbClasses\OPT_RANGE_REFERENCES.cs" />
+    <Compile Include="DbClasses\OPT_RecruiterTypes.cs" />
+    <Compile Include="DbClasses\OPT_RECRUITER_TYPE.cs" />
+    <Compile Include="DbClasses\OPT_REFERENCES.cs" />
+    <Compile Include="DbClasses\OPT_REFERENCES_CHECK_SEQURITY.cs" />
+    <Compile Include="DbClasses\OPT_REFERENCES_UNIT.cs" />
+    <Compile Include="DbClasses\OPT_REGIONAL_PENALTY_COSTS.cs" />
+    <Compile Include="DbClasses\OPT_REGIONAL_SMS.cs" />
+    <Compile Include="DbClasses\OPT_REGIONAL_SPECIFICS.cs" />
+    <Compile Include="DbClasses\OPT_RELATIONSHIP_PENALTY_TYPES.cs" />
+    <Compile Include="DbClasses\OPT_SHEDULE.cs" />
+    <Compile Include="DbClasses\OPT_SHEDULE_TYPE.cs" />
+    <Compile Include="DbClasses\OPT_SHIFTS_BEFORE_PAY.cs" />
+    <Compile Include="DbClasses\OPT_SIZES.cs" />
+    <Compile Include="DbClasses\OPT_SMS_EVENTS.cs" />
+    <Compile Include="DbClasses\OPT_SMS_EVENTS_VARIABLES.cs" />
+    <Compile Include="DbClasses\OPT_SMS_TEMPLATES.cs" />
+    <Compile Include="DbClasses\OPT_SMS_VARIABLES.cs" />
+    <Compile Include="DbClasses\OPT_STATUS.cs" />
+    <Compile Include="DbClasses\OPT_STATUSES.cs" />
+    <Compile Include="DbClasses\OPT_STATUS_GROUP.cs" />
+    <Compile Include="DbClasses\OPT_SUPERVISOR_TYPES.cs" />
+    <Compile Include="DbClasses\OPT_TEL_CODE_ZONES.cs" />
+    <Compile Include="DbClasses\OPT_WAGE_OPTIONS_TYPE.cs" />
+    <Compile Include="DbClasses\OPT_WORK_TYPES.cs" />
+    <Compile Include="DbClasses\OR_LUOV.cs" />
+    <Compile Include="DbClasses\OR_ORDER.cs" />
+    <Compile Include="DbClasses\OR_ORDER_ACTUALS.cs" />
+    <Compile Include="DbClasses\OR_ORDER_COMMENTS.cs" />
+    <Compile Include="DbClasses\OR_ORDER_COSTS.cs" />
+    <Compile Include="DbClasses\OR_ORDER_COSTS_HISTORY.cs" />
+    <Compile Include="DbClasses\OR_ORDER_HISTORY.cs" />
+    <Compile Include="DbClasses\OR_ORDER_REQUIREMENTS.cs" />
+    <Compile Include="DbClasses\OR_ORDER_WORKERS.cs" />
+    <Compile Include="DbClasses\OR_ORDER_WORKER_HISTORY.cs" />
+    <Compile Include="DbClasses\OR_PRE_ADD.cs" />
+    <Compile Include="DbClasses\OR_QUEUE_ACTUALISATION.cs" />
+    <Compile Include="DbClasses\OR_RANGE_REQUIREMENTS.cs" />
+    <Compile Include="DbClasses\OR_TRAIN_CENTER_AVAILABLE.cs" />
+    <Compile Include="DbClasses\OR_TRAIN_CENTER_AVAILABLE_CAMPAIGNS.cs" />
+    <Compile Include="DbClasses\OR_TRAIN_CENTER_WORKERS.cs" />
+    <Compile Include="DbClasses\OR_TRAIN_CENTER_WORKERS_CAMPAIGN.cs" />
+    <Compile Include="DbClasses\REASONS_FIRE_MACHINE.cs" />
+    <Compile Include="DbClasses\SC_AUTHORIZATION_LOG.cs" />
+    <Compile Include="DbClasses\SC_BANK_SIGNS_RESP.cs" />
+    <Compile Include="DbClasses\SC_PLACES_SMS.cs" />
+    <Compile Include="DbClasses\SC_RELATED_UNITS.cs" />
+    <Compile Include="DbClasses\SC_ROLES.cs" />
+    <Compile Include="DbClasses\SC_UNIT.cs" />
+    <Compile Include="DbClasses\SC_UNIT_PLACES.cs" />
+    <Compile Include="DbClasses\SC_USERS.cs" />
+    <Compile Include="DbClasses\SC_USER_ROLES.cs" />
+    <Compile Include="DbClasses\SMS_RECEIVED_MSG.cs" />
+    <Compile Include="DbClasses\SMS_RECEIVE_REQUESTS.cs" />
+    <Compile Include="DbClasses\SMS_SEND_CONDITIONS.cs" />
+    <Compile Include="DbClasses\SMS_SEND_CONDITIONS_PARAMS.cs" />
+    <Compile Include="DbClasses\SMS_SEND_CONDITIONS_TYPES.cs" />
+    <Compile Include="DbClasses\SMS_TEMPLATES.cs" />
+    <Compile Include="DbClasses\SMS_TEMPLATES_HISTORY.cs" />
+    <Compile Include="DbClasses\SMS_TEMPLATES_PARAMS.cs" />
+    <Compile Include="DbClasses\SYS_CONDITIONS.cs" />
+    <Compile Include="DbClasses\SYS_FIELDS.cs" />
+    <Compile Include="DbClasses\SYS_FIELDS_TYPES.cs" />
+    <Compile Include="DbClasses\SYS_FIELDS_TYPES_AVAILABLE_CONDITIONS.cs" />
+    <Compile Include="DbClasses\TEMPORARY_AC_ACCURAL.cs" />
+    <Compile Include="DbClasses\TEMPORARY_WR_DISMISSAL_ITEMS.cs" />
+    <Compile Include="DbClasses\tmpCL_WORK_COSTS.cs" />
+    <Compile Include="DbClasses\tmp_calc_file.cs" />
+    <Compile Include="DbClasses\tmp_calc_worker.cs" />
+    <Compile Include="DbClasses\TMP_COUNTERS.cs" />
+    <Compile Include="DbClasses\tmp_old_costs.cs" />
+    <Compile Include="DbClasses\tmp_old_order_costs.cs" />
+    <Compile Include="DbClasses\TMP_RETURN_KEEPING.cs" />
+    <Compile Include="DbClasses\WR_20x100COUNTER.cs" />
+    <Compile Include="DbClasses\WR_ACTION_15x15.cs" />
+    <Compile Include="DbClasses\WR_ACTION_BONUSES20x100.cs" />
+    <Compile Include="DbClasses\WR_ACTION_BRING_FRIEND_2012_CALCS.cs" />
+    <Compile Include="DbClasses\WR_ACTION_BRING_FRIEND_2012_UNITS.cs" />
+    <Compile Include="DbClasses\WR_ACTION_STOKMANN_2012.cs" />
+    <Compile Include="DbClasses\WR_BANK_PROFILES.cs" />
+    <Compile Include="DbClasses\WR_CARDS_LOST.cs" />
+    <Compile Include="DbClasses\WR_CARDS_ROSEURO.cs" />
+    <Compile Include="DbClasses\WR_CHARGE.cs" />
+    <Compile Include="DbClasses\WR_CHARGE_HISTORY.cs" />
+    <Compile Include="DbClasses\WR_CH_CARD.cs" />
+    <Compile Include="DbClasses\WR_CH_CARD_ITEM.cs" />
+    <Compile Include="DbClasses\WR_DataType.cs" />
+    <Compile Include="DbClasses\WR_DISMISSAL_HIST_ACCRUAL.cs" />
+    <Compile Include="DbClasses\WR_DISMISSAL_ITEMS.cs" />
+    <Compile Include="DbClasses\WR_DISMISSAL_ITEMS_HISTORY.cs" />
+    <Compile Include="DbClasses\WR_DOCUMENTS.cs" />
+    <Compile Include="DbClasses\WR_DOCUMENT_TYPES.cs" />
+    <Compile Include="DbClasses\WR_EDUCATION.cs" />
+    <Compile Include="DbClasses\WR_FAMILY.cs" />
+    <Compile Include="DbClasses\WR_GROUPS.cs" />
+    <Compile Include="DbClasses\WR_HISTORY.cs" />
+    <Compile Include="DbClasses\WR_IMAGES.cs" />
+    <Compile Include="DbClasses\WR_INTERNAL_CONTRACT.cs" />
+    <Compile Include="DbClasses\WR_INTERVIEW.cs" />
+    <Compile Include="DbClasses\WR_INTERVIEW_AND_WORKER.cs" />
+    <Compile Include="DbClasses\WR_INVOICE_NUMBERS.cs" />
+    <Compile Include="DbClasses\WR_KEEPING.cs" />
+    <Compile Include="DbClasses\WR_KEEPING_HISTORY.cs" />
+    <Compile Include="DbClasses\WR_KLADR.cs" />
+    <Compile Include="DbClasses\WR_KLADR_COUNTRIES.cs" />
+    <Compile Include="DbClasses\WR_KLADR_LESS.cs" />
+    <Compile Include="DbClasses\WR_LABOR_CONTRACTS.cs" />
+    <Compile Include="DbClasses\WR_LENTA_CARD.cs" />
+    <Compile Include="DbClasses\WR_LOG_KEEPING.cs" />
+    <Compile Include="DbClasses\WR_LOG_RETURN_KEEPING.cs" />
+    <Compile Include="DbClasses\WR_MEDICAL_BOOKS.cs" />
+    <Compile Include="DbClasses\WR_MIN_RESTS.cs" />
+    <Compile Include="DbClasses\WR_NDFL.cs" />
+    <Compile Include="DbClasses\WR_PAYMENT.cs" />
+    <Compile Include="DbClasses\WR_PAYMENT_ACCRUALS.cs" />
+    <Compile Include="DbClasses\WR_PAYMENT_HISTORY.cs" />
+    <Compile Include="DbClasses\WR_PAYMENT_HISTORY_ACCRUAL.cs" />
+    <Compile Include="DbClasses\WR_PAYMENT_TYPE.cs" />
+    <Compile Include="DbClasses\WR_PENALTIES.cs" />
+    <Compile Include="DbClasses\WR_PENALTY_HISTORY.cs" />
+    <Compile Include="DbClasses\WR_PREVIOUS_WORK.cs" />
+    <Compile Include="DbClasses\WR_REALLY.cs" />
+    <Compile Include="DbClasses\WR_RECOMMENDATION.cs" />
+    <Compile Include="DbClasses\WR_RECRUITER.cs" />
+    <Compile Include="DbClasses\WR_RECRUITER_HISTORY.cs" />
+    <Compile Include="DbClasses\WR_RECRUITER_PERIOD.cs" />
+    <Compile Include="DbClasses\WR_RECRUITER_PERIOD_HISTORY.cs" />
+    <Compile Include="DbClasses\WR_ROSEURO_IDS.cs" />
+    <Compile Include="DbClasses\WR_SHEDULE_ITEM.cs" />
+    <Compile Include="DbClasses\WR_SMS.cs" />
+    <Compile Include="DbClasses\WR_SMS_TYPES.cs" />
+    <Compile Include="DbClasses\WR_SUPERVISORS.cs" />
+    <Compile Include="DbClasses\WR_TEMP_PROFILES.cs" />
+    <Compile Include="DbClasses\WR_WAGES.cs" />
+    <Compile Include="DbClasses\WR_WAGES_OPTIONS.cs" />
+    <Compile Include="DbClasses\WR_WAGES_OPTIONS_LMK.cs" />
+    <Compile Include="DbClasses\WR_WAGES_PERIODS.cs" />
+    <Compile Include="DbClasses\WR_WAITING_FOR_FMS_RESPONSE.cs" />
+    <Compile Include="DbClasses\WR_WORKERS.cs" />
+    <Compile Include="DbClasses\WR_WORKERS_EXTENSIONS.cs" />
+    <Compile Include="DbClasses\WR_WORKERS_EXTENSIONS_TYPE.cs" />
+    <Compile Include="DbClasses\WR_WORKER_ACTION_BRING_FRIEND.cs" />
+    <Compile Include="DbClasses\WR_WORKER_ACTION_PAYMENTS.cs" />
+    <Compile Include="DbClasses\WR_WORKER_ACTION_PAYMENTS_HISTORY.cs" />
+    <Compile Include="DbClasses\WR_WORKER_COMMENTS.cs" />
+    <Compile Include="DbClasses\WR_WORKER_DOCS_ATTRIBUTES.cs" />
+    <Compile Include="DbClasses\WR_WORKER_DOCUMENTS.cs" />
+    <Compile Include="DbClasses\WR_WORKER_DOCUMENT_ATTR_CONTENT.cs" />
+    <Compile Include="DbClasses\WR_WORKER_DOC_CONTENT.cs" />
+    <Compile Include="DbClasses\WR_WORKER_REFERENCES.cs" />
+    <Compile Include="DbClasses\WR_WORKER_VACATIONS.cs" />
+    <Compile Include="DbClasses\WR_WORKER_WORK_TYPE.cs" />
+    <Compile Include="Models\AddOrderSmsTemplate.cs" />
+    <Compile Include="Models\ConditionTypes.cs" />
+    <Compile Include="Models\ISmsTemplates.cs" />
+    <Compile Include="Models\SmsEvents.cs" />
+    <Compile Include="Models\SmsEventTypes.cs" />
+    <Compile Include="Models\SmsSendConditions.cs" />
+    <Compile Include="Models\SmsTemplatesParams.cs" />
+    <Compile Include="Models\SmsVariables.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BO\BO.csproj">
+      <Project>{848eebfa-c4ac-487c-81f9-77aa34943678}</Project>
+      <Name>BO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

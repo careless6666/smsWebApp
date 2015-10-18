@@ -1,16 +1,32 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "";
 }
 
 @model SmsWebApplication.Models.ModelsList
 
 <script>
-    smsModule.Models = @Html.Raw(Json.Encode(Model))
+    smsModule.Models = @Html.Raw(Json.Encode(Model));
+    var getNetsUrl = '@Url.Action("GetNets")';
+    var getClientsUrl = '@Url.Action("GetClients")';
+    var getWorkTypesUrl = '@Url.Action("GetWorkTypes")';
+    var getDepartmentsUrl = '@Url.Action("GetDepartments")';
+    var saveAddToOrder = '@Url.Action("SaveAddToOrder")';
+    var loadDefaultTemplate = '@Url.Action("LoadDefaultTemplate")';
 </script>
-    <img src="@Url.Content("~/Content/images/city-street-night.png")" class="stub-img" />
+<div class="s-avt-parent-container">
+    @*<div class="s-avt-container">
+        <div class="s-avt-text">
+            <span class=" glyphicon glyphicon-envelope"></span>
+            <br/>
+            <span>SMS SERVICE</span>
+        </div>
+        
+    </div>*@
 
+    <img src="@Url.Content("~/Content/images/city-street-night-wide.png")" class="stub-img" />
+</div>
 
 
 <div class="s-menu-item-value" data-action="addToOrderContainer">
-    @Html.Partial("AddToOrder")
+    @Html.Partial("AddToOrder", Model.AddToOrderViewModel)
 </div>

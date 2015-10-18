@@ -33,7 +33,32 @@
 }
 
 .stub-img {
-    width: 50%;
+    width: 100%;
+}
+
+.s-avt-container {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.s-avt-text {
+    position: absolute;
+    display: inline-block;
+    color: wheat;
+    left: 0;
+    right: 0;
+    font-size: xx-large;
+    color: white;
+}
+
+.s-form-control {
+    width: 100%;
+    max-width: 280px;
+}
+
+.s-avt-parent-container {
+    text-align: center;
+    display: table;
 }
 
 .brand, .brand:active {
@@ -77,9 +102,29 @@
     margin-bottom: 21px;
     position: fixed;
     z-index: 2;
+    /*display: none;*/
 }
 
     .stub-img {
         margin-top: 18px;
     }
+}
+
+.modal {
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) { 
+  .modal:before {
+    display: inline-block;
+    vertical-align: middle;
+    content: " ";
+    height: 100%;
+  }
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
 }

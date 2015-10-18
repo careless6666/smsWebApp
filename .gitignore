@@ -1,5 +1,5 @@
-SmsWebApplication/
-SmsWebApplication/obj/Debug/SmsWebApplication.pdb
+/SmsWebApplication/bin/
+/SmsWebApplication/obj/
 /BL/obj/
 /BL/bin/
 /DAL/obj/
@@ -8,5 +8,3 @@ SmsWebApplication/obj/Debug/SmsWebApplication.pdb
 /DI/bin/
 /BO/obj/
 /BO/bin/
-1.txt
-1/

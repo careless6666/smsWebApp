@@ -1,98 +1,119 @@
-﻿<h2>Добавление на заказ</h2>
+﻿@model SmsWebApplication.Models.AddToOrderViewModel
+
+
+<h2>Добавление на заказ</h2>
 <hr />
 
 <form class="form-horizontal" role="form">
     <div class="form-group">
-        <label class="control-label col-sm-2 s-label" for="DoNotSendSmsAddToOrder">Не отправлять смс:</label>
-        <div class="col-sm-10">
-            @*<input type="email" class="form-control" id="UnitAddToOrder" placeholder="Enter email">*@
-            <input id="DoNotSendSmsAddToOrder" type="checkbox"/>
+        <label class="control-label col-sm-3 s-label" for="DoNotSendSmsAddToOrder">Не отправлять смс:</label>
+        <div class="col-sm-9">
+            <input id="DoNotSendSmsAddToOrder" type="checkbox" data-bind="cheked: $root.AddToOrderVM.isSendSms, click: function(data, event) {$root.AddToOrderVM.SendSms(data)}"/>
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-sm-2 s-label" for="UnitAddToOrder">Подразделение:</label>
-        <div class="col-sm-10">
-            @*<input type="email" class="form-control" id="UnitAddToOrder" placeholder="Enter email">*@
-            <select id="UnitAddToOrder" class="form-control"></select>
+        <label class="control-label col-sm-3 s-label" for="SelectedUnit">Подразделение:</label>
+        <div class="col-sm-9">
+            @Html.DropDownListFor(x=>x.SelectedUnitAddToOrder, Model.Units.Select(x=> new SelectListItem {Value = x.Id.ToString(), Text = x.Name}), new Dictionary<string, object>()
+           {
+               {"data-bind", "event: { change: $root.AddToOrderVM.ChangeUnit }"},
+               {"class", "s-form-control" },
+               { "multiple", "multiple"}
+           })
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-sm-2 s-label" for="NetAddToOrder">Сеть:</label>
-        <div class="col-sm-10">
-            <select id="NetAddToOrder" class="form-control"></select>
+        <label class="control-label col-sm-3 s-label" for="NetAddToOrder">Сеть:</label>
+        <div class="col-sm-9">
+            @Html.DropDownListFor(x=>x.SelectedNetworkAddToOrder, Model.Networks.Select(x => new SelectListItem { Value = x.Id.ToString(), Text = x.Name }), new Dictionary<string, object>()
+           {
+               {"data-bind", "event: { change: $root.AddToOrderVM.ChangeNet }"},
+               {"class", "s-form-control" },
+               { "multiple", "multiple"}
+           })
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-sm-2 s-label" for="ClientAddToOrder">Клиент:</label>
-        <div class="col-sm-10">
-            <select id="ClientAddToOrder" class="form-control"></select>
+        <label class="control-label col-sm-3 s-label" for="ClientAddToOrder">Клиент:</label>
+        <div class="col-sm-9">
+            @Html.DropDownListFor(x => x.SelectedClientAddToOrder, Model.Clients.Select(x => new SelectListItem { Value = x.Id.ToString(), Text = x.Name }), new Dictionary<string, object>()
+           {
+               {"data-bind", "event: { change: $root.AddToOrderVM.ChangeWorkType }"},
+               { "class", "s-form-control" },
+               { "multiple", "multiple"}
+           })
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-sm-2 s-label" for="WorkTypeAddToOrder">Тип работ:</label>
-        <div class="col-sm-10">
-            <select id="WorkTypeAddToOrder" class="form-control"></select>
+        <label class="control-label col-sm-3 s-label" for="WorkTypeAddToOrder">Тип работ:</label>
+        <div class="col-sm-9">
+            @Html.DropDownListFor(x => x.SelectedWorkTypesAddToOrder, Model.WorkTypes.Select(x => new SelectListItem { Value = x, Text = x }), new Dictionary<string, object>()
+           {
+               {"data-bind", "event: { change: $root.AddToOrderVM.UpdateDeparments }"},
+               { "class", "s-form-control" },
+               { "multiple", "multiple"}
+           })
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-sm-2 s-label" for="DepartmentAddToOrder">Отдел:</label>
-        <div class="col-sm-10">
-            <select id="DepartmentAddToOrder" class="form-control"></select>
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="control-label col-sm-2 s-label">Дата начала с:</label>
-        <div class="col-sm-10">
-            @*<input id="StartDateAddToOrder" class="form-control"/>*@
+        <label class="control-label col-sm-3 s-label" for="SelectedDepartmentAddToOrder">Отдел:</label>
+        <div class="col-sm-9">
+            @Html.DropDownListFor(x => x.SelectedDepartmentAddToOrder, Model.Deparment.Select(x => new SelectListItem { Value = x.Id.ToString(), Text = x.Name }), new Dictionary<string, object>()
+           {
+               {"class", "s-form-control" },
+               { "multiple", "multiple"}
+           })
 
-
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-3 s-label">Дата начала с:</label>
+        <div class="col-sm-9">
             <div class="input-group date form_date s-date-time" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-                <input class="form-control" size="16" type="text" value="" readonly>
+                <input class="form-control" size="16" type="text" value="" readonly data-bind="value: $root.AddToOrderVM.DateStart, event: {change: $root.AddToOrderVM.ValidateDates($data)}">
                 <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                 <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
             </div>
-            <input type="hidden" id="StartDateAddToOrder" value=""/>
-
+            <input type="hidden" id="StartDateAddToOrder" value="" data-bind="value: $root.AddToOrderVM.DateStart, event: {change: $root.AddToOrderVM.ValidateDates}"/>
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-sm-2 s-label">Дата начала по:</label>
-        <div class="col-sm-10">
+        <label class="control-label col-sm-3 s-label">Дата начала по:</label>
+        <div class="col-sm-9">
             <div class="input-group date form_date s-date-time" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-                <input class="form-control" size="16" type="text" value="" readonly>
+                <input class="form-control" size="16" type="text" value="" readonly data-bind="value: $root.AddToOrderVM.DateEnd, event: {change: $root.AddToOrderVM.ValidateDates($data)}"> 
                 <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                 <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
             </div>
-            <input type="hidden" id="EndDateAddToOrder" value=""/>
+            <input type="hidden" id="EndDateAddToOrder" value="" data-bind="value: $root.AddToOrderVM.DateEnd"/>
+            <span style="color: red;" data-bind="visible: $root.AddToOrderVM.DatesValis">Дата начала с должна быть меньше даты начала по</span>
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-sm-2 s-label" for="StartTimeAddToOrder">Время начала с:</label>
-        <div class="col-sm-10">
-            @*<input id="StartTimeAddToOrder" class="form-control" data-bind="localTimepicker: $root.AddToOrderViewModel.TimeStart"/>*@
+        <label class="control-label col-sm-3 s-label" for="StartTimeAddToOrder">Время начала с:</label>
+        <div class="col-sm-9">
             <div class="input-group date form_time s-date-time" data-date="" data-date-format="hh:ii" data-link-field="dtp_input3" data-link-format="hh:ii">
-                <input class="form-control" size="16" type="text" value="" data-bind="value: $root.AddToOrderViewModel.TimeStart">
+                <input class="form-control" size="16" type="text" value="" data-bind="value: $root.AddToOrderVM.TimeStart">
                 <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                 <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
             </div>
-            <input type="hidden" id="StartTimeAddToOrder" value="" data-bind="value: $root.AddToOrderViewModel.TimeStart" />
+            <input type="hidden" id="StartTimeAddToOrder" value="" data-bind="value: $root.AddToOrderVM.TimeStart"/>
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-sm-2 s-label" for="EndTimeAddToOrder">Время начала по:</label>
-        <div class="col-sm-10">
-            @*<input id="EndTimeAddToOrder" class="form-control"  />*@
+        <label class="control-label col-sm-3 s-label" for="EndTimeAddToOrder">Время начала по:</label>
+        <div class="col-sm-9">
             <div class="input-group date form_time s-date-time" data-date="" data-date-format="hh:ii" data-link-field="dtp_input3" data-link-format="hh:ii">
-                <input class="form-control" size="16" type="text" value="" data-bind="value: $root.AddToOrderViewModel.TimeEnd">
+                <input class="form-control" size="16" type="text" value="" data-bind="value: $root.AddToOrderVM.TimeEnd">
                 <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                 <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
             </div>
-            <input type="hidden" id="EndTimeAddToOrder" value="" data-bind="value: $root.AddToOrderViewModel.TimeEnd" />
+            <input type="hidden" id="EndTimeAddToOrder" value="" data-bind="value: $root.AddToOrderVM.TimeEnd"/>
         </div>
     </div>
     <div class="form-group">
         <div class="col-sm-8">
-            <textarea class="form-control s-text-area" placeholder="Введите текст сообщения ..." Rows="7"></textarea>
+            <textarea class="form-control s-text-area" placeholder="Введите текст сообщения ..." Rows="7" data-bind="value: $root.AddToOrderVM.Message" required></textarea>
         </div>
         <div class="col-sm-4">
             <div class="container">
@@ -101,14 +122,14 @@
                 </div>
                 <div class="row">
                     <div>
-                        <button class="btn btn-default s-btn" type="button">Дата начала</button>
-                        <button class="btn btn-default s-btn" type="button">Время начала</button>
-                        <button class="btn btn-default s-btn" type="button">Дата окончания</button>
-                        <button class="btn btn-default s-btn" type="button">Время окончания</button>
-                        <button class="btn btn-default s-btn" type="button">Клиент</button>
-                        <button class="btn btn-default s-btn" type="button">Тип работы</button>
-                        <button class="btn btn-default s-btn" type="button">Отдел</button>
-                        <button class="btn btn-default s-btn" type="button">Адрес</button>
+                        <button class="btn btn-default s-btn" type="button" data-bind="click: function(data, event) { $root.AddToOrderVM.ItemClick(data.AddToOrderVM.Message, event) }">Дата начала</button>   
+                        <button class="btn btn-default s-btn" type="button" data-bind="click: function(data, event) { $root.AddToOrderVM.ItemClick(data.AddToOrderVM.Message, event) }">Время начала</button>
+                        <button class="btn btn-default s-btn" type="button" data-bind="click: function(data, event) { $root.AddToOrderVM.ItemClick(data.AddToOrderVM.Message, event) }">Дата окончания</button>
+                        <button class="btn btn-default s-btn" type="button" data-bind="click: function(data, event) { $root.AddToOrderVM.ItemClick(data.AddToOrderVM.Message, event) }">Время окончания</button>
+                        <button class="btn btn-default s-btn" type="button" data-bind="click: function(data, event) { $root.AddToOrderVM.ItemClick(data.AddToOrderVM.Message, event) }">Клиент</button>
+                        <button class="btn btn-default s-btn" type="button" data-bind="click: function(data, event) { $root.AddToOrderVM.ItemClick(data.AddToOrderVM.Message, event) }">Тип работы</button>
+                        <button class="btn btn-default s-btn" type="button" data-bind="click: function(data, event) { $root.AddToOrderVM.ItemClick(data.AddToOrderVM.Message, event) }">Отдел</button>
+                        <button class="btn btn-default s-btn" type="button" data-bind="click: function(data, event) { $root.AddToOrderVM.ItemClick(data.AddToOrderVM.Message, event) }">Адрес</button>
                     </div>
                 </div>
             </div>
@@ -116,18 +137,39 @@
     </div>
     <div class="form-group">
         <label class="control-label col-sm-2 s-label" for="TranslitAddToOrder">Выполнить транслитерацию:</label>
-        <div class="col-sm-10">
+        <div class="col-sm-10" style="margin-top: 8px;">
             @*<input type="email" class="form-control" id="UnitAddToOrder" placeholder="Enter email">*@
-            <input id="TranslitAddToOrder" type="checkbox"/>
+            <input id="TranslitAddToOrder" type="checkbox" data-bind="cheked: $root.AddToOrderVM.EnableTranslite, click: function(data, event) { $root.AddToOrderVM.TranslitText(data)}"/>
         </div>
     </div>
     <div class="form-group">
         <div class="col-sm-12">
-            <button class="btn btn-primary s-btn" type="button">Сохранить шаблон</button>
-            <button class="btn btn-success s-btn" type="button">Предварительный просмотр</button>
-            <button class="btn btn-info s-btn" type="button">Загрузить шаблон по умолчанию</button>
-            <button class="btn btn-primary s-btn" type="button">Сохранить шаблон по умочанию</button>
+            <button class="btn btn-primary s-btn" type="submit" data-bind="click: $root.AddToOrderVM.SaveTemplate.bind($data)">Сохранить шаблон</button>
+            <button class="btn btn-success s-btn" type="button" data-toggle="modal" data-target="#myModal" data-bind="click: $root.AddToOrderVM.PreviewMessageBuilder.bind($data)">Предварительный просмотр</button>
+            <button class="btn btn-info s-btn" type="button" data-bind="click: $root.AddToOrderVM.LoadDefaultTemplate.bind($data)">Загрузить шаблон по умолчанию</button>
+            <button class="btn btn-primary s-btn" type="button"  data-bind="click: $root.AddToOrderVM.SaveDefaultTemplate.bind($data)">Сохранить шаблон по умочанию</button>
         </div>
     </div>
 </form>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Предварительный просмотр смс сообщения</h4>
+            </div>
+            <div class="modal-body">
+                <p><span data-bind="text: $root.AddToOrderVM.PreviewMessage"></span></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+            </div>
+        </div>
+
+    </div>
+</div>
 
