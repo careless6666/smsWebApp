@@ -25,7 +25,7 @@ namespace SmsWebApplication.Controllers
 		AddToOrderViewModel = new AddToOrderViewModel
 		{
 		   Clients = new List<Client>(),
-		   Department = new List<Department>(),
+		   Deparment = new List<Department>(),
 		   Networks = new List<Nets>(),
 		   Units = new List<Unit>,
 		   WorkTypes = new List<string>
