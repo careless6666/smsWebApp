@@ -21,7 +21,15 @@ namespace SmsWebApplication.Controllers
             var pm = new PrepareModel();
             var model = new ModelsList
             {
-                AddToOrderViewModel = pm.GetAddToOrderModel()
+		//AddToOrderViewModel = pm.GetAddToOrderModel()
+		AddToOrderViewModel = new AddToOrderViewModel
+		{
+		   Clients = new List<Client>(),
+		   Department = new List<Department>(),
+		   Networks = new List<Nets>(),
+		   Units = new List<Unit>,
+		   WorkTypes = new List<string>
+		}
             };
             return View(model);
         }
